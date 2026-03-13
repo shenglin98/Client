@@ -1,0 +1,166 @@
+@charset "UTF-8";
+.common-circle-node {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid #777;
+  border-radius: 50%;
+  background-color: #f4f6fc;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.common-circle-node.node-start, .common-circle-node.node-end {
+  min-width: 100px;
+  padding: 0 10px;
+  border-radius: 100px;
+  width: auto;
+}
+
+.common-circle-node:hover {
+  z-index: 2;
+}
+
+.common-circle-node.active {
+  outline: 2px dashed #409EFF;
+  outline-offset: 0px;
+}
+
+.common-rectangle-node {
+  position: absolute;
+  min-height: 60px;
+  max-height: 60px;
+  min-width: 120px;
+  max-width: 300px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #777;
+  border-radius: 5px;
+  background-color: #f4f6fc;
+  z-index: 1;
+  word-break: break-all;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.common-rectangle-node > span {
+  padding-left: 5px;
+  text-align: left;
+}
+
+.common-rectangle-node:hover {
+  z-index: 2;
+}
+
+.common-rectangle-node.active {
+  outline: 2px dashed #409EFF;
+  outline-offset: 0px;
+}
+
+.common-diamond-node {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid #777;
+  border-radius: 3px;
+  background-color: #f4f6fc;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.common-diamond-node:before {
+  position: absolute;
+  content: '网关';
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.common-diamond-node:hover {
+  z-index: 2;
+}
+
+.common-diamond-node.active {
+  outline: 2px dashed #409EFF;
+  outline-offset: 0px;
+}
+
+.common-x-lane-node {
+  position: absolute;
+  text-align: center;
+  border: 1px solid #777;
+  border-radius: 2px;
+}
+
+.common-x-lane-node.laneActive {
+  outline: 2px dashed #409EFF;
+  outline-offset: 0px;
+}
+
+.common-x-lane-node .lane-text-div {
+  width: 18px;
+  height: 100%;
+  position: absolute;
+  display: table;
+  border-right: 1px solid #777;
+  background-color: #f4f6fc;
+}
+
+.common-x-lane-node .lane-text-div:hover {
+  z-index: 2;
+}
+
+.common-x-lane-node .lane-text-div .lane-text {
+  word-wrap: break-word;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 0.8em;
+}
+
+.common-y-lane-node {
+  position: absolute;
+  text-align: center;
+  border: 1px solid #777;
+  border-radius: 2px;
+}
+
+.common-y-lane-node.laneActive {
+  outline: 2px dashed #409EFF;
+  outline-offset: 0px;
+}
+
+.common-y-lane-node .lane-text-div {
+  width: 100%;
+  height: 18px;
+  position: absolute;
+  display: table;
+  border-bottom: 1px solid #777;
+  background-color: #f4f6fc;
+}
+
+.common-y-lane-node .lane-text-div:hover {
+  z-index: 2;
+}
+
+.common-y-lane-node .lane-text-div .lane-text {
+  word-wrap: break-word;
+  display: table-cell;
+  font-size: 0.8em;
+}
+
+.node-icon {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+/*# sourceMappingURL=flow-node.css.map */

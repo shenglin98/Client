@@ -1,0 +1,147 @@
+.statisticsdisease {
+    padding: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    .subject {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        background: #FFFFFF;
+        border-radius: 6px;
+        overflow: hidden;
+        .search_box {
+            display: flex;
+            height: 40px;
+            width: 100%;
+            background-color: #f6f7fc;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 20px;
+            .sbtn {
+                margin: 0 10px;
+            }
+            .el-input {
+                width: 250px;
+            }
+        }
+        .mainbody {
+            height: calc(100% - 40px);
+            .el-row {
+                height: 100%;
+                .el-col {
+                    height: 100%;
+                }
+                .main_l {
+                    box-sizing: border-box;
+                    padding: 10px;
+                    .top_form {
+                        height: 230px;
+                        .el-form {
+                            .el-select {
+                                width: 100%;
+                            }
+                            .df {
+                                .dfb {
+                                    display: flex;
+                                    align-items: center;
+                                    .el-button {
+                                        height: 28px !important;
+                                    }
+                                }
+                                .el-select {
+                                    width: 72%;
+                                    margin-right: 2%;
+                                }
+                                .el-radio-group {
+                                    width: 72%;
+                                    margin-right: 2%;
+                                    .el-radio {
+                                        margin: 0 0 8px 0 !important;
+                                        width: 50%;
+                                    }
+                                }
+                                .el-button {
+                                    width: 25%;
+                                }
+                            }
+                        }
+                    }
+                    .people_box {
+                        height: calc(100% - 190px);
+                    }
+                }
+                .main_r {
+                    box-sizing: border-box;
+                    padding: 10px 10px 10px 0;
+                    .pdfbox {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .maintenance_dia {
+            .el-dialog__header {
+                padding: 10px 10px 0 10px;
+            }
+            .el-dialog__body {
+                padding: 10px;
+                .maintenance {
+                    box-sizing: border-box;
+                    height: 600px;
+                    .el-row {
+                        height: 100%;
+                        box-sizing: border-box;
+                        .el-col {
+                            height: 100%;
+                            .top_btn {
+                                display: flex;
+                                align-items: center;
+                                height: 32px;
+                                margin-bottom: 8px;
+                                .el-input {
+                                    width: 200px;
+                                    margin-right: 8px;
+                                }
+                                .select_box {
+                                    display: flex;
+                                    align-items: center;
+                                    margin-right: 20px;
+                                    >span {
+                                        margin-right: 8px;
+                                    }
+                                    .el-select {
+                                        width: 200px;
+                                    }
+                                }
+                            }
+                            .daleiBox {
+                                height: calc(100% - 32px);
+                            }
+                            .jibingBox {
+                                height: calc(100% - 62px);
+                            }
+                            .select_input {
+                                height: 30px;
+                                .el-input {
+                                    width: 200px;
+                                }
+                            }
+                        }
+                        .mr {
+                            width: calc(50% - 8px);
+                            margin-right: 8px;
+                        }
+                    }
+                }
+                .vxe-body--row.row--current {
+                    background-color: #3489ca !important;
+                }
+            }
+        }
+        .discount_dialog {
+            background-color: rgba(0, 0, 0, .3);
+        }
+    }
+}

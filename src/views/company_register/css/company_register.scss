@@ -1,0 +1,88 @@
+.company_register {
+    background-color: #fff;
+    .bg-white {
+        display: flex;
+        flex-direction: column;
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            padding: 0 !important;
+            height: 32px;
+            margin-top: 5px;
+            border: none;
+        }
+    }
+    .sticky {
+        .el-date-editor {
+            margin-right: 20px;
+        }
+    }
+}
+
+/deep/.iconfont {
+    margin-right: 5px;
+}
+
+/deep/.el-checkbox__inner {
+    border-radius: 8px;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-leave {
+    opacity: 1;
+}
+
+.fade-enter-active {
+    transition: opacity 0.5s;
+}
+
+.fade-leave-active {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.filter-box {
+    background-color: #fff;
+}
+
+.company_register {
+    background-color: #fff;
+}
+
+.filter-container {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #f5f7fa;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    .filter-container-in {
+        margin: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        //   background-color: #fff;
+        .daterange {
+            margin-right: 20px;
+        }
+    }
+}
+
+.filter-container-btn {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.custom-tags-view {
+    margin-top: 10px !important;
+}
+
+.app-container {
+    background-color: #fff;
+}

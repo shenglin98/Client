@@ -1,0 +1,52 @@
+.project .search_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project .search_head .search_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.project .search_head .search_box /deep/.el-input {
+  margin-right: 20px;
+}
+
+.project .search_head .price_box {
+  color: red;
+}
+
+.project .table_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  height: 450px;
+}
+
+.project .table_body > div {
+  margin-right: 10px;
+  width: 24%;
+}
+
+.project .table_body > div:last-child {
+  margin-right: 0px;
+}
+
+.project .fromitem {
+  white-space: nowrap;
+}
+
+.project .btn_group {
+  margin-top: 10px;
+  text-align: right;
+}
+/*# sourceMappingURL=project.css.map */

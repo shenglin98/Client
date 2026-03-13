@@ -1,0 +1,213 @@
+.questionnaire {
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.questionnaire .subject {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.questionnaire .subject /deep/.is-current {
+  background-color: #5586d1 !important;
+}
+
+.questionnaire .subject .choose_tree {
+  width: 200px;
+  border-right: 1px solid #eaeefb;
+}
+
+.questionnaire .subject .choose_tree .head {
+  height: 50px;
+  background-color: #f6f7fc;
+}
+
+.questionnaire .subject .choose_tree .pageTree {
+  margin-top: 15px;
+}
+
+.questionnaire .subject .content {
+  width: calc(100% - 200px);
+}
+
+.questionnaire .subject .content .search_box {
+  height: 50px;
+  background-color: #f6f7fc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 20px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.questionnaire .subject .content .search_box /deep/.el-tag {
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questionnaire .subject .content .search_box /deep/.el-select,
+.questionnaire .subject .content .search_box /deep/.el-input {
+  width: 200px !important;
+}
+
+.questionnaire .subject .content .search_box .btn_group {
+  margin-left: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.questionnaire .subject .content .child_components {
+  height: calc(100% - 50px);
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.questionnaire .subject .content .child_components /deep/.el-table .cell .el-link.name_box {
+  width: 220px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questionnaire .subject .content .child_components /deep/.el-table .cell .el-link.name_box .el-link--inner {
+  width: 220px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.questionnaire .subject .content .child_components .human_system {
+  width: 100%;
+  height: 100%;
+}
+
+.questionnaire .subject .content .child_components .human_system .humansystem_data {
+  height: 100%;
+}
+
+.questionnaire .subject .content .child_components .history_taking {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.questionnaire .subject .content .child_components .history_taking .taking_tree {
+  width: 150px;
+  margin-right: 15px;
+}
+
+.questionnaire .subject .content .child_components .history_taking .historytaking_data {
+  width: calc(100% - 165px);
+}
+
+.questionnaire .subject .content .child_components .health_questionnaire {
+  width: 100%;
+  height: 100%;
+}
+
+.questionnaire .subject .content .child_components .health_questionnaire .healthquestionnaire_data {
+  height: 100%;
+}
+
+.questionnaire .subject .content .child_components .questionnaire_details {
+  width: 100%;
+  height: 100%;
+}
+
+.questionnaire .subject .content .child_components .questionnaire_details .screen_box {
+  height: 30px;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.questionnaire .subject .content .child_components .questionnaire_details .screen_box .select_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 510px);
+}
+
+.questionnaire .subject .content .child_components .questionnaire_details .screen_box .select_box .title {
+  margin-right: 15px;
+}
+
+.questionnaire .subject .content .child_components .questionnaire_details .screen_box .btn_group {
+  width: 500px;
+}
+
+.questionnaire .subject .content .child_components .questionnaire_details .details_table {
+  width: 100%;
+  height: calc(100% - 40px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.questionnaire .subject .content .child_components .questionnaire_details .details_table .questionnairedetails_data {
+  width: calc(100% - 510px);
+}
+
+.questionnaire .subject .content .child_components .questionnaire_details .details_table .optionalfilling_data {
+  width: 500px;
+  margin-left: 8px;
+}
+
+.questionnaire .subject .humansystem_dia /deep/.el-form .el-select {
+  width: 100%;
+}
+
+.questionnaire .subject .historytaking_dia /deep/.el-form .el-select {
+  width: 100%;
+}
+
+.questionnaire .subject .healthquestionnaire_dia /deep/.el-form .el-select {
+  width: 100%;
+}
+
+.questionnaire .subject .questionnairedetails_dia /deep/.el-form .el-select {
+  width: 100%;
+}
+
+.questionnaire .subject .optionalfilling_dia /deep/.el-form .el-select {
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */

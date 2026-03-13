@@ -1,0 +1,349 @@
+.sign {
+    .filter-container {
+        height: 38px;
+        margin: 5px 10px 0 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        >div {
+            margin: 0 4px;
+        }
+        // border-bottom-right-radius: 5px;
+        // border-bottom-left-radius: 5px;
+        .filter-container-in {
+            height: 38px;
+            // padding: 10px 10px 10px 10px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 38px;
+            .filter-items {
+                width: 100%;
+                height: 30px;
+                margin-left: 10px;
+                /deep/.el-button {
+                    // width: 100px;
+                }
+            }
+        }
+    }
+    // 主体数据结构
+    .app-container {
+        .bg_white {
+            border-radius: 5px;
+            background-color: #fff;
+            height: calc(100vh - 140px);
+            /deep/.el-form-item {
+                margin-bottom: 10px;
+            }
+            // 主体内容右侧
+            .content_right {
+                height: calc(100vh - 15px);
+                padding: 10px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                .message {
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    /deep/.el-switch {
+                        margin-right: 20px;
+                    }
+                }
+                // 个人信息
+                .personal_info {
+                    margin-top: 16px;
+                    margin-bottom: 20px;
+                    .head {
+                        display: flex;
+                        align-items: center;
+                        font-size: 18px;
+                        font-weight: 600;
+                        background-color: #f6f7fc;
+                        line-height: 38px;
+                        margin: 0px 0 10px 0px;
+                        border-radius: 5px;
+                        .logo {
+                            width: 7px;
+                            height: 20px;
+                            background-color: #5c7ceb;
+                            border-radius: 3.5px;
+                            margin-right: 5px;
+                        }
+                    }
+                    .info_body {
+                        display: flex;
+                        .form_box {
+                            margin-right: 10px;
+                            flex: 1;
+                            .el-form {
+                                .el-row {
+                                    display: flex;
+                                    align-items: center;
+                                    .el-form-item {
+                                        margin-bottom: 5px;
+                                    }
+                                }
+                            }
+                            .age {
+                                /deep/.el-form-item__content {
+                                    display: flex;
+                                }
+                                .age_num {
+                                    /deep/.el-input__inner {
+                                        padding-right: 0;
+                                    }
+                                }
+                            }
+                            // .birthday {}
+                        }
+                        // 照片
+                        .photo_box {
+                            width: 90px;
+                            margin-right: 10px;
+                            .avatar {
+                                width: 90px;
+                                height: 100px;
+                                border: 1px solid #ebeef5;
+                            }
+                            .text {
+                                font-weight: 600;
+                                text-align: center;
+                            }
+                            .detailed_dialog {
+                                /deep/.el-dialog__body {
+                                    height: 500px;
+                                    overflow: auto;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+                // 团检信息
+                .team_inspect {
+                    margin-bottom: 20px;
+                    .head {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        font-size: 18px;
+                        font-weight: 600;
+                        background-color: #f6f7fc;
+                        line-height: 38px;
+                        border-radius: 5px;
+                        .logo {
+                            width: 7px;
+                            height: 20px;
+                            background-color: #5c7ceb;
+                            border-radius: 3.5px;
+                            margin-right: 5px;
+                        }
+                        .hand_title {
+                            display: flex;
+                            align-items: center;
+                            min-width: 85px;
+                            height: 38px;
+                        }
+                        .el-form {
+                            // position: absolute;
+                            // padding-top: 10px;
+                            // right: 15px;
+                            margin-right: 10px;
+                            .el-form-item {
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+                // 体检项目
+                .checkup_project {
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    padding-bottom: 10px;
+                    height: 100%;
+                    .head {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        background-color: #f6f7fc;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                        .hand_title {
+                            display: flex;
+                            align-items: center;
+                            min-width: 85px;
+                            .logo {
+                                width: 7px;
+                                height: 20px;
+                                background-color: #5c7ceb;
+                                border-radius: 3.5px;
+                                margin-right: 5px;
+                            }
+                            span {
+                                font-size: 18px;
+                                line-height: 38px;
+                                font-weight: 600;
+                            }
+                        }
+                        .checkup_body {
+                            display: flex;
+                            align-items: center;
+                            .select_box {
+                                display: flex;
+                                align-items: center;
+                                margin-left: 15px;
+                                .select_text {
+                                    text-align: right;
+                                    vertical-align: middle;
+                                    float: left;
+                                    font-size: 14px;
+                                    color: #606266;
+                                    line-height: 40px;
+                                    padding: 0 12px 0 0;
+                                    box-sizing: border-box;
+                                }
+                            }
+                            .state_group {
+                                display: flex;
+                                align-items: center;
+                                cursor: pointer;
+                                font-size: 16px;
+                                padding-right: 10px;
+                                .state_item {
+                                    display: flex;
+                                    margin-left: 20px;
+                                    border-radius: 5px;
+                                    border: 1px solid #dcdfe6;
+                                    overflow: hidden;
+                                    div {
+                                        padding: 5px 10px;
+                                    }
+                                    .title {
+                                        color: #fff;
+                                    }
+                                    .bg_1 {
+                                        background-color: #409eff;
+                                    }
+                                    .bg_2 {
+                                        background-color: #f56c6c;
+                                    }
+                                    .bg_3 {
+                                        background-color: #67c23a;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .group_table {
+                        height: calc(100% - 155px);
+                    }
+                }
+            }
+            // 主体内容左侧
+            .content_left {
+                height: calc(100vh - 5px);
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                .head {
+                    display: flex;
+                    align-items: center;
+                    font-size: 18px;
+                    font-weight: 600;
+                    background-color: #f6f7fc;
+                    line-height: 38px;
+                    margin: -10px 0px 10px -10px;
+                    padding-left: 12px;
+                    border-radius: 5px;
+                    .logo {
+                        width: 7px;
+                        height: 20px;
+                        background-color: #5c7ceb;
+                        border-radius: 3.5px;
+                        margin-right: 5px;
+                    }
+                }
+                .check_date {
+                    width: 100%;
+                    display: flex;
+                    margin-bottom: 8px;
+                    .el-date-editor {
+                        flex-shrink: 0;
+                        margin-left: 12px;
+                        width: 220px;
+                    }
+                }
+                .checkup_code {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    margin-bottom: 8px;
+                    /deep/.el-input {
+                        width: 305px;
+                        margin-left: 12px;
+                    }
+                    .read_card {
+                        height: 28px;
+                        width: 305px;
+                        border-radius: 4px;
+                        border: 1px solid #dcdfe6;
+                        margin-left: 10px;
+                        outline: none;
+                        background-color: #fff;
+                    }
+                    .read_card:focus {
+                        border: 1px solid #0076c8;
+                    }
+                }
+                .checkup_date {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    margin-bottom: 8px;
+                    /deep/.el-button {
+                        margin-right: 10px;
+                    }
+                }
+                .checkup_btn {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    margin-bottom: 8px;
+                    /deep/.el-button {
+                        margin-right: 7px;
+                    }
+                }
+                .condition_table {
+                    height: calc(100% - 310px);
+                }
+            }
+        }
+    }
+}
+
+.el-popover {
+    .content {
+        .content_item {
+            height: 20px;
+            margin-bottom: 3px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .content_item:hover {
+            color: #66b1ff;
+            background-color: #ecf5ff;
+        }
+    }
+    .print_item {
+        margin-bottom: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .print_item:hover {
+        background-color: #ecf5ff;
+        color: #66b1ff;
+    }
+}

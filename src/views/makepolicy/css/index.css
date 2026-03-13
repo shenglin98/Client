@@ -1,0 +1,467 @@
+.makepolicy {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.makepolicy .title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #343434;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.makepolicy .title::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 20px;
+  background: #559FEB;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.makepolicy .mt1 {
+  margin-top: 10px;
+}
+
+.makepolicy .mt2 {
+  margin-top: 15px;
+}
+
+.makepolicy .page_status {
+  margin-left: 15px;
+}
+
+.makepolicy .page_status /deep/.el-radio-button {
+  margin-left: 5px;
+  -webkit-transform: skewX(-20deg);
+          transform: skewX(-20deg);
+}
+
+.makepolicy .page_status /deep/.el-radio-button .el-radio-button__inner {
+  border: 0 none;
+  border-radius: 4px;
+}
+
+.makepolicy .page_status /deep/.el-radio-button .text {
+  -webkit-transform: skewX(20deg);
+          transform: skewX(20deg);
+}
+
+.makepolicy .search_box {
+  height: 80px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.makepolicy .search_box .time_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 350px;
+}
+
+.makepolicy .search_box .time_box /deep/.el-date-editor {
+  width: 250px !important;
+}
+
+.makepolicy .search_box .time_box .t_title {
+  width: 80px;
+  text-align: center;
+}
+
+.makepolicy .search_box .group_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.makepolicy .search_box .reset_btn {
+  width: 300px;
+  text-align: center;
+}
+
+.makepolicy .check_schedule {
+  height: 290px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.makepolicy .check_schedule .head {
+  background-color: #f6f7fc;
+  padding: 0 10px;
+}
+
+.makepolicy .check_schedule .head .title {
+  height: 38px;
+}
+
+.makepolicy .check_schedule .check_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 0;
+}
+
+.makepolicy .check_schedule .check_body .check_item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 220px;
+  background: #ECF5FF;
+  border-radius: 10px;
+  margin: 0 10px;
+}
+
+.makepolicy .check_schedule .check_body .bg2 {
+  background-color: #e7f7fa;
+}
+
+.makepolicy .check_schedule .check_body .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.makepolicy .check_schedule .check_body .total > img {
+  width: 80px;
+}
+
+.makepolicy .check_schedule .check_body .total .num_box {
+  margin-left: 20px;
+}
+
+.makepolicy .check_schedule .check_body .total .num_box .subscribe {
+  font-size: 36px;
+  font-weight: 500;
+  color: #2A87E6;
+}
+
+.makepolicy .check_schedule .check_body .total .num_box .text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #818389;
+}
+
+.makepolicy .check_schedule .check_body .inspect,
+.makepolicy .check_schedule .check_body .gender,
+.makepolicy .check_schedule .check_body .marriage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.makepolicy .check_schedule .check_body .inspect .inspect_top,
+.makepolicy .check_schedule .check_body .gender .inspect_top,
+.makepolicy .check_schedule .check_body .marriage .inspect_top {
+  width: 100%;
+  height: 85%;
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.makepolicy .check_schedule .check_body .inspect .inspect_top .percentage,
+.makepolicy .check_schedule .check_body .gender .inspect_top .percentage,
+.makepolicy .check_schedule .check_body .marriage .inspect_top .percentage {
+  font-size: 14px;
+}
+
+.makepolicy .check_schedule .check_body .inspect .inspect_top .percentage .p_top,
+.makepolicy .check_schedule .check_body .gender .inspect_top .percentage .p_top,
+.makepolicy .check_schedule .check_body .marriage .inspect_top .percentage .p_top {
+  color: red;
+  font-size: 18px;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.makepolicy .check_schedule .check_body .inspect .inspect_top .percentage .p_top .p_icon,
+.makepolicy .check_schedule .check_body .gender .inspect_top .percentage .p_top .p_icon,
+.makepolicy .check_schedule .check_body .marriage .inspect_top .percentage .p_top .p_icon {
+  height: 25px;
+}
+
+.makepolicy .check_schedule .check_body .inspect .inspect_top .percentage .p_top .p_text,
+.makepolicy .check_schedule .check_body .gender .inspect_top .percentage .p_top .p_text,
+.makepolicy .check_schedule .check_body .marriage .inspect_top .percentage .p_top .p_text {
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.makepolicy .check_schedule .check_body .inspect .inspect_top .percentage .p_bom,
+.makepolicy .check_schedule .check_body .gender .inspect_top .percentage .p_bom,
+.makepolicy .check_schedule .check_body .marriage .inspect_top .percentage .p_bom {
+  margin-top: 8px;
+}
+
+.makepolicy .check_schedule .check_body .inspect .inspect_top .inspectChart,
+.makepolicy .check_schedule .check_body .inspect .inspect_top .genderChart,
+.makepolicy .check_schedule .check_body .inspect .inspect_top .businessChart,
+.makepolicy .check_schedule .check_body .inspect .inspect_top .marriageChart,
+.makepolicy .check_schedule .check_body .gender .inspect_top .inspectChart,
+.makepolicy .check_schedule .check_body .gender .inspect_top .genderChart,
+.makepolicy .check_schedule .check_body .gender .inspect_top .businessChart,
+.makepolicy .check_schedule .check_body .gender .inspect_top .marriageChart,
+.makepolicy .check_schedule .check_body .marriage .inspect_top .inspectChart,
+.makepolicy .check_schedule .check_body .marriage .inspect_top .genderChart,
+.makepolicy .check_schedule .check_body .marriage .inspect_top .businessChart,
+.makepolicy .check_schedule .check_body .marriage .inspect_top .marriageChart {
+  width: 55%;
+  height: 100%;
+}
+
+.makepolicy .check_schedule .check_body .inspect .inspect_bottom,
+.makepolicy .check_schedule .check_body .gender .inspect_bottom,
+.makepolicy .check_schedule .check_body .marriage .inspect_bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.makepolicy .check_schedule .check_body .inspect .inspect_bottom .ib_l_num,
+.makepolicy .check_schedule .check_body .gender .inspect_bottom .ib_l_num,
+.makepolicy .check_schedule .check_body .marriage .inspect_bottom .ib_l_num {
+  color: #30ADC6;
+  font-weight: 600;
+}
+
+.makepolicy .check_schedule .check_body .inspect .inspect_bottom .ib_r_num,
+.makepolicy .check_schedule .check_body .gender .inspect_bottom .ib_r_num,
+.makepolicy .check_schedule .check_body .marriage .inspect_bottom .ib_r_num {
+  color: #CAAA29;
+  font-weight: 600;
+}
+
+.makepolicy .check_schedule .check_body .gender .ib_l_num {
+  color: #85B827 !important;
+}
+
+.makepolicy .check_schedule .check_body .marriage .ib_l_num {
+  color: #D33E23 !important;
+}
+
+.makepolicy .columnar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 460px;
+}
+
+.makepolicy .columnar .year_ratio,
+.makepolicy .columnar .age_spread,
+.makepolicy .columnar .month_ratio,
+.makepolicy .columnar .check_spread {
+  width: 49%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.makepolicy .columnar .year_ratio .head,
+.makepolicy .columnar .age_spread .head,
+.makepolicy .columnar .month_ratio .head,
+.makepolicy .columnar .check_spread .head {
+  background-color: #f6f7fc;
+  padding: 0 10px;
+}
+
+.makepolicy .columnar .year_ratio .head .title,
+.makepolicy .columnar .age_spread .head .title,
+.makepolicy .columnar .month_ratio .head .title,
+.makepolicy .columnar .check_spread .head .title {
+  height: 38px;
+}
+
+.makepolicy .columnar .year_ratio .yearChart,
+.makepolicy .columnar .year_ratio .ageChart,
+.makepolicy .columnar .year_ratio .monthChart,
+.makepolicy .columnar .age_spread .yearChart,
+.makepolicy .columnar .age_spread .ageChart,
+.makepolicy .columnar .age_spread .monthChart,
+.makepolicy .columnar .month_ratio .yearChart,
+.makepolicy .columnar .month_ratio .ageChart,
+.makepolicy .columnar .month_ratio .monthChart,
+.makepolicy .columnar .check_spread .yearChart,
+.makepolicy .columnar .check_spread .ageChart,
+.makepolicy .columnar .check_spread .monthChart {
+  width: 100%;
+  height: 90%;
+}
+
+.makepolicy .columnar .year_ratio .chart_box,
+.makepolicy .columnar .age_spread .chart_box,
+.makepolicy .columnar .month_ratio .chart_box,
+.makepolicy .columnar .check_spread .chart_box {
+  height: calc(100% - 38px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.makepolicy .columnar .year_ratio .chart_box .group_check,
+.makepolicy .columnar .year_ratio .chart_box .type_check,
+.makepolicy .columnar .age_spread .chart_box .group_check,
+.makepolicy .columnar .age_spread .chart_box .type_check,
+.makepolicy .columnar .month_ratio .chart_box .group_check,
+.makepolicy .columnar .month_ratio .chart_box .type_check,
+.makepolicy .columnar .check_spread .chart_box .group_check,
+.makepolicy .columnar .check_spread .chart_box .type_check {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.makepolicy .columnar .year_ratio .chart_box .group_check .c_title,
+.makepolicy .columnar .year_ratio .chart_box .type_check .c_title,
+.makepolicy .columnar .age_spread .chart_box .group_check .c_title,
+.makepolicy .columnar .age_spread .chart_box .type_check .c_title,
+.makepolicy .columnar .month_ratio .chart_box .group_check .c_title,
+.makepolicy .columnar .month_ratio .chart_box .type_check .c_title,
+.makepolicy .columnar .check_spread .chart_box .group_check .c_title,
+.makepolicy .columnar .check_spread .chart_box .type_check .c_title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #343434;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.makepolicy .columnar .year_ratio .chart_box .group_check .chart_bg,
+.makepolicy .columnar .year_ratio .chart_box .type_check .chart_bg,
+.makepolicy .columnar .age_spread .chart_box .group_check .chart_bg,
+.makepolicy .columnar .age_spread .chart_box .type_check .chart_bg,
+.makepolicy .columnar .month_ratio .chart_box .group_check .chart_bg,
+.makepolicy .columnar .month_ratio .chart_box .type_check .chart_bg,
+.makepolicy .columnar .check_spread .chart_box .group_check .chart_bg,
+.makepolicy .columnar .check_spread .chart_box .type_check .chart_bg {
+  height: calc(100% - 40px);
+  background: #E7F7FA;
+  border-radius: 10px;
+}
+
+.makepolicy .columnar .year_ratio .chart_box .group_check .chart_bg .groupCheckChart,
+.makepolicy .columnar .year_ratio .chart_box .group_check .chart_bg .businessChart,
+.makepolicy .columnar .year_ratio .chart_box .group_check .chart_bg .typeCheckChart,
+.makepolicy .columnar .year_ratio .chart_box .type_check .chart_bg .groupCheckChart,
+.makepolicy .columnar .year_ratio .chart_box .type_check .chart_bg .businessChart,
+.makepolicy .columnar .year_ratio .chart_box .type_check .chart_bg .typeCheckChart,
+.makepolicy .columnar .age_spread .chart_box .group_check .chart_bg .groupCheckChart,
+.makepolicy .columnar .age_spread .chart_box .group_check .chart_bg .businessChart,
+.makepolicy .columnar .age_spread .chart_box .group_check .chart_bg .typeCheckChart,
+.makepolicy .columnar .age_spread .chart_box .type_check .chart_bg .groupCheckChart,
+.makepolicy .columnar .age_spread .chart_box .type_check .chart_bg .businessChart,
+.makepolicy .columnar .age_spread .chart_box .type_check .chart_bg .typeCheckChart,
+.makepolicy .columnar .month_ratio .chart_box .group_check .chart_bg .groupCheckChart,
+.makepolicy .columnar .month_ratio .chart_box .group_check .chart_bg .businessChart,
+.makepolicy .columnar .month_ratio .chart_box .group_check .chart_bg .typeCheckChart,
+.makepolicy .columnar .month_ratio .chart_box .type_check .chart_bg .groupCheckChart,
+.makepolicy .columnar .month_ratio .chart_box .type_check .chart_bg .businessChart,
+.makepolicy .columnar .month_ratio .chart_box .type_check .chart_bg .typeCheckChart,
+.makepolicy .columnar .check_spread .chart_box .group_check .chart_bg .groupCheckChart,
+.makepolicy .columnar .check_spread .chart_box .group_check .chart_bg .businessChart,
+.makepolicy .columnar .check_spread .chart_box .group_check .chart_bg .typeCheckChart,
+.makepolicy .columnar .check_spread .chart_box .type_check .chart_bg .groupCheckChart,
+.makepolicy .columnar .check_spread .chart_box .type_check .chart_bg .businessChart,
+.makepolicy .columnar .check_spread .chart_box .type_check .chart_bg .typeCheckChart {
+  width: 100%;
+  height: 100%;
+}
+
+.makepolicy .columnar .year_ratio .chart_box .type_check,
+.makepolicy .columnar .age_spread .chart_box .type_check,
+.makepolicy .columnar .month_ratio .chart_box .type_check,
+.makepolicy .columnar .check_spread .chart_box .type_check {
+  margin-left: 15px;
+}
+
+.makepolicy::-webkit-scrollbar {
+  width: 8px;
+}
+
+.makepolicy::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 2em;
+}
+
+.makepolicy::-webkit-scrollbar-thumb {
+  background-color: #dddee0;
+  border-radius: 2em;
+}
+/*# sourceMappingURL=index.css.map */

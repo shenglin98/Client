@@ -1,0 +1,136 @@
+.addoredit {
+    padding: 10px;
+    background-color: #efefef;
+    box-sizing: border-box;
+    height: calc(100vh - 80px);
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #343434;
+        display: flex;
+        align-items: center;
+        background-color: #f6f7fc;
+    }
+    .title::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 20px;
+        background: #559FEB;
+        border-radius: 4px;
+        margin-right: 8px;
+    }
+    .head_box {
+        height: 115px;
+        background: #FFFFFF;
+        border-radius: 6px;
+        padding: 10px;
+        // padding: 14px 20px;
+        box-sizing: border-box;
+        .title_box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f6f7fc;
+        }
+        .search_form {
+            margin-top: 22px;
+            display: flex;
+            /deep/.el-form-item {
+                margin-bottom: 0;
+            }
+        }
+    }
+    // 主体内容
+    .subject {
+        margin-top: 10px;
+        height: calc(100% - 125px);
+        display: flex;
+        // 左侧主体表格
+        .s_left {
+            background: #FFFFFF;
+            border-radius: 6px;
+            box-sizing: border-box;
+            height: 100%;
+            width: 36%;
+            margin-right: 10px;
+            padding: 10px;
+            position: relative;
+            /deep/.el-radio-group {
+                margin: 12px 0;
+            }
+            .staff_table {
+                height: calc(100% - 80px);
+            }
+            .mask {
+                background-color: transparent;
+                position: absolute;
+                width: 95%;
+                height: calc(100% - 100px);
+                z-index: 999;
+            }
+        }
+        // 右侧主体操作
+        .s_right {
+            background: #FFFFFF;
+            border-radius: 6px;
+            box-sizing: border-box;
+            height: 100%;
+            width: 63%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            .staff_table {
+                flex: 1;
+            }
+            .mode_box {
+                display: flex;
+                align-items: center;
+                margin: 15px 0 13px 0;
+                .mode_title {
+                    margin: 0 30px 0 16px;
+                }
+            }
+            .mode_message {
+                display: flex;
+                flex-wrap: wrap;
+                .message_itme {
+                    margin-top: 8px;
+                    width: 33%;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    .m_title {
+                        margin-right: 20px;
+                        display: flex;
+                        align-items: center;
+                        white-space: nowrap
+                    }
+                    .m_value {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+            .mode_explain {
+                display: flex;
+                margin-top: 21px;
+                .e_title {
+                    width: 100px;
+                }
+                .explain {
+                    height: 60px;
+                    /deep/.el-textarea__inner {
+                        height: 100%;
+                    }
+                }
+            }
+            .page_btn {
+                margin-top: 21px;
+                text-align: center;
+                /deep/.el-button {
+                    width: 100px;
+                }
+            }
+        }
+    }
+}

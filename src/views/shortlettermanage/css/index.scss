@@ -1,0 +1,110 @@
+.shortlettermanage {
+    height: 100%;
+    box-sizing: border-box;
+    .page {
+        height: 100%;
+    }
+    .filter-container {
+        display: flex;
+        background-color: #f8f8f8;
+        padding-right: 20px;
+        height: 42px;
+        align-items: center;
+        justify-content: flex-end;
+        >div {
+            margin-left: 10px;
+        }
+    }
+}
+
+// 头部标题
+.head_title {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: #f6f7fc;
+    height: 38px;
+    margin: -20px -20px 0 -20px;
+    padding-left: 10px;
+}
+
+.head_logo {
+    width: 7px;
+    height: 18px;
+    background-color: #2a85ea;
+    border-radius: 3.5px;
+    margin-right: 5px;
+}
+
+.head_title p {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+// 头部表单
+.head_content {
+    margin: 20px 0 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+// 内容盒子
+.content_box {
+    height: calc(100% - 170px);
+    box-sizing: border-box;
+    /deep/.el-card__body {
+        height: 100%;
+        .content_team_form {
+            height: calc(100% - 30px);
+            display: flex;
+            .table_1 {
+                height: 100%;
+                margin-right: 5px;
+                width: calc(50% - 5px);
+                box-sizing: border-box;
+                .page_table {
+                    height: 100%;
+                }
+            }
+            .table_2 {
+                height: 100%;
+                width: 50%;
+                .page_table {
+                    height: 100%;
+                }
+            }
+            >div {
+                height: 100%;
+            }
+        }
+    }
+}
+
+.content_team_form {
+    margin: 10px 0 0 0px;
+}
+
+.pagebox {
+    padding: 0 10px;
+    height: 100%;
+    box-sizing: border-box;
+    .head_box {}
+    .content_box {
+        margin-top: 5px;
+    }
+}
+
+.el-popover {
+    .print_item {
+        margin-bottom: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .print_item:hover {
+        background-color: #ecf5ff;
+        color: #66b1ff;
+    }
+}

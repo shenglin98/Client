@@ -1,0 +1,118 @@
+.company_register {
+  background-color: #fff;
+}
+
+.company_register .bg-white {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.company_register .bg-white .pagination-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 !important;
+  height: 32px;
+  margin-top: 5px;
+  border: none;
+}
+
+.company_register .sticky .el-date-editor {
+  margin-right: 20px;
+}
+
+/deep/.iconfont {
+  margin-right: 5px;
+}
+
+/deep/.el-checkbox__inner {
+  border-radius: 8px;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-enter-active {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.fade-leave-active {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.filter-box {
+  background-color: #fff;
+}
+
+.company_register {
+  background-color: #fff;
+}
+
+.filter-container {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #f5f7fa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+}
+
+.filter-container .filter-container-in {
+  margin: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filter-container .filter-container-in .daterange {
+  margin-right: 20px;
+}
+
+.filter-container-btn {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.custom-tags-view {
+  margin-top: 10px !important;
+}
+
+.app-container {
+  background-color: #fff;
+}
+/*# sourceMappingURL=company_register.css.map */

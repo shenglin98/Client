@@ -1,0 +1,370 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  padding: 0 5px;
+}
+
+.main .head {
+  margin: 10px 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.main .content .card {
+  height: calc(100vh - 150px);
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.main .content .card .content_head {
+  padding: 0 10px;
+  height: 38px;
+  background-color: #dde3ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .content .card .content_head .head_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .content .card .content_head .logo {
+  width: 7px;
+  height: 18px;
+  background-color: #5c7ceb;
+  border-radius: 3.5px;
+  margin-right: 8px;
+}
+
+.main .content .card .content_left {
+  height: calc(100% - 38px);
+  overflow: auto;
+}
+
+.main .content .card .content_left .left_item {
+  padding: 6px;
+}
+
+.main .content .card .content_left .left_item .item_title {
+  padding: 8px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .content .card .content_left .left_item .item_title a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.main .content .card .content_left .left_item .item_title i {
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.main .content .card .content_left .left_item .age_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .content .card .content_left .left_item .age_content .el-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .content .card .content_left .left_item .age_content .el-form .el-form-item {
+  margin: 0 !important;
+}
+
+.main .content .card .content_left .left_item .age_content .el-form .el-form-item span {
+  margin: 0 5px;
+}
+
+.main .content .card .content_left .left_item .age_content .el-form .el-form-item /deep/.el-form-item__content {
+  margin: 0 !important;
+}
+
+.main .content .card .content_left .left_item .cost_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .content .card .content_left .left_item .cost_content span {
+  margin: 0 5px;
+}
+
+.main .content .card .content_left .left_item .cost_content .el-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .content .card .content_left .left_item .cost_content .el-form .el-form-item {
+  margin: 0 !important;
+}
+
+.main .content .card .content_left .left_item .cost_content .el-form .el-form-item i {
+  margin: 0 5px;
+}
+
+.main .content .card .content_left .left_item .cost_content .el-form .el-form-item /deep/.el-form-item__content {
+  margin: 0 !important;
+}
+
+.main .content .card .content_center {
+  padding: 0 15px;
+  height: calc(100% - 38px);
+  overflow: auto;
+}
+
+.main .content .card .content_center .center_item {
+  border: 1px solid #bbbbbb;
+  margin-top: 8px;
+}
+
+.main .content .card .content_center .center_item .center_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 35px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #00abee;
+  background-color: #dde3ff;
+}
+
+.main .content .card .content_center .center_item .center_head .head_btn {
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .content .card .content_center .center_item .center_head .head_btn .el-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 32px;
+  height: 20px;
+}
+
+.main .content .card .content_center .dialog_main {
+  height: calc(100vh - 400px);
+  overflow: auto;
+}
+
+.main .content .card .content_center .dialog_main .dialog_card {
+  margin: 10px 0 10px 0;
+  min-height: 128px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.main .content .card .content_center .dialog_main .dialog_card .dialog_head {
+  padding-left: 10px;
+  height: 38px;
+  border-radius: 5px 5px 0 0;
+  background-color: #f6f7fc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .content .card .content_center .dialog_main .dialog_card .dialog_head .logo {
+  width: 7px;
+  height: 18px;
+  background-color: #5c7ceb;
+  border-radius: 3.5px;
+  margin-right: 5px;
+}
+
+.main .content .card .content_center .dialog_main .dialog_card .dialog_content {
+  padding: 10px;
+  height: calc(100% - 38px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .content .card .content_center .dialog_main .dialog_card .dialog_content .content_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.main .content .card .content_center .dialog_main .dialog_card .dialog_content .content_item .el-checkbox {
+  line-height: 35px;
+  margin: 0 20px 0 20px;
+}
+
+.main .content .card .content_center .dialog_main .dialog_card .dialog_content .content_item .el-input {
+  width: 100px;
+  margin-left: 10px;
+}
+
+.main .content .card .content_center .concludingWord .searchword_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.main .content .card .content_center .concludingWord .concludingWord_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.main .content .card .content_center .concludingWord .concludingWord_btn .el-button {
+  margin: 10px 0;
+}
+
+.main .content .card .content_center .searchproject {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 20px 0 5px 0;
+}
+
+.main .content .card .content_center .searchproject .searchproject_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+}
+
+.main .content .card .content_right {
+  padding: 0 15px;
+  height: calc(100% - 38px);
+  overflow: auto;
+}
+
+.main .content .card .content_right .right_item {
+  border: 1px solid #bbbbbb;
+  margin-top: 8px;
+}
+
+.main .content .card .content_right .right_item .right_head {
+  line-height: 30px;
+  background-color: #dde3ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .content .card .content_right .right_item .right_head span {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.main .content .card .content_right .right_item .right_head .head_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+}
+
+.main .content .card .content_right .right_item .right_head .head_btn .el-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 32px;
+  height: 20px;
+}
+
+.main .content .card .content_right .right_item .basic_Information {
+  padding: 10px;
+}
+
+.main .content .card .content_right .right_item .basic_Information .el-checkbox-group .el-checkbox {
+  width: 33%;
+  padding: 3px 0;
+  margin: 0;
+}
+/*# sourceMappingURL=index.css.map */

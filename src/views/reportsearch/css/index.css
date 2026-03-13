@@ -1,0 +1,287 @@
+.report_search .subject {
+  width: 100%;
+  height: calc(100vh - 121px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  background-color: #EFEFEF;
+}
+
+.report_search .subject .bg_white {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.report_search .subject .bg_white /deep/.el-col {
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 6px;
+}
+
+.report_search .subject .bg_white .form_box {
+  min-width: 280px;
+  margin-right: 15px;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.report_search .subject .bg_white .form_box .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  background-color: #f6f7fc;
+  margin: -12px -12px 12px -12px;
+  padding-left: 12px;
+  border-radius: 5px 5px 0 0;
+  line-height: 38px;
+}
+
+.report_search .subject .bg_white .form_box .head .logo {
+  width: 7px;
+  height: 20px;
+  background-color: #5c7ceb;
+  border-radius: 3.5px;
+  margin-right: 5px;
+}
+
+.report_search .subject .bg_white .form_box .checkup_code {
+  margin-bottom: 12px;
+}
+
+.report_search .subject .bg_white .form_box .checkup_code /deep/.el-form-item__content {
+  margin: 0 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.report_search .subject .bg_white .form_box .checkup_code /deep/.el-input {
+  width: 250px;
+  margin-left: 22px;
+}
+
+.report_search .subject .bg_white .form_box .checkup_date {
+  margin-bottom: 12px;
+}
+
+.report_search .subject .bg_white .form_box .checkup_date /deep/.el-form-item__content {
+  margin: 0 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.report_search .subject .bg_white .form_box .checkup_date /deep/.el-form-item__content .el-date-editor {
+  width: 250px !important;
+  margin-left: 22px;
+}
+
+.report_search .subject .bg_white .form_box .btn_group /deep/ .el-button:first-child {
+  margin-left: 0;
+}
+
+.report_search .subject .bg_white .form_box .btn_group .group_item {
+  margin-bottom: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.report_search .subject .bg_white .form_box .btn_group .vbh /deep/ .el-button:first-child {
+  visibility: hidden;
+}
+
+.report_search .subject .bg_white .form_box .btn_group /deep/.el-button {
+  width: 80px;
+  margin-left: 22px;
+}
+
+.report_search .subject .bg_white .form_box .select {
+  margin-bottom: 12px;
+}
+
+.report_search .subject .bg_white .form_box .select /deep/.el-form-item__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.report_search .subject .bg_white .form_box .select /deep/.el-form-item__content .form_label {
+  width: 80px !important;
+  text-align: right;
+}
+
+.report_search .subject .bg_white .form_box .select /deep/.el-form-item__content .el-select {
+  width: 250px;
+  margin-left: 22px;
+}
+
+.report_search .subject .bg_white .form_box .input {
+  margin-bottom: 12px;
+}
+
+.report_search .subject .bg_white .form_box .input /deep/.el-form-item__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.report_search .subject .bg_white .form_box .input /deep/.el-form-item__content .form_label {
+  width: 80px !important;
+  text-align: right;
+}
+
+.report_search .subject .bg_white .form_box .input /deep/.el-form-item__content .el-input {
+  width: 250px;
+  margin-left: 22px;
+}
+
+.report_search .subject .bg_white .form_box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.report_search .subject .bg_white .form_box::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 2em;
+}
+
+.report_search .subject .bg_white .form_box::-webkit-scrollbar-thumb {
+  background-color: #dddee0;
+  border-radius: 2em;
+}
+
+.report_search .subject .bg_white .table_box {
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.report_search .subject .bg_white .table_box .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  background-color: #f6f7fc;
+  margin: -12px -12px 12px -12px;
+  padding-left: 12px;
+  border-radius: 5px 5px 0 0;
+  line-height: 38px;
+}
+
+.report_search .subject .bg_white .table_box .head .logo {
+  width: 7px;
+  height: 20px;
+  background-color: #5c7ceb;
+  border-radius: 3.5px;
+  margin-right: 5px;
+}
+
+.report_search .subject .bg_white .table_box .page_table {
+  height: calc(100% - 75px);
+}
+
+.report_search .subject .bg_white .table_box /deep/.el-pagination {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.report_search .filter-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f8f8f8;
+  padding-right: 20px;
+  height: 42px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.report_search .filter-container > div {
+  margin-left: 10px;
+}
+
+.report_search .print_box .print_btn {
+  height: 29px !important;
+  margin-left: 10px !important;
+}
+
+.report_search .scan_box /deep/.el-dialog .el-dialog__header {
+  display: none;
+}
+
+.report_search .scan_box /deep/.el-dialog .el-dialog__body {
+  padding: 15px;
+}
+
+.report_search .scan_box /deep/.el-dialog .btn_group {
+  text-align: right;
+}
+
+.report_search .scan_box /deep/.el-dialog .btn_input {
+  margin-top: 10px;
+}
+
+.report_search .scan_box /deep/.el-dialog .btn_input .head {
+  font-weight: 600;
+}
+
+.report_search .scan_box /deep/.el-dialog .btn_input .btn_input_box {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.report_search .scan_box /deep/.el-dialog .btn_input .btn_input_box .checkno {
+  margin-left: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.report_search .scan_box /deep/.el-dialog .btn_input .btn_input_box .checkno .el-input {
+  margin-left: 12px;
+}
+
+.report_search .scan_box /deep/.el-dialog .dialog_table {
+  margin-top: 10px;
+}
+
+.report_search .scan_box /deep/.el-dialog .dialog_table .el-table {
+  height: 100%;
+}
+
+.el-popover .content .content_item {
+  height: 20px;
+  margin-bottom: 3px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.el-popover .content .content_item:hover {
+  color: #66b1ff;
+  background-color: #ecf5ff;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,824 @@
+.personal_register {
+    // 头部按钮组调整
+    height: 100vh;
+    // overflow: auto;
+    .filter-container {
+        height: 45px;
+        background-color: #cfdeeb;
+        margin: 5px 10px 0 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        >div {
+            margin: 0 4px;
+        }
+        // border-bottom-right-radius: 5px;
+        // border-bottom-left-radius: 5px;
+        .filter-container-in {
+            height: 50px;
+            // padding: 10px 10px 10px 10px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 43px;
+            .filter-items {
+                width: 100%;
+                height: 30px;
+                margin-left: 10px;
+                /deep/.el-button {
+                    // width: 100px;
+                }
+            }
+        }
+    }
+    .headss {
+        min-width: 100px;
+        display: flex;
+        font-size: 16px;
+        font-weight: 600;
+        color: #000;
+        align-items: center;
+        // padding-left: 10px;
+        // padding-top: 15px;
+        .heads-in {
+            width: 5px;
+            height: 18px;
+            background-color: #2a85ea;
+            border-radius: 2px;
+            margin-right: 5px;
+        }
+    }
+    // 主体数据结构
+    .app-container {
+        height: calc(100vh - 130px);
+        .bg_white {
+            height: 100%;
+            /deep/.el-col {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                .content_left {
+                    height: 100%;
+                }
+                .height_h {
+                    .basicInfo {
+                        height: 100% !important;
+                        overflow: hidden;
+                    }
+                }
+                .group_body {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    height: calc(100% - 365px);
+                }
+            }
+            // background-color: #fff;
+            /deep/.el-form-item {
+                margin-bottom: 1px;
+            }
+            // 主体内容左侧
+            .content_left {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                .basicInfo {
+                    background-color: #fff;
+                    padding: 0 0 1px 0;
+                    border-radius: 5px;
+                    overflow: auto;
+                    .message {
+                        width: 100%;
+                        background: #cfdeeb;
+                        // margin: -10px;
+                        padding: 5px 10px 5px 10px;
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        box-sizing: border-box;
+                        // justify-content: space-between;
+                        // background-color: #fff;
+                        // margin-right: 10px;
+                        /deep/.el-input {
+                            width: 300px;
+                            margin: 0 15px;
+                        }
+                        // 健康卡
+                        .card_operation {
+                            display: flex;
+                            margin-left: 105px;
+                            /deep/.el-input {
+                                width: 200px;
+                                margin: 0 15px;
+                            }
+                        }
+                        .card_operations {
+                            margin-left: 50px;
+                            width: 40%;
+                            display: flex;
+                            // flex-wrap: wrap;
+                            align-items: center;
+                            padding: 0 10px;
+                            .read_card {
+                                height: 28px;
+                                border-radius: 4px;
+                                border: 1px solid #dcdfe6;
+                                margin-left: 10px;
+                                outline: none;
+                                background-color: #fff;
+                            }
+                            .read_card:focus {
+                                border: 1px solid #0076c8;
+                            }
+                            /deep/.el-select {
+                                min-width: 90px;
+                                margin-right: 10px;
+                                .el-input {
+                                    width: 100%;
+                                }
+                            }
+                            .el-input {
+                                margin: 0;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                    .questionnairebox {
+                        height: calc(100vh - 191px);
+                        padding: 15px 0;
+                    }
+                    .medicalhistory {
+                        height: calc(100vh - 191px);
+                        overflow-y: auto;
+                    }
+                    // 个人信息
+                    .personal_info {
+                        padding: 0 2px;
+                        margin-top: 2px;
+                        .head {
+                            font-size: 18px;
+                            font-weight: 600;
+                            margin: 5px 0;
+                        }
+                        .info_body {
+                            display: flex;
+                            .form_box {
+                                margin-right: 10px;
+                                flex: 1;
+                                .age {
+                                    /deep/.el-form-item__content {
+                                        display: flex;
+                                    }
+                                    .age_num {
+                                        /deep/.el-input__inner {
+                                            padding-right: 0;
+                                        }
+                                    }
+                                }
+                                .mess_select {
+                                    /deep/.el-select {
+                                        width: 100%;
+                                    }
+                                }
+                                .birthday {}
+                            }
+                            // 照片
+                            .photo_box {
+                                width: 104px;
+                                height: 124px;
+                                overflow: hidden;
+                                position: relative;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    background-size: 50% 50%;
+                                }
+                                .del_btn {
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 26px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-color: rgba(0, 0, 0, .4);
+                                    color: #fff;
+                                    cursor: pointer;
+                                }
+                                .avatar {
+                                    width: 104px;
+                                    height: 124px;
+                                    cursor: pointer;
+                                    border: 1px solid #ebeef5;
+                                }
+                                .text {
+                                    font-weight: 600;
+                                    text-align: center;
+                                }
+                                .photo_box_dialog {
+                                    /deep/.el-dialog__body {
+                                        padding: 0 10px;
+                                        .canvasCamera {
+                                            margin-left: 10px;
+                                        }
+                                    }
+                                    /deep/.el-dialog__footer {
+                                        padding: 10px;
+                                        text-align: center;
+                                    }
+                                }
+                                .detailed_dialog {
+                                    /deep/.el-dialog__body {
+                                        // height: 500px;
+                                        overflow: auto;
+                                        text-align: center;
+                                        display: flex;
+                                        flex-direction: column;
+                                        .img_group {}
+                                        .btn_camera {
+                                            .el-button {
+                                                width: 150px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // 职业病信息
+                    .other_info {
+                        margin-top: 16px;
+                        .other_info_form {
+                            /deep/.el-form-item {
+                                .el-select {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .head {
+                            width: 100%;
+                            height: 32px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            background-color: #cfdeeb;
+                            padding-left: 12px;
+                            border-radius: 6px;
+                            margin-bottom: 7px;
+                            .title {
+                                .title {
+                                    display: flex;
+                                    align-items: center;
+                                    .logo {
+                                        .logo {
+                                            width: 7px;
+                                            height: 20px;
+                                            background-color: #5c7ceb;
+                                            border-radius: 3.5px;
+                                            margin-right: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .age {
+                            /deep/.el-form-item__label {
+                                width: 90px !important;
+                            }
+                            /deep/.el-form-item__content {
+                                display: flex;
+                            }
+                            .age_num {
+                                /deep/.el-input__inner {
+                                    padding-right: 0;
+                                }
+                            }
+                        }
+                        .other_info_check {
+                            height: 32px !important;
+                            display: flex;
+                            align-items: center;
+                            padding-left: 15px;
+                        }
+                    }
+                }
+                // 团检信息
+                .team_inspect {
+                    display: flex;
+                    align-items: center;
+                    border-radius: 5px 5px 0 0;
+                    background-color: #cfdeeb;
+                    padding-left: 12px;
+                    .message-title {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        .headss {
+                            .heads-in {
+                                width: 5px;
+                                height: 18px;
+                                background-color: #2a85ea;
+                                border-radius: 2px;
+                                margin-right: 5px;
+                            }
+                        }
+                        .message_content {
+                            // margin-top: 10px;
+                            position: relative;
+                            .laoganmask {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                width: 100%;
+                                height: 100%;
+                                background-color: transparent;
+                                z-index: 999999;
+                                cursor: not-allowed;
+                            }
+                        }
+                    }
+                    .tuanjian {
+                        /deep/.el-select {
+                            width: 100%;
+                        }
+                    }
+                }
+                // 体检项目
+                .checkup_project {
+                    height: calc(100% - 10px);
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    padding-bottom: 1px;
+                    // height: 100%;
+                    .head {
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin: 5px 0;
+                    }
+                    .checkup_body {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 1px;
+                        justify-content: space-between;
+                        box-sizing: border-box;
+                        padding: 0 1px;
+                        .btn_state_gro {
+                            display: flex;
+                        }
+                        .select_box {
+                            display: flex;
+                            align-items: center;
+                            margin-left: 15px;
+                            .select_text {
+                                text-align: right;
+                                vertical-align: middle;
+                                float: left;
+                                font-size: 14px;
+                                color: #606266;
+                                line-height: 40px;
+                                padding: 0 12px 0 0;
+                                box-sizing: border-box;
+                            }
+                        }
+                        .state_group {
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            .state_item {
+                                display: flex;
+                                margin-right: 20px;
+                                border-radius: 5px;
+                                height: 30px;
+                                line-height: 30px;
+                                // border: 1px solid #dcdfe6;
+                                overflow: hidden;
+                                div {
+                                    padding: 5px 0px 5px 10px;
+                                }
+                                .title1 {
+                                    color: #f56c6c;
+                                    font-size: 14px;
+                                }
+                                .state1 {
+                                    color: #f56c6c;
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                }
+                                .title2 {
+                                    color: #67c23a;
+                                    font-size: 14px;
+                                }
+                                .state2 {
+                                    color: #67c23a;
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                }
+                                .title3 {
+                                    color: #409eff;
+                                    font-size: 14px;
+                                }
+                                .state3 {
+                                    color: #409eff;
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                }
+                                .title4 {
+                                    color: #fc5531;
+                                    font-size: 14px;
+                                }
+                                .state4 {
+                                    color: #fc5531;
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                }
+                                // .bg_1 {
+                                //     background-color: #409eff;
+                                // }
+                                // .bg_2 {
+                                //     background-color: #f56c6c;
+                                // }
+                                // .bg_3 {
+                                //     background-color: #67c23a;
+                                // }
+                            }
+                        }
+                        .state-add {
+                            padding-right: 10px;
+                        }
+                        .table-box {
+                            max-width: 100%;
+                            // min-height: 370px;
+                            // padding-bottom: -9999px;
+                            // margin-bottom: 9999px;
+                        }
+                        .auxiliary {
+                            height: 28px;
+                            padding: 0 20px;
+                            margin-left: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 12px;
+                        }
+                        .discount {
+                            margin-left: 20px;
+                        }
+                    }
+                    .group_table {
+                        height: 93%;
+                        padding: 0 1px;
+                        /deep/.el-table__row {
+                            height: 26px !important;
+                        }
+                        /deep/.el-table__body {
+                            .cell {
+                                .discount_input {
+                                    width: 100%;
+                                    height: 28px;
+                                    border-radius: 4px;
+                                    border: 1px solid #dcdfe6;
+                                    outline: none;
+                                    background-color: #fff;
+                                }
+                                .discount_input:focus {
+                                    border: 1px solid #0076c8;
+                                }
+                            }
+                            td {
+                                padding: 0 !important;
+                            }
+                        }
+                        /*滚动条样式*/
+                        /deep/.el-table__body-wrapper::-webkit-scrollbar {
+                            width: 8px;
+                            height: 8px;
+                            background-color: rgba(240, 240, 240, 1);
+                        }
+                        /*定义滚动条轨道 内阴影+圆角*/
+                        /deep/.el-table__body-wrapper::-webkit-scrollbar-track {
+                            box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
+                            border-radius: 10px;
+                            background-color: rgba(240, 240, 240, .5);
+                        }
+                        /*定义滑块 内阴影+圆角*/
+                        /deep/.el-table__body-wrapper::-webkit-scrollbar-thumb {
+                            border-radius: 10px;
+                            box-shadow: inset 0 0 0px gray;
+                            background-color: gray;
+                        }
+                    }
+                }
+                // margin-top: 5px;
+            }
+            // 主体内容右侧
+            .content_right {
+                height: 100%;
+                padding: 0 0 0 10px;
+                display: flex;
+                flex-direction: column;
+                .card_operation-id {
+                    width: 100%;
+                    background-color: #fff;
+                    display: flex;
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    .card_operations {
+                        width: 100%;
+                        display: flex;
+                        height: 50px;
+                        align-items: center;
+                        padding: 10px;
+                    }
+                }
+                .content_table {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .message-title {
+                    margin: 1px;
+                    padding: 1px;
+                    height: 115px;
+                    border-radius: 5px;
+                    background-color: #cfdeeb;
+                    min-height: 86px;
+                    .condition {
+                        margin-top: 1px;
+                        .checkup_code {
+                            margin-bottom: 1px;
+                        }
+                    }
+                }
+                .checkup_code {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    margin-bottom: 8px;
+                    >span {
+                        margin-right: 10px;
+                    }
+                    /deep/.el-input {
+                        width: 230px !important;
+                        margin-right: 10px;
+                        .el-input__inner {
+                            width: 100%;
+                        }
+                    }
+                }
+                .unit_box {
+                    display: flex;
+                    align-items: center;
+                    // margin-left: 4px;
+                    .unit_title {
+                        white-space: nowrap;
+                        width: 80px;
+                        // margin-right: 4px;
+                    }
+                    /deep/.el-select {
+                        width: 230px;
+                    }
+                }
+                .checkup_date {
+                    display: flex;
+                    align-items: center;
+                    .date_box {
+                        .date_title {
+                            width: 80px;
+                            white-space: nowrap;
+                        }
+                        display: flex;
+                        flex-wrap: nowrap;
+                        align-items: center;
+                        /deep/.el-date-editor {
+                            width: 230px;
+                        }
+                        /deep/.el-button {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+                .checkup_btn {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    margin-bottom: 2px;
+                    .checkin {
+                        margin-left: 30px !important;
+                    }
+                }
+                .condition_table {
+                    // height: 570px !important;
+                    // max-height: 570px !important;
+                    // min-height: 250px !important;
+                    // height: calc(100% - 275px);
+                    padding: 1px 1px 1px 1px;
+                }
+            }
+            .checkup_btn-in {
+                width: 100%;
+                height: calc(100% - 120px);
+                background-color: #fff;
+                min-height: 300px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                .checkins {
+                    border: none;
+                }
+                .checkup_btn {
+                    margin-left: 10px;
+                    // width: 45%;
+                    border-radius: 5px;
+                    margin-bottom: 0px;
+                    /deep/.el-button {
+                        margin: 0;
+                        border-radius: 3px;
+                    }
+                }
+                .condition_table {
+                    height: calc(100% - 40px);
+                    .condition_table_es {
+                        height: calc(100% - 32px);
+                    }
+                    /deep/.el-pagination {
+                        margin-top: 2px;
+                    }
+                }
+            }
+        }
+    }
+    // 收费明细弹出层
+    .charge_details {
+        .table_box {
+            margin-top: 10px;
+            display: flex;
+            height: 500px;
+            .table_item {
+                width: 65%;
+                // /deep/.el-table__header {
+                //     .el-checkbox {
+                //         display: none;
+                //     }
+                // }
+            }
+            .charge_form {
+                width: 34%;
+                min-width: 265px;
+                height: 100%;
+                margin-left: 12px;
+                display: flex;
+                flex-direction: column;
+                .form_body {
+                    background-color: #ebeef5;
+                    height: calc(100% - 36px);
+                    display: flex;
+                    flex-direction: column;
+                    .form_body_item {
+                        flex: 1;
+                        font-weight: 600;
+                        font-size: 18px;
+                        display: flex;
+                        align-items: center;
+                        padding-left: 20px;
+                        .title {
+                            color: #000;
+                            white-space: nowrap;
+                        }
+                        .value {}
+                        .blue {
+                            color: #0000bf;
+                        }
+                        .red {
+                            color: red;
+                        }
+                    }
+                }
+                .form_btn {
+                    height: 36px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    /deep/.el-button {
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+        .table_box .table_item:first-child {
+            margin-right: 15px;
+        }
+    }
+    // 历史项目
+    .history_table {
+        .history_table_box .history_table_item:first-child {
+            margin-right: 12px;
+        }
+        .history_table_box {
+            height: 500px;
+            display: flex;
+            .history_table_item {
+                width: 49%;
+            }
+        }
+        /deep/.el-dialog__footer {
+            text-align: center;
+        }
+    }
+    // 智能推荐
+    .intellect {
+        .big_box {
+            height: 620px;
+            .table_box {
+                margin-top: 5px;
+                height: 295px;
+                .table_item {
+                    height: 100%;
+                }
+            }
+        }
+        /deep/.el-dialog__footer {
+            text-align: center;
+        }
+    }
+    // 项目折扣
+    .discount_dialog {
+        .discount_box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /deep/.el-input {
+                width: 150px;
+            }
+            >div {
+                margin-left: 5px;
+            }
+        }
+        /deep/.el-dialog__footer {
+            text-align: center;
+        }
+    }
+    // 组合开单
+    .todaycombine {
+        /deep/.el-dialog__header,
+        /deep/.el-dialog__body,
+        /deep/.el-dialog__footer {
+            padding: 10px;
+        }
+        /deep/.el-dialog__footer {
+            text-align: center;
+        }
+        /deep/.el-dialog__body {
+            .tc_content {
+                height: 320px;
+                >div {
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .history_pson {
+        .table_item {
+            height: 400px;
+        }
+    }
+    .fade-enter {
+        opacity: 0;
+    }
+    .fade-leave {
+        opacity: 1;
+    }
+    .fade-enter-active {
+        transition: opacity 0.5s;
+    }
+    .fade-leave-active {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+}
+
+.el-popover {
+    .content {
+        .content_item {
+            height: 20px;
+            margin-bottom: 3px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .content_item:hover {
+            color: #66b1ff;
+            background-color: #ecf5ff;
+        }
+    }
+    .print_item {
+        margin-bottom: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .print_item:hover {
+        background-color: #ecf5ff;
+        color: #66b1ff;
+    }
+}

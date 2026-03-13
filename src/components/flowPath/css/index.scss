@@ -1,0 +1,203 @@
+.flow_path {
+    .head {
+        font-size: 18px;
+        font-weight: 600;
+        color: #000;
+    }
+    .headss {
+        background-color: #fff;
+        display: flex;
+        font-size: 16px;
+        font-weight: 600;
+        color: #000;
+        align-items: center;
+        padding: 8px 10px;
+        background-color: #cfdeeb;
+        border-radius: 4px;
+        .heads-in {
+            width: 5px;
+            height: 18px;
+            background-color: #2a85ea;
+            border-radius: 2px;
+            margin-right: 5px;
+        }
+    }
+    .message_form {
+        /deep/.el-form {
+            padding-top: 0;
+            .el-form-item {
+                margin-top: 10px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+    // 基本信息
+    .message {
+        padding: 10px;
+        background-color: #fff;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        // margin-top: 10px;
+        .message-title {
+            display: flex;
+            background-color: #cfdeeb;
+            padding: 5px;
+            border-radius: 4px;
+            .heads {
+                display: flex;
+                font-size: 16px;
+                font-weight: 600;
+                color: #000;
+                align-items: center;
+                .heads-in {
+                    width: 5px;
+                    height: 18px;
+                    background-color: #2a85ea;
+                    border-radius: 2px;
+                    margin-right: 5px;
+                }
+            }
+        }
+        .age {
+            /deep/.el-form-item__label {
+                width: 80px !important;
+            }
+            /deep/.el-form-item__content {
+                display: flex;
+            }
+            .age_num {
+                /deep/.el-input__inner {
+                    padding-right: 0;
+                    border: none;
+                    border-radius: 0;
+                    border: 1px solid #e4e7ed;
+                    border-right: none;
+                    // border-radius: 4px;
+                    border-top-left-radius: 5px;
+                    /* 左上角 */
+                    border-bottom-left-radius: 5px;
+                    /* 左下角 */
+                }
+            }
+            .agearr {
+                /deep/.el-input__inner {
+                    border: none;
+                    border-radius: 0;
+                    border: 1px solid #e4e7ed;
+                    border-left: none;
+                    // border-radius: 4px;
+                    border-top-right-radius: 5px;
+                    /* 右上角 */
+                    border-bottom-right-radius: 5px;
+                    /* 右下角 */
+                }
+            }
+        }
+        .company {
+            /deep/.el-select {
+                width: 100%;
+            }
+        }
+    }
+    // 步骤条
+    .steps {
+        .steps_box {
+            padding: 20px;
+            background-color: #fff;
+            box-sizing: border-box;
+            max-height: 450px;
+            overflow-y: auto;
+            /deep/.el-step__head {
+                border-color: #fff;
+            }
+            /deep/.el-step__line {
+                background-color: #67c23a;
+            }
+            /deep/.el-step__icon {
+                background-color: #409eff;
+                // box-shadow: 0 2px 2px rgba(10, 16, 20, .24), 0 0 2px rgba(10, 16, 20, .12);
+                .el-step__icon-inner {
+                    display: none;
+                    // color: #409eff;
+                    // background-color: #409eff;
+                    // border-radius: 50%;
+                }
+            }
+            .content {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                // align-items: center;
+                .content-in {
+                    padding: 4px 0;
+                    .content_time {
+                        min-width: 200px;
+                        // flex: 1;
+                        margin-left: 15px;
+                        // margin-bottom: 15px;
+                    }
+                    .content_name {
+                        min-width: 200px;
+                        flex: 1;
+                    }
+                    .content_locale {
+                        min-width: 200px;
+                        flex: 1;
+                    }
+                }
+                // .content_time,
+                // .content_name,
+                // .content_locale {
+                //     flex: 1;
+                //     padding-right: 18px;
+                //     overflow: hidden;
+                //     text-overflow: ellipsis;
+                //     white-space: nowrap;
+                // }
+                .project {
+                    div {
+                        padding: 4px 0 4px 15px;
+                        border-top: 1px #ccddf3 solid;
+                        color: red;
+                    }
+                }
+            }
+            /deep/.el-step__description {
+                padding-right: 0%;
+                background-color: #f5f7fa;
+                border-radius: 5px;
+            }
+        }
+        // 滚动条美化
+        .steps_box::-webkit-scrollbar {
+            width: 8px;
+        }
+        .steps_box::-webkit-scrollbar-track {
+            background-color: transparent;
+            -webkit-border-radius: 2em;
+            -moz-border-radius: 2em;
+            border-radius: 2em;
+        }
+        .steps_box::-webkit-scrollbar-thumb {
+            background-color: #dddee0;
+            -webkit-border-radius: 2em;
+            -moz-border-radius: 2em;
+            border-radius: 2em;
+        }
+    }
+    // 按钮组
+    .btn_group {
+        text-align: center;
+        margin: 20px 0 10px 0;
+    }
+    /deep/.el-dialog__body {
+        background-color: #f5f7fa;
+    }
+    /deep/.el-step__main {
+        // height: 135px;
+        background-color: #fff;
+    }
+    /deep/.el-step__line {
+        background-color: #409eff !important;
+    }
+}

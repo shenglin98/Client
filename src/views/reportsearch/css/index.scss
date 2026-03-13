@@ -1,0 +1,228 @@
+.report_search {
+    .subject {
+        width: 100%;
+        height: calc(100vh - 121px);
+        box-sizing: border-box;
+        padding: 10px;
+        background-color: #EFEFEF;
+        .bg_white {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            /deep/.el-col {
+                height: 100%;
+                background: #FFFFFF;
+                border-radius: 6px;
+            }
+            .form_box {
+                min-width: 280px;
+                margin-right: 15px;
+                padding: 12px;
+                box-sizing: border-box;
+                overflow-y: auto;
+                .head {
+                    display: flex;
+                    align-items: center;
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                    background-color: #f6f7fc;
+                    margin: -12px -12px 12px -12px;
+                    padding-left: 12px;
+                    border-radius: 5px 5px 0 0;
+                    line-height: 38px;
+                    .logo {
+                        width: 7px;
+                        height: 20px;
+                        background-color: #5c7ceb;
+                        border-radius: 3.5px;
+                        margin-right: 5px;
+                    }
+                }
+                .checkup_code {
+                    margin-bottom: 12px;
+                    /deep/.el-form-item__content {
+                        margin: 0 !important;
+                        display: flex;
+                    }
+                    /deep/.el-input {
+                        width: 250px;
+                        margin-left: 22px;
+                    }
+                }
+                .checkup_date {
+                    margin-bottom: 12px;
+                    /deep/.el-form-item__content {
+                        margin: 0 !important;
+                        display: flex;
+                        .el-date-editor {
+                            width: 250px !important;
+                            margin-left: 22px;
+                        }
+                    }
+                }
+                .btn_group /deep/.el-button:first-child {
+                    margin-left: 0;
+                }
+                .btn_group {
+                    .group_item {
+                        margin-bottom: 8px;
+                        display: flex;
+                        flex-wrap: nowrap;
+                        .el-radio-group {
+                            width: 100%;
+                        }
+                    }
+                    .vbh /deep/.el-button:first-child {
+                        visibility: hidden;
+                    }
+                    /deep/.el-button {
+                        width: 80px;
+                        margin-left: 22px;
+                    }
+                }
+                .select {
+                    margin-bottom: 12px;
+                    /deep/.el-form-item__content {
+                        display: flex;
+                        .form_label {
+                            width: 80px !important;
+                            text-align: right;
+                        }
+                        .el-select {
+                            width: 250px;
+                            margin-left: 22px;
+                        }
+                    }
+                }
+                .input {
+                    margin-bottom: 12px;
+                    /deep/.el-form-item__content {
+                        display: flex;
+                        .form_label {
+                            width: 80px !important;
+                            text-align: right;
+                        }
+                        .el-input {
+                            width: 250px;
+                            margin-left: 22px;
+                        }
+                    }
+                }
+            }
+            .form_box::-webkit-scrollbar {
+                width: 6px;
+            }
+            .form_box::-webkit-scrollbar-track {
+                background-color: transparent;
+                -webkit-border-radius: 2em;
+                -moz-border-radius: 2em;
+                border-radius: 2em;
+            }
+            .form_box::-webkit-scrollbar-thumb {
+                background-color: #dddee0;
+                -webkit-border-radius: 2em;
+                -moz-border-radius: 2em;
+                border-radius: 2em;
+            }
+            .table_box {
+                padding: 12px;
+                box-sizing: border-box;
+                .head {
+                    display: flex;
+                    align-items: center;
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                    background-color: #f6f7fc;
+                    margin: -12px -12px 12px -12px;
+                    padding-left: 12px;
+                    border-radius: 5px 5px 0 0;
+                    line-height: 38px;
+                    .logo {
+                        width: 7px;
+                        height: 20px;
+                        background-color: #5c7ceb;
+                        border-radius: 3.5px;
+                        margin-right: 5px;
+                    }
+                }
+                .page_table {
+                    height: calc(100% - 75px);
+                }
+                /deep/.el-pagination {
+                    text-align: center;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+    .filter-container {
+        display: flex;
+        background-color: #f8f8f8;
+        padding-right: 20px;
+        height: 42px;
+        align-items: center;
+        justify-content: flex-end;
+        >div {
+            margin-left: 10px;
+        }
+    }
+    .print_box {
+        .print_btn {
+            height: 29px !important;
+            margin-left: 10px !important;
+        }
+    }
+    .scan_box {
+        /deep/.el-dialog {
+            .el-dialog__header {
+                display: none;
+            }
+            .el-dialog__body {
+                padding: 15px;
+            }
+            .btn_group {
+                text-align: right;
+            }
+            .btn_input {
+                margin-top: 10px;
+                .head {
+                    font-weight: 600;
+                }
+                .btn_input_box {
+                    margin-top: 10px;
+                    display: flex;
+                    .checkno {
+                        margin-left: 170px;
+                        display: flex;
+                        .el-input {
+                            margin-left: 12px;
+                        }
+                    }
+                }
+            }
+            .dialog_table {
+                margin-top: 10px;
+                .el-table {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.el-popover {
+    .content {
+        .content_item {
+            height: 20px;
+            margin-bottom: 3px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .content_item:hover {
+            color: #66b1ff;
+            background-color: #ecf5ff;
+        }
+    }
+}

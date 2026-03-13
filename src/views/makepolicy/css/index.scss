@@ -1,0 +1,377 @@
+.makepolicy {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow-y: auto;
+    .title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #343434;
+        display: flex;
+        align-items: center;
+    }
+    .title::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 20px;
+        background: #559FEB;
+        border-radius: 4px;
+        margin-right: 8px;
+    }
+    .mt1 {
+        margin-top: 10px;
+    }
+    .mt2 {
+        margin-top: 15px;
+    }
+    // 头部tabs切换页面
+    .page_status {
+        margin-left: 15px;
+        /deep/.el-radio-button {
+            margin-left: 5px;
+            transform: skewX(-20deg);
+            .el-radio-button__inner {
+                border: 0 none;
+                border-radius: 4px;
+            }
+            .text {
+                transform: skewX(20deg);
+            }
+        }
+    }
+    // 头部筛选盒子
+    .search_box {
+        height: 80px;
+        background: #FFFFFF;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .time_box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 350px;
+            /deep/.el-date-editor {
+                width: 250px !important;
+            }
+            .t_title {
+                width: 80px;
+                text-align: center;
+            }
+        }
+        .group_btn {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .reset_btn {
+            width: 300px;
+            text-align: center;
+        }
+    }
+    // txt分析
+    .txt_analysis {
+        width: 100%;
+        height: calc(100% - 30px);
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff;
+        overflow: hidden;
+        .unit_notice,
+        .self_notice {
+            height: 50%;
+            .head_title {
+                height: 35px;
+                font-size: 18px;
+                font-weight: 600;
+                background-color: #f6f7fc;
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+                box-sizing: border-box;
+            }
+            .txt_content {
+                height: calc(100% - 35px);
+                padding: 8px;
+                box-sizing: border-box;
+                display: flex;
+                flex-wrap: wrap;
+                overflow-y: auto;
+                /deep/.el-card {
+                    width: 23%;
+                    height: 190px;
+                    margin: 0 2% 12px 0;
+                    .el-card__header {
+                        height: 45px;
+                        line-height: 20px;
+                        .gsmc {
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+                        .tjsj {
+                            font-weight: 600;
+                            font-size: 15px;
+                            color: #ff00ff;
+                        }
+                    }
+                    .el-card__body {
+                        height: calc(100% - 45px);
+                        padding: 0 5px 5px 5px;
+                        .tccard_content {
+                            height: 100%;
+                            .tccard_item {
+                                height: 20%;
+                                display: flex;
+                                >div {
+                                    width: 25%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    .el-tag {
+                                        height: 90%;
+                                        width: 90%;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // txt分析弹框操作
+    .dia_txtsign {
+        /deep/.el-dialog__header {
+            padding: 10px;
+        }
+        /deep/.el-dialog__body {
+            padding: 0 10px 10px 10px;
+            .txtsign_content {
+                height: 700px;
+                .diaunit,
+                .diaself {
+                    height: 100%;
+                    .head_condition {
+                        display: flex;
+                        justify-content: space-between;
+                        .el-form {
+                            display: flex;
+                            .el-form-item {
+                                margin-bottom: 8px;
+                            }
+                        }
+                    }
+                    .table_box {
+                        height: calc(100% - 70px);
+                    }
+                    .el-pagination {
+                        height: 30px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    // 体检进度
+    .check_schedule {
+        height: 290px;
+        background: #FFFFFF;
+        border-radius: 6px;
+        overflow: hidden;
+        .head {
+            background-color: #f6f7fc;
+            padding: 0 10px;
+            .title {
+                height: 38px;
+            }
+        }
+        .check_body {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            .check_item {
+                flex: 1;
+                height: 220px;
+                background: #ECF5FF;
+                border-radius: 10px;
+                margin: 0 10px;
+            }
+            .bg2 {
+                background-color: #e7f7fa;
+            }
+            .total {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                >img {
+                    width: 80px;
+                }
+                .num_box {
+                    margin-left: 20px;
+                    .subscribe {
+                        font-size: 36px;
+                        font-weight: 500;
+                        color: #2A87E6;
+                    }
+                    .text {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #818389;
+                    }
+                }
+            }
+            .inspect,
+            .gender,
+            .marriage {
+                display: flex;
+                flex-direction: column;
+                .inspect_top {
+                    width: 100%;
+                    height: 85%;
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .percentage {
+                        font-size: 14px;
+                        .p_top {
+                            color: red;
+                            font-size: 18px;
+                            font-weight: 600;
+                            display: flex;
+                            .p_icon {
+                                height: 25px;
+                            }
+                            .p_text {
+                                height: 25px;
+                                display: flex;
+                                align-items: center;
+                            }
+                        }
+                        .p_bom {
+                            margin-top: 8px;
+                        }
+                    }
+                    .inspectChart,
+                    .genderChart,
+                    .businessChart,
+                    .marriageChart {
+                        width: 55%;
+                        height: 100%;
+                    }
+                }
+                .inspect_bottom {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    .ib_l_num {
+                        color: #30ADC6;
+                        font-weight: 600;
+                    }
+                    .ib_r_num {
+                        color: #CAAA29;
+                        font-weight: 600;
+                    }
+                }
+            }
+            .gender {
+                .ib_l_num {
+                    color: #85B827 !important;
+                }
+            }
+            .marriage {
+                .ib_l_num {
+                    color: #D33E23 !important;
+                }
+            }
+        }
+    }
+    // 柱状图
+    .columnar {
+        display: flex;
+        justify-content: space-between;
+        height: 460px;
+        .year_ratio,
+        .age_spread,
+        .month_ratio,
+        .check_spread {
+            width: 49%;
+            height: 100%;
+            background: #FFFFFF;
+            border-radius: 6px;
+            overflow: hidden;
+            .head {
+                background-color: #f6f7fc;
+                padding: 0 10px;
+                .title {
+                    height: 38px;
+                }
+            }
+            .yearChart,
+            .ageChart,
+            .monthChart {
+                width: 100%;
+                height: 90%;
+            }
+            .chart_box {
+                height: calc(100% - 38px);
+                box-sizing: border-box;
+                padding: 10px;
+                display: flex;
+                .group_check,
+                .type_check {
+                    flex: 1;
+                    .c_title {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: #343434;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .chart_bg {
+                        height: calc(100% - 40px);
+                        background: #E7F7FA;
+                        border-radius: 10px;
+                        .groupCheckChart,
+                        .businessChart,
+                        .typeCheckChart {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+                .type_check {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}
+
+// 滚动条美化
+.makepolicy::-webkit-scrollbar {
+    width: 8px;
+}
+
+.makepolicy::-webkit-scrollbar-track {
+    background-color: transparent;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+
+.makepolicy::-webkit-scrollbar-thumb {
+    background-color: #dddee0;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}

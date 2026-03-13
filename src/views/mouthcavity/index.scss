@@ -1,0 +1,499 @@
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li:before,
+li:after {
+    content: "";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+/* 尝试清除特定浏览器中的样式 */
+li {
+    list-style-type: none !important;
+    /* 使用 !important 关键字强制覆盖 */
+}
+
+
+.form_box {
+    .el-form-item {
+        display: flex !important;
+    }
+
+    .el-form-item__content {
+        display: flex;
+    }
+}
+
+.el-form-item {
+    display: flex !important;
+}
+
+.el-form-item__content {
+    display: flex;
+}
+
+.el-form-item {
+    display: flex !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+}
+
+.el-form-item__content {
+    display: flex;
+
+    /deep/.el-form-item {
+        display: flex !important;
+        background-color: skyblue !important;
+    }
+
+    /deep/.el-form-item__content {
+        display: flex;
+    }
+}
+
+.btnBoxClas {
+    display: flex;
+    justify-content: center;
+
+    /* 水平居中对齐 */
+    .sub-navbar {
+        height: auto;
+    }
+
+    .filter-container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.el-table .renBcClas {
+    background-color: rgb(241, 210, 210) !important;
+
+}
+
+.formBoxClas {
+    width: 100%;
+    border: 2px solid #000;
+
+    input {
+        border: 0;
+        background: node;
+    }
+
+    input:focus {
+        border: 0;
+        outline: none;
+    }
+
+    .el-input__inner {
+        border: 0;
+        background: node;
+    }
+
+    .el-input__inner:focus {
+        border: 0;
+        outline: none;
+    }
+
+    .header {
+        border-bottom: 2px solid black;
+        padding: 5px 0;
+
+        .titleOne,
+        .titleTwo {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            align-items: center;
+            padding: 0 20px;
+
+            span {
+                display: inline-block;
+            }
+
+
+        }
+
+        .titleOne {
+            .nameClas {
+                border-bottom: 2px solid black;
+                width: 100px;
+                text-align: center;
+            }
+        }
+
+        .titleTwo {
+            .yearClas {
+                width: 150px;
+                text-align: center;
+                position: relative;
+
+                input {
+                    text-align: center;
+                }
+
+                .el-input__inner {
+                    text-align: center;
+                }
+            }
+
+            .yearClas::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 3px;
+                width: 150px;
+                height: 2px;
+                background-color: black;
+                left: 50%;
+                margin-left: -75px;
+            }
+        }
+    }
+
+    .body1 {
+        border-bottom: 2px solid black;
+
+        .toothBox,
+        .signBox {
+            margin: auto;
+        }
+
+        .toothBox::after {
+            content: '';
+            display: block;
+            width: 3px;
+            height: 200px;
+            background-color: black;
+            position: absolute;
+            left: calc(55% - 19px);
+            top: 50px;
+        }
+
+        .toothBox {
+            width: 700px;
+            height: 260px;
+            position: relative;
+
+            .toothItemBox>li {
+                flex: 1;
+            }
+
+            .toothItemBox {
+                display: flex;
+
+                .border_buttom {
+                    border-bottom: 2px solid black;
+                    padding-bottom: 5px;
+                    margin-bottom: 10px;
+                }
+
+                .toothItemBoxTitle {
+                    flex: 0 1 13%;
+                    width: 50px;
+                    text-align: center;
+                    line-height: 102px;
+                }
+
+                .toothItemOne {
+                    flex: 0 1 20%;
+
+                    .numberClas {
+                        display: flex;
+                        flex-wrap: wrap;
+                        /* 允许子元素换行 */
+                        width: 280px;
+
+                        li {
+                            width: 33px;
+                            height: 30px;
+                            text-align: center;
+                            line-height: 30px;
+                            margin: 1px 3px;
+                        }
+
+                        .bacRedClas {
+                            border: 1px solid red;
+
+                            input {
+                                width: 100%;
+                                height: 100%;
+                                padding: 0;
+                                border: 0;
+                                background: none;
+                                text-align: center;
+                            }
+
+                            .el-input__inner {
+                                width: 100%;
+                                height: 100%;
+                                padding: 0;
+                                border: 0;
+                                background: none;
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                }
+
+
+            }
+
+
+        }
+
+        .signBox {
+            width: 700px;
+            height: 180px;
+
+            .tableClas {
+                width: 230px;
+                display: inline-block;
+                vertical-align: top;
+
+                th,
+                td {
+                    width: 50px;
+                    text-align: center;
+                    font-weight: 500;
+                }
+
+                th {}
+
+            }
+        }
+    }
+
+    .BTitle {
+        font-weight: bold;
+        color: black;
+        font-size: 17px;
+    }
+
+    .body2 {
+        .toothBox::after {
+            height: 264px !important;
+        }
+
+        .toothBox {
+            height: auto !important;
+
+            .toothItemBox {
+                .toothItemBoxTitle2 {
+                    padding-top: 30px;
+
+                    span {
+                        display: block;
+                        margin: 0 auto;
+                        height: 34px;
+                    }
+                }
+            }
+        }
+
+        .signBox2 {
+            display: flex !important;
+            justify-content: space-between !important;
+            padding: 0 25px !important;
+            height: 120px !important;
+
+            .signTitle2 {}
+        }
+
+    }
+
+    .body3 {
+        width: 100%;
+        min-height: 180px;
+        border: 2px solid balck;
+        display: flex;
+
+        .item1,
+        .item2 {
+            width: 50%;
+            height: 100%;
+        }
+
+        .item1 {
+            padding-left: 50px;
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            ul>li {
+                width: 200px;
+                padding: 2px 0;
+            }
+
+            ul>li span:first-child {
+                display: inline-block;
+                margin: 0 80px 0 20px;
+            }
+
+            ul,
+            .redBorder {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .redBorder {
+                margin: 80px 0 0 55px;
+                border: 1px solid red;
+                width: 30px;
+                height: 30px;
+
+                input {
+                    width: 100%;
+                    height: 30px;
+                    padding: 0;
+                    border: 0;
+                    background: none;
+                    text-align: center;
+                }
+
+                .el-input__inner {
+                    width: 100%;
+                    height: 30px;
+                    padding: 0;
+                    border: 0;
+                    background: none;
+                    text-align: center;
+                }
+            }
+        }
+
+        .item2 {
+            border-left: 2px solid black;
+            padding-left: 30px;
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+
+            .bottomRightClas {
+                margin: 30px auto;
+                width: 175px;
+            }
+
+            span,
+            .redBorder {
+                display: inline-block;
+                vertical-align: top;
+                line-height: 30px;
+            }
+
+            .redBorder {
+                border: 1px solid red;
+                width: 30px;
+                height: 30px;
+
+                input {
+                    width: 100%;
+                    height: 30px;
+                    padding: 0;
+                    border: 0;
+                    background: none;
+                    text-align: center;
+                }
+
+                .el-input__inner {
+                    width: 100%;
+                    height: 30px;
+                    padding: 0;
+                    border: 0;
+                    background: none;
+                    text-align: center;
+                }
+            }
+
+            .bottomRightClas2 {
+                margin: 30px auto;
+                width: 175px;
+
+                ul,
+                span {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+
+                .redBorder {
+                    margin: 11px 0 0 80px;
+                }
+
+                ul li {
+                    padding: 2px;
+                }
+            }
+        }
+    }
+}
+
+.babyFormBoxClas {
+    .toothBox::after {
+        left: calc(56% - 16px) !important;
+    }
+
+    .toothBox {}
+
+    .toothItemBoxTitle {
+        flex: 0 1 20% !important;
+    }
+
+    .numberClas {
+        width: 240px !important;
+    }
+
+    .titleTwo>li>span {
+        display: inline-block !important;
+        margin-right: 114px !important;
+    }
+
+    .signBox {
+        height: auto !important;
+
+        .signTitle {
+            margin-right: 80px;
+        }
+
+        .signTitle,
+        .tableClas {
+            display: inline-block !important;
+        }
+
+        .tableClas {
+            width: 500px !important;
+            margin-top: 13px;
+
+            tr,
+            td {
+                width: 143px !important;
+            }
+        }
+    }
+
+    .body3 {
+        .item2 {
+            width: 100% !important;
+
+            .left,
+            .right {
+                width: 50%;
+                display: inline-block;
+            }
+        }
+    }
+
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}

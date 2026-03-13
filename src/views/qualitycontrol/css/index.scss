@@ -1,0 +1,145 @@
+.qualitycontrol {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 6px;
+    .head_box {
+        background-color: #fff;
+        border-radius: 6px;
+        padding: 10px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .btn_group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .time_box {
+            display: flex;
+            .time_item {
+                margin-right: 20px;
+                display: flex;
+                align-items: center;
+                .time_title {
+                    width: 80px;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .subject {
+        margin-top: 6px;
+        width: 100%;
+        height: calc(100% - 108px);
+        /deep/.el-row {
+            height: 100%;
+            display: flex;
+        }
+        .subject_l,
+        .subject_r {
+            height: 100%;
+            overflow: hidden;
+        }
+        .subject_l {
+            border-radius: 6px;
+            box-sizing: border-box;
+            padding: 10px;
+            background-color: #fff;
+            margin-right: 6px;
+            /deep/.el-radio-group {
+                margin-bottom: 6px;
+            }
+            .page_table {
+                height: calc(100% - 34px);
+            }
+        }
+        .subject_r {
+            border-radius: 6px;
+            box-sizing: border-box;
+            .subject_r_t {
+                padding: 10px;
+                margin-bottom: 6px;
+                background-color: #fff;
+                border-radius: 6px;
+                height: 29%;
+                /deep/.el-form {
+                    margin-top: 10px;
+                }
+            }
+            .subject_r_b {
+                padding: 10px;
+                background-color: #fff;
+                border-radius: 6px;
+                height: calc(100% - 29% - 6px);
+                .subject_r_b_box {
+                    height: calc(100% - 40px);
+                    .time_btn {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100% !important;
+                    }
+                    .time_item {
+                        margin: 12px 0;
+                        width: 95%;
+                        display: flex;
+                        /deep/.el-row {
+                            width: 100%;
+                            .el-col {
+                                display: flex;
+                            }
+                        }
+                        .time_title {
+                            flex-shrink: 0;
+                            width: 100px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            margin-right: 8px;
+                        }
+                        .time_textarea {
+                            flex-shrink: 0;
+                            width: 100px;
+                            display: flex;
+                            align-items: flex-start;
+                            justify-content: flex-end;
+                            margin-right: 8px;
+                        }
+                        /deep/.el-radio-group {
+                            display: flex;
+                            >label {
+                                display: flex;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 头部标题
+    .head_title {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        height: 38px;
+        padding-left: 10px;
+    }
+    .head_logo {
+        width: 7px;
+        height: 18px;
+        background-color: #2a85ea;
+        border-radius: 3.5px;
+        margin-right: 5px;
+    }
+    .head_title p {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+    }
+}

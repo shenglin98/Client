@@ -1,0 +1,210 @@
+.dic_index {
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    .dic_combine_his {
+        height: 100%;
+        display: flex;
+        .combine_his {
+            width: 32%;
+            margin-right: 10px;
+            height: 100%;
+        }
+        .combine_his_son {
+            height: 100%;
+            width: calc(68% - 10px);
+        }
+    }
+    .subject {
+        width: 100%;
+        height: 100%;
+        background: #FFFFFF;
+        border-radius: 6px;
+        display: flex;
+        overflow: hidden;
+        /deep/.is-current {
+            background-color: #5586d1 !important;
+        }
+        .choose_tree {
+            width: 200px;
+            border-right: 1px solid #eaeefb;
+            .head {
+                height: 50px;
+                background-color: #f6f7fc;
+            }
+            .pageTree {
+                margin-top: 15px;
+            }
+        }
+        .content {
+            width: calc(100% - 200px);
+            .search_box {
+                height: 50px;
+                background-color: #f6f7fc;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 0 20px;
+                justify-content: flex-end;
+                /deep/.el-tag {
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                }
+                /deep/.el-select,
+                /deep/.el-input {
+                    width: 200px !important;
+                }
+                .btn_group {
+                    margin-left: 50px;
+                    display: flex;
+                    flex-wrap: nowrap;
+                }
+            }
+            // 子组件盒子
+            .child_components {
+                height: calc(100% - 50px);
+                padding: 10px;
+                box-sizing: border-box;
+                /deep/.el-table {
+                    .cell {
+                        .el-link.name_box {
+                            width: 220px;
+                            display: flex;
+                            align-items: center;
+                            .el-link--inner {
+                                width: 220px;
+                                display: inline-block;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+                // 项目字典
+                .dic_item {
+                    width: 100%;
+                    height: 100%;
+                    .dicitem_data {
+                        height: 100%;
+                    }
+                }
+                // 组合字典
+                .dic_combine {
+                    width: 100%;
+                    height: 100%;
+                    .combine_data {
+                        height: 100%;
+                    }
+                }
+                // 项目常见结果字典
+                .dic_item_value,
+                .dic_item_contrast,
+                .dic_combine_charge,
+                .dic_combine_apply {
+                    display: flex;
+                    height: 100%;
+                    .dicItemValue_data,
+                    .contrast_data,
+                    .combineCharge_data,
+                    .combine_data {
+                        width: 30%;
+                    }
+                    .dicItemValue_son,
+                    .contrast_son,
+                    .combineapply {
+                        width: 70%;
+                    }
+                    .combineCharge_son_box {
+                        height: 100%;
+                        width: 70%;
+                        .combineCharge_son {
+                            height: calc(100% - 40px);
+                        }
+                        .botttom_Charge_son {
+                            height: 30px;
+                            margin-top: 8px;
+                            padding: 0 10px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
+                }
+                // 收费字典
+                .dic_item_charge {
+                    height: 100%;
+                    .dicItem_charge {
+                        height: 100%;
+                    }
+                }
+                // 组合分组
+                .Dic_combine_group {
+                    height: 100%;
+                    .combine_group {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    // 项目常见字典新增编辑弹框
+    .dicitemvalue_dia {
+        /deep/.el-dialog__header,
+        /deep/.el-dialog__body,
+        /deep/.el-dialog__footer {
+            padding: 15px;
+        }
+        /deep/.el-dialog__footer {
+            .dialog-footer {
+                text-align: center;
+            }
+        }
+        /deep/.el-dialog__body {
+            .el-form {
+                width: 95%;
+                .el-form-item {
+                    .el-select {
+                        width: 100%;
+                    }
+                }
+                .sfbm {
+                    .el-dropdown {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    // 淡入淡出效果
+    .fade-enter {
+        opacity: 0;
+    }
+    .fade-leave {
+        opacity: 1;
+    }
+    .fade-enter-active {
+        transition: opacity .2s;
+    }
+    .fade-leave-active {
+        opacity: 0;
+        transition: opacity .2s;
+    }
+}
+
+.my-dropdown2 {
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #dcdfe6;
+}
+
+.active {
+    color: #409eff;
+    background-color: #f5f7fa;
+}
+
+.list-item2:hover {
+    background-color: #f5f7fa;
+}

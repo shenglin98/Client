@@ -1,0 +1,117 @@
+.customer_manage {
+    width: 100%;
+    height: 100%;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    .customer_manage_box {
+        width: 100%;
+        height: 100%;
+        /deep/.sticky {
+            border-radius: 5px;
+        }
+        .subject {
+            background-color: #fff;
+            margin-top: 6px;
+            border-radius: 5px;
+            padding: 6px 10px;
+            box-sizing: border-box;
+            width: 100%;
+            height: calc(100% - 50px);
+            overflow: hidden;
+            .condition_box {
+                height: 30px;
+                .c_status,
+                .c_search {
+                    display: flex;
+                    align-items: center;
+                    .title {
+                        width: 50px;
+                    }
+                }
+            }
+            .page_table {
+                margin-top: 10px;
+                height: calc(100% - 72px);
+            }
+            .record {
+                display: flex;
+                align-items: center;
+                padding: 10px 0 0 0;
+            }
+            .dialog_box {
+                width: 100%;
+                height: auto;
+                .dialog_hear {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 0 0 10px 0;
+                    .dialog_title {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: #000;
+                    }
+                }
+                .dialog_content {
+                    .ipt_one {
+                        display: flex;
+                        justify-content: space-between;
+                        /deep/ {
+                            .el-input__inner {
+                                width: 200px;
+                            }
+                            .el-input {
+                                width: 200px;
+                            }
+                        }
+                        .search_icon {
+                            font-size: 20px;
+                            padding-left: 10px;
+                        }
+                    }
+                }
+            }
+            .operation {
+                box-sizing: border-box;
+                display: flex;
+                justify-content: space-evenly;
+                padding: 0 260px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.customer_name {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.negative_left {
+    margin-left: -30px;
+}
+
+/deep/.el-dialog {
+    min-width: 950px !important;
+}
+
+// 设置element框架样式
+/deep/ {
+    .el-form-item {
+        margin-bottom: 0px !important;
+    }
+    .fade-enter {
+        opacity: 0;
+    }
+    .fade-leave {
+        opacity: 1;
+    }
+    .fade-enter-active {
+        transition: opacity 0.5s;
+    }
+    .fade-leave-active {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+}

@@ -1,0 +1,122 @@
+.orderquery {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    .head_box {
+        width: 100%;
+        height: 21%;
+        min-width: 1000px;
+        min-height: 175px;
+        background-color: #fff;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .filter-container {
+            height: 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+        .search_form {
+            margin-top: 10px;
+            .mbzero {
+                margin-bottom: 0px;
+            }
+        }
+    }
+    .subject {
+        width: 100%;
+        height: calc(100% - 21% - 10px);
+        margin-top: 10px;
+        background-color: #fff;
+        border-radius: 6px;
+        padding: 8px 15px;
+        box-sizing: border-box;
+        .count_box {
+            display: flex;
+            .count_item {
+                width: 265px;
+                min-width: 265px;
+                height: 64px;
+                margin-right: 8px;
+                display: flex;
+                overflow: hidden;
+                .value_box {
+                    display: flex;
+                    border: 1px solid #ccc;
+                    border-radius: 0 4px 4px 0;
+                    .bor {
+                        border-right: 1px solid #ccc;
+                    }
+                    .value_item {
+                        width: 70px;
+                        height: 100%;
+                        .val_title {
+                            height: 50%;
+                            border-bottom: 1px solid #ccc;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                        }
+                        .val_number {
+                            height: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+                .title {
+                    width: 50px;
+                    min-width: 50px;
+                    color: #fff;
+                    border-radius: 4px 0 0 4px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .value {
+                    // padding: 3px 30px;
+                    border: 1px solid #ccc;
+                    font-weight: 600;
+                    border-radius: 0 4px 4px 0;
+                }
+                .bg1 {
+                    background-color: #8080ff;
+                }
+                .bg2 {
+                    background-color: #ec808d;
+                }
+                .bg3 {
+                    background-color: #00bfbf;
+                }
+                .bg4 {
+                    background-color: #81d3f8;
+                }
+                .bg5 {
+                    background-color: #c280ff;
+                }
+            }
+        }
+        .page_table {
+            margin-top: 15px;
+            height: calc(100% - 118px);
+        }
+        /deep/.el-pagination {
+            margin-top: 8px;
+            text-align: center;
+        }
+    }
+}

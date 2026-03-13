@@ -1,0 +1,216 @@
+.customer_critical {
+    height: 100%;
+    box-sizing: border-box;
+    .filter-container {
+        display: flex;
+        background-color: #f8f8f8;
+        padding-right: 20px;
+        height: 42px;
+        align-items: center;
+        justify-content: flex-end;
+        >div {
+            margin-left: 10px;
+        }
+    }
+    // 头部标题
+    .head_title {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        background-color: #f6f7fc;
+        height: 38px;
+        margin: -20px -20px 0 -20px;
+        padding-left: 10px;
+        .head_logo {
+            width: 7px;
+            height: 18px;
+            background-color: #2a85ea;
+            border-radius: 3.5px;
+            margin-right: 5px;
+        }
+        p {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    // 头部表单
+    .head_content {
+        margin: 20px 0 0 20px;
+        display: flex;
+        align-items: center;
+    }
+    // 内容盒子
+    .content_box {
+        height: calc(100% - 270px);
+        box-sizing: border-box;
+        /deep/.el-card__body {
+            height: 100%;
+            .content_team_form {
+                height: calc(100% - 60px);
+                .page_table {
+                    height: 100%;
+                }
+                .el-pagination {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .content_team_form {
+        margin: 10px 0 0 0px;
+    }
+    .pagebox {
+        padding: 0 10px;
+        height: 100%;
+        box-sizing: border-box;
+        .content_box {
+            margin-top: 15px;
+        }
+    }
+    .template {
+        width: 100%;
+        height: auto;
+        .template_header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .template_body {
+            margin-top: 20px;
+        }
+    }
+    .sms_dia {
+        /deep/.el-dialog__header,
+        /deep/.el-dialog__body,
+        /deep/.el-dialog__footer {
+            padding: 10px;
+        }
+        /deep/.el-dialog__footer {
+            text-align: center;
+        }
+        /deep/.el-dialog__body {
+            .sms_dia_content {
+                height: 400px;
+                .smsname {
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    .smstitle {
+                        width: 85px;
+                    }
+                }
+                .smscontent {
+                    height: calc(100% - 40px);
+                    display: flex;
+                    .smscontenttitle {
+                        width: 85px;
+                    }
+                    .conc_text {
+                        flex: 1;
+                        height: 100%;
+                        .el-textarea__inner {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .critical_dia {
+        /deep/.el-dialog__header {
+            display: none;
+        }
+        /deep/.el-dialog__body,
+        /deep/.el-dialog__footer {
+            padding: 10px;
+        }
+        /deep/.el-dialog__footer {
+            text-align: center;
+        }
+        /deep/.el-dialog__body {
+            .cd_content {
+                height: 800px;
+                overflow-y: auto;
+                box-sizing: border-box;
+                .cd_mess_title,
+                .cd_record_title,
+                .cd_project_title {
+                    height: 35px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    background-color: #f6f7fc;
+                    border-radius: 8px;
+                    padding-left: 10px;
+                    display: flex;
+                    align-items: center;
+                    color: #000;
+                }
+                .cd_mess_body {
+                    font-size: 16px;
+                    color: #000;
+                    .el-row {
+                        margin-top: 8px;
+                    }
+                }
+                .cd_record_title {
+                    margin-top: 10px;
+                    .crt_select {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: purple;
+                        margin-left: 20px;
+                    }
+                }
+                .cd_record_body {
+                    .cd_record_body_top {
+                        margin: 5px 0;
+                        .cd_df {
+                            display: flex;
+                            .cd_df_title {
+                                width: 90px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                        }
+                    }
+                    .cd_record_body_bottom {
+                        display: flex;
+                        .cdrbb_l {
+                            width: 41.5%;
+                            margin-right: 1%;
+                            .el-textarea {
+                                height: 150px;
+                                .el-textarea__inner {
+                                    height: 100%;
+                                }
+                            }
+                        }
+                        .cdrbb_r {
+                            width: 59.4%;
+                            .el-textarea {
+                                height: 150px;
+                                .el-textarea__inner {
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .cd_project_title {
+                    margin-top: 10px;
+                    .el-radio-group {
+                        margin-left: 20px;
+                    }
+                }
+                .cd_project_body {
+                    margin-top: 10px;
+                    height: 400px;
+                }
+            }
+        }
+    }
+}

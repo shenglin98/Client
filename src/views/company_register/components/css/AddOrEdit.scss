@@ -1,0 +1,411 @@
+.add_edit {
+    width: 100%;
+    min-width: 1050px;
+    box-sizing: border-box;
+    padding: 10px !important;
+    height: calc(100vh - 78px);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+    .group_form {
+        /deep/.el-form-item {
+            margin-bottom: 26px;
+        }
+    }
+    .head_box-iofn {
+        display: flex;
+        align-items: center;
+        .nullBox {
+            flex: 1;
+        }
+    }
+    .message_box {
+        height: 230px;
+        // padding: 0 0 10px 0;
+        margin-bottom: 15px;
+    }
+    .clearance_top {
+        margin-top: 10px;
+    }
+    .clearance_right {
+        margin-right: 10px;
+    }
+    .head_box-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 12px;
+        border-radius: 5px;
+    }
+    .box-iofn {
+        background-color: #fff;
+    }
+    .head_box {
+        display: flex;
+        justify-content: space-between;
+        margin: -20px -20px 15px -20px;
+        height: 38px;
+        border-radius: 5px;
+        align-items: center;
+        background: #f6f7fc;
+        .tj_box {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            .price_box {
+                font-size: 16px;
+                font-weight: 400;
+                margin-left: 20px;
+                padding-top: 4px;
+                span {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    .page_form {
+        max-height: 170px;
+        overflow-y: auto;
+        .filelink {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-align: left;
+            /deep/.el-link--inner {
+                width: 100%;
+                text-align: left;
+            }
+        }
+        .form_df {
+            /deep/.el-form-item__content {
+                display: flex;
+            }
+        }
+        /deep/.el-form-item {
+            margin-bottom: 4px;
+        }
+        .companyItem {
+            /deep/.el-form-item__content {
+                display: flex;
+                align-items: center;
+                .el-button {
+                    padding: 0;
+                    width: 50px;
+                    height: 20px;
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+    .combineitems {
+        /deep/.el-card__body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 0;
+        }
+        .combineitems_table {
+            height: 100%;
+            .del_com {
+                cursor: pointer;
+                color: #3188ea;
+            }
+            .delDelCom {
+                cursor: pointer;
+                color: #3188ea;
+            }
+            .discount_input {
+                width: 100%;
+                height: 28px;
+                border-radius: 4px;
+                border: 1px solid #dcdfe6;
+                outline: none;
+                background-color: #fff;
+            }
+            .discount_input:focus {
+                border: 1px solid #0076c8;
+            }
+        }
+        .price_box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+        }
+    }
+    .project_btn {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 10px;
+    }
+    .subscribe_group {
+        width: 100%;
+        display: flex;
+        height: 34px;
+        line-height: 40px;
+        .sub_item {
+            width: 12%;
+            display: flex;
+            // border: 1px solid #c0c4cc;
+            margin-right: 25px;
+            border-radius: 2px;
+            overflow: hidden;
+            .sub_title {
+                color: #fff;
+            }
+            .sub_success {
+                width: 50%;
+                text-align: center;
+                background-color: #fc5531;
+            }
+            .sub_primary {
+                width: 50%;
+                text-align: center;
+                background-color: #67c23a;
+            }
+            .sub_warning {
+                width: 50%;
+                text-align: center;
+                background-color: #409eff;
+            }
+            .sub_ok {
+                width: 50%;
+                text-align: center;
+                background-color: #e6a23c;
+            }
+            // .sub_title {
+            // padding: 5px 20px;
+            // margin: 0 auto;
+            // }
+            .sub_value,
+            .sub_title {
+                // padding: 5px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    .physical {
+        height: 76px;
+        /deep/.el-card__body {
+            display: flex;
+            align-items: center;
+        }
+    }
+    // 底部分组盒子
+    .add_h {
+        height: calc(100% - 325px) !important;
+    }
+    .edit_h {
+        height: calc(100% - 371px) !important;
+    }
+    .bottom_group {
+        width: 100%;
+        // min-height: 400px;
+        display: flex;
+        // margin-bottom: 90px;
+        // flex: 1;
+        .el-card {
+            flex: 1;
+            /deep/.el-card__body {
+                height: 100%;
+            }
+        }
+        .unit_grouping {
+            overflow: auto;
+            // min-height: 325px;
+            height: calc(100% - 30px);
+            .unit_item {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px;
+                border: 1px solid #dcdfe6;
+                margin-bottom: 2px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-bottom: 10px;
+                background-color: #edf4fc;
+                border: 1px solid #c8e2ff;
+                .discount_input {
+                    width: 100%;
+                    height: 28px;
+                    border-radius: 4px;
+                    border: 1px solid #dcdfe6;
+                    outline: none;
+                    background-color: #fff;
+                }
+                .discount_input:focus {
+                    border: 1px solid #0076c8;
+                }
+                .df {
+                    display: flex;
+                    align-items: center;
+                    .df_title {}
+                    .title_input {
+                        width: 50% !important;
+                    }
+                }
+            }
+            // 选中类
+            .current_row {
+                background-color: #e6f1fa;
+                border: 1px solid #3188ea;
+            }
+        }
+    }
+    .el-form-item {
+        margin-bottom: 10px;
+    }
+    .range_age {
+        width: 47%;
+    }
+    .range_line {
+        margin: 0 10px;
+        width: 6%;
+    }
+    .empty_group {
+        font-size: 12px;
+        text-align: center;
+        color: #909399;
+        margin-top: 50px;
+    }
+    // 添加项目头部搜索
+    .search_head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .search_box {
+            display: flex;
+            /deep/.el-input {
+                margin-right: 20px;
+            }
+        }
+    }
+    .save_box {
+        .save_btn {
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+        .save_content {
+            height: 215px;
+        }
+    }
+    .save_foot {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    // 添加项目表格列表
+    .table_body {
+        display: flex;
+        margin-top: 10px;
+        // height: 450px;
+        flex-wrap: wrap;
+        .table_body_name {
+            width: 25%;
+            // height: 245px;
+        }
+        .table_body_project {
+            display: flex;
+            width: 75%;
+            padding-left: 10px;
+            // height: 215px;
+            >div {
+                margin-right: 10px;
+            }
+        }
+        .table_body_price {
+            display: flex;
+            margin-top: 20px;
+            // background-color: #67c23a;
+            .price_box {
+                width: 180px;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                border: 1px solid #909399;
+                border-radius: 5px;
+                font-size: 16px;
+                margin-right: 50px;
+                overflow: hidden;
+                .price_box_left {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #67c23a;
+                    height: 100%;
+                    flex: 1;
+                    border-right: 1px solid #909399;
+                }
+                .price_box_right {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto;
+                    flex: 1;
+                }
+            }
+        }
+    }
+    .table_body>div:last-child {
+        margin-right: 0px;
+    }
+    // .fromitem {
+    //     white-space: nowrap;
+    // }
+    .fromitem {
+        display: flex;
+        /deep/.el-form-item__label {
+            width: 100px !important;
+        }
+        /deep/.el-form-item__content {
+            width: calc(100% - 100px);
+            margin-left: 0 !important;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+    }
+    // 进度
+    .schedule {
+        width: 100%;
+        // min-height: 150px;
+        height: 38px;
+        margin-bottom: 10px;
+        background: #f6f7fc;
+        .head_box-titles {
+            // margin: -20px -20px 20px -20px;
+            padding-left: 12px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            border-radius: 5px;
+            .box-titles {
+                width: 120px;
+                margin-right: 50px;
+            }
+        }
+        /deep/.el-card__body {
+            padding: 0;
+            height: 38px;
+        }
+    }
+}
+
+.logo {
+    width: 7px;
+    height: 18px;
+    background-color: #5c7ceb;
+    border-radius: 3.5px;
+    margin-right: 5px;
+}

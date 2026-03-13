@@ -1,0 +1,208 @@
+@charset "UTF-8";
+.flow_path .head {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+
+.flow_path .headss {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 10px;
+  background-color: #cfdeeb;
+  border-radius: 4px;
+}
+
+.flow_path .headss .heads-in {
+  width: 5px;
+  height: 18px;
+  background-color: #2a85ea;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+
+.flow_path .message {
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.flow_path .message .message-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5px;
+  background-color: #cfdeeb;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.flow_path .message .message-title .heads {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flow_path .message .message-title .heads .heads-in {
+  width: 5px;
+  height: 18px;
+  background-color: #2a85ea;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+
+.flow_path .message .age /deep/.el-form-item__label {
+  width: 80px !important;
+}
+
+.flow_path .message .age /deep/.el-form-item__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flow_path .message .age .age_num /deep/.el-input__inner {
+  padding-right: 0;
+  border: none;
+  border-radius: 0;
+  border: 1px solid #e4e7ed;
+  border-right: none;
+  border-top-left-radius: 5px;
+  /* 左上角 */
+  border-bottom-left-radius: 5px;
+  /* 左下角 */
+}
+
+.flow_path .message .age .agearr /deep/.el-input__inner {
+  border: none;
+  border-radius: 0;
+  border: 1px solid #e4e7ed;
+  border-left: none;
+  border-top-right-radius: 5px;
+  /* 右上角 */
+  border-bottom-right-radius: 5px;
+  /* 右下角 */
+}
+
+.flow_path .message .company /deep/.el-select {
+  width: 100%;
+}
+
+.flow_path .steps .steps_box {
+  padding: 20px;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.flow_path .steps .steps_box /deep/.el-step__head {
+  border-color: #fff;
+}
+
+.flow_path .steps .steps_box /deep/.el-step__line {
+  background-color: #67c23a;
+}
+
+.flow_path .steps .steps_box /deep/.el-step__icon {
+  background-color: #409eff;
+}
+
+.flow_path .steps .steps_box /deep/.el-step__icon .el-step__icon-inner {
+  display: none;
+}
+
+.flow_path .steps .steps_box .content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flow_path .steps .steps_box .content .content-in {
+  padding: 10px 0;
+}
+
+.flow_path .steps .steps_box .content .content-in .content_time {
+  min-width: 200px;
+  margin-left: 15px;
+}
+
+.flow_path .steps .steps_box .content .content-in .content_name {
+  min-width: 200px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.flow_path .steps .steps_box .content .content-in .content_locale {
+  min-width: 200px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.flow_path .steps .steps_box .content .project div {
+  padding: 15px 0 15px 15px;
+  border-top: 1px #ccddf3 solid;
+  color: red;
+}
+
+.flow_path .steps .steps_box /deep/.el-step__description {
+  padding-right: 0%;
+  background-color: #f5f7fa;
+  border-radius: 5px;
+}
+
+.flow_path .steps .steps_box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.flow_path .steps .steps_box::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 2em;
+}
+
+.flow_path .steps .steps_box::-webkit-scrollbar-thumb {
+  background-color: #dddee0;
+  border-radius: 2em;
+}
+
+.flow_path .btn_group {
+  text-align: center;
+  margin: 20px 0 10px 0;
+}
+
+.flow_path /deep/.el-dialog__body {
+  background-color: #f5f7fa;
+}
+
+.flow_path /deep/.el-step__main {
+  height: 135px;
+  background-color: #fff;
+}
+
+.flow_path /deep/.el-step__line {
+  background-color: #409eff !important;
+}
+/*# sourceMappingURL=index.css.map */

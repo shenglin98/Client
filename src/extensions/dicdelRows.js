@@ -1,0 +1,41 @@
+let extension = {
+  components: {
+    //组件扩展
+  },
+
+  methods: {//事件扩展
+    delrows(objs, rows, TableName, callback) {
+      var _this = this
+      _this.$confirm('是否确认删除?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+
+        var data = {
+          id: rows.map(u => u.id),
+          TableName: TableName
+        }
+        objs.del(data).then(() => {
+          _this.getList();
+          _this.$notify({
+            title: '成功',
+            message: '删除成功',
+            type: 'success',
+          })
+
+          if (callback != undefined) {
+            callback()
+          }
+        })
+      }).catch(() => {
+        _this.$message({
+          showClose: true,
+          type: 'info',
+          message: '已取消'
+        });
+      });
+    }
+  }
+};
+export default extension;

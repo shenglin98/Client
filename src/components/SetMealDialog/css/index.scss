@@ -1,0 +1,135 @@
+.setmeal_dialog {
+    .page_dialog {
+        /deep/.el-dialog {
+            margin-top: 86px !important;
+            margin-bottom: 0 !important;
+        }
+    }
+    /deep/.page_dialog {
+        .el-dialog__header,
+        .el-dialog__body,
+        .el-dialog__footer {
+            padding: 10px;
+        }
+        .el-dialog__body {
+            .content {
+                // 头部搜索
+                .content_top {
+                    height: 35px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 0 20px;
+                    display: flex;
+                    .search_box {
+                        display: flex;
+                        width: 250px;
+                        align-items: center;
+                        margin-right: 50px;
+                        .el-input {
+                            margin-right: 8px;
+                        }
+                    }
+                    .total_box {
+                        align-items: center;
+                        display: flex;
+                        margin-right: 170px;
+                        .total {
+                            display: flex;
+                            font-size: 16px;
+                            font-weight: 600;
+                            border: 1px solid #8d8d8d;
+                            margin-right: 20px;
+                            .title {
+                                padding: 5px 10px;
+                                background-color: #caf982;
+                                border-right: 1px solid #8d8d8d;
+                            }
+                            .bgtwo {
+                                background-color: #81d3f8;
+                            }
+                            .value {
+                                padding: 5px 20px;
+                            }
+                        }
+                    }
+                    .btn_template {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+                // 主体表格盒子
+                .table_box {
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 590px;
+                    padding: 0 20px;
+                    box-sizing: border-box;
+                    display: flex;
+                    .setmeal_table {
+                        width: 24%;
+                        margin: 0 8px 0 0;
+                        height: 100%;
+                    }
+                    .combination_table {
+                        width: 24%;
+                        margin: 0 8px;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    /deep/.temp_dialog {
+        z-index: 2200 !important;
+        background-color: rgba(0, 0, 0, 0.4) !important;
+        .el-dialog__header,
+        .el-dialog__body,
+        .el-dialog__footer {
+            padding: 10px;
+        }
+        .el-dialog__body {
+            .add_temp {
+                margin-top: 20px;
+                .head {
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin: 8px 0;
+                }
+                .input_box {
+                    display: flex;
+                    align-items: center;
+                    .el-input {
+                        width: 250px;
+                    }
+                }
+            }
+            .update_temp {
+                .head {
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin: 8px 0;
+                }
+                .template_table {
+                    height: 250px;
+                }
+            }
+        }
+    }
+    // 隐藏全选
+    /deep/.vxe-table .vxe-header--row .col--checkbox .vxe-cell--checkbox {
+        display: none;
+    }
+    /*vxe-table 自定义行高 */
+    /deep/.vxe-table .vxe-body--column.col--ellipsis {
+        height: 30px;
+    }
+    /deep/.vxe-table .vxe-body--column:not(.col--ellipsis),
+    /deep/.vxe-table .vxe-footer--column:not(.col--ellipsis),
+    /deep/.vxe-table .vxe-header--column:not(.col--ellipsis) {
+        padding: 5px 0;
+        height: 30px;
+    }
+    /deep/.vxe-table--tooltip-wrapper {
+        z-index: 999999 !important;
+    }
+}

@@ -1,0 +1,20 @@
+.filter-container {
+    display: flex;
+    background-color: #f8f8f8;
+    padding-right: 20px;
+    height: 42px;
+    align-items: center;
+    justify-content: flex-end;
+
+    >div {
+        margin-left: 10px;
+    }
+}
+
+.subject {
+    width: 100%;
+    height: calc(100vh - 121px);
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: #EFEFEF;
+}

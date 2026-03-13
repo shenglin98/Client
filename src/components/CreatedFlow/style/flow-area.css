@@ -1,0 +1,100 @@
+.btn-wrapper-simple {
+  height: 24px !important;
+  line-height: 24px !important;
+}
+
+.vue-contextmenu-listWrapper {
+  padding-left: 1px !important;
+}
+
+.child-ul-wrapper {
+  padding-left: 1px !important;
+}
+
+.flow-container {
+  position: absolute;
+  right: -3000px;
+  bottom: -3000px;
+  -webkit-transition: -webkit-transform 0.5s ease 0s,-webkit-transform-origin 0.5s ease 0s;
+  transition: -webkit-transform 0.5s ease 0s,-webkit-transform-origin 0.5s ease 0s;
+  transition: transform 0.5s ease 0s,transform-origin 0.5s ease 0s;
+  transition: transform 0.5s ease 0s,transform-origin 0.5s ease 0s,-webkit-transform 0.5s ease 0s,-webkit-transform-origin 0.5s ease 0s;
+}
+
+.flow-container.grid {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(5%, #ebebeb), color-stop(5%, rgba(0, 0, 0, 0))), -webkit-gradient(linear, left top, left bottom, color-stop(5%, #ebebeb), color-stop(5%, rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(90deg, #ebebeb 5%, rgba(0, 0, 0, 0) 5%), linear-gradient(#ebebeb 5%, rgba(0, 0, 0, 0) 5%);
+  background-size: 1rem 1rem;
+}
+
+.flow-container.zoomIn {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+.flow-container.zoomOut {
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+}
+
+.flow-container.canScale {
+  cursor: url(../assets/search.png), default;
+}
+
+.flow-container.canDrag {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flow-container.canMultiple {
+  cursor: url(../assets/multip-pointer.png), default;
+}
+
+.rectangle-multiple {
+  position: absolute;
+  border: 1px dashed #31676f;
+  background-color: #0cceea29;
+}
+
+.flow-container-active {
+  background-color: #e4e4e438;
+  cursor: crosshair;
+}
+
+.auxiliary-line-x {
+  position: absolute;
+  border: 0.5px solid #409EFF;
+  width: 100%;
+  z-index: 9999;
+}
+
+.auxiliary-line-y {
+  position: absolute;
+  border: 0.5px solid #409EFF;
+  height: 100%;
+  z-index: 9999;
+}
+
+.link-active {
+  outline: 2px dashed #409EFF;
+}
+
+.container-scale {
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+.mouse-position {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+}
+
+.common-remarks {
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  background-color: #ffffaa;
+}
+/*# sourceMappingURL=flow-area.css.map */

@@ -1,0 +1,101 @@
+.search_dialog /deep/.el-dialog__header {
+  display: none;
+}
+
+.search_dialog /deep/.el-dialog__body {
+  padding: 12px 12px 25px 12px;
+}
+
+.search_dialog /deep/.el-dialog__body .btn_group {
+  text-align: right;
+}
+
+.search_dialog /deep/.el-dialog__body .search_form .head {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.search_dialog /deep/.el-dialog__body .search_form .form_box {
+  margin-top: 12px;
+}
+
+.search_dialog /deep/.el-dialog__body .search_form .el-form-item {
+  margin-bottom: 10px;
+}
+
+.search_dialog /deep/.el-dialog__body .search_form .check_date .el-date-editor {
+  width: 100%;
+}
+
+.search_dialog /deep/.el-dialog__body .search_form .check_select .el-select {
+  width: 100%;
+}
+
+.search_dialog /deep/.el-dialog__body .queue_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.search_dialog /deep/.el-dialog__body .queue_box .queue_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  font-weight: 600;
+}
+
+.search_dialog /deep/.el-dialog__body .queue_box .title,
+.search_dialog /deep/.el-dialog__body .queue_box .value {
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search_dialog /deep/.el-dialog__body .queue_box .value {
+  border: 1px solid #dcdfe6;
+}
+
+.search_dialog /deep/.el-dialog__body .queue_box .title {
+  color: #fff;
+}
+
+.search_dialog /deep/.el-dialog__body .queue_box .bg1 {
+  background-color: #8080ff;
+}
+
+.search_dialog /deep/.el-dialog__body .queue_box .bg2 {
+  background-color: #ec808d;
+}
+
+.search_dialog /deep/.el-dialog__body .queue_box .bg3 {
+  background-color: #02a7f0;
+}
+
+.search_dialog /deep/.el-dialog__body .queue_box .bg4 {
+  background-color: #00bfbf;
+}
+
+.search_dialog /deep/.el-dialog__body .queue_box .bg5 {
+  background-color: #70b603;
+}
+
+.search_dialog /deep/.el-dialog__body .page_table {
+  margin-top: 15px;
+  height: 400px;
+}
+
+.search_dialog /deep/.el-dialog__body .el-pagination {
+  margin-top: 8px;
+  text-align: center;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,65 @@
+.form_box {
+    .el-form-item {
+        display: flex !important;
+    }
+
+    .el-form-item__content {
+        display: flex;
+    }
+
+    .el-form-item {
+        display: flex !important;
+    }
+
+    .el-form-item__content {
+        display: flex;
+    }
+
+    .el-form-item {
+        display: flex !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+    }
+
+    .el-form-item__content {
+        display: flex;
+
+        /deep/.el-form-item {
+            display: flex !important;
+            background-color: skyblue !important;
+        }
+
+        /deep/.el-form-item__content {
+            display: flex;
+        }
+    }
+}
+
+
+.btnBoxClas {
+    display: flex;
+    justify-content: center;
+
+    /* 水平居中对齐 */
+    .sub-navbar {
+        height: auto;
+    }
+
+    .filter-container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.el-table .renBcClas {
+    background-color: rgb(241, 210, 210) !important;
+
+}
+
+.displayFlex {
+    .el-col {
+        .el-form-item {
+            display: flex;
+        }
+    }
+}

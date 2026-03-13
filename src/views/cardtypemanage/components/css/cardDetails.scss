@@ -1,0 +1,42 @@
+.cardDetails {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 6px;
+    overflow: hidden;
+    .search_box {
+        display: flex;
+        height: 40px;
+        width: 100%;
+        background-color: #f6f7fc;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 6%;
+        .ml20 {
+            margin-left: 20px !important;
+        }
+        >div {
+            display: flex;
+        }
+        .regist_box {
+            display: flex;
+            align-items: center;
+        }
+        .sbtn {
+            margin: 0 10px;
+        }
+        .el-input {
+            width: 250px;
+        }
+    }
+    .bodymain {
+        width: 100%;
+        height: calc(100% - 40px);
+        box-sizing: border-box;
+        padding: 5px;
+        .pagetable {
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.income {
+    .check_schedule {
+        height: 320px;
+        .check_body {
+            display: flex;
+            flex-direction: column;
+            .chart_box {
+                display: flex;
+                .total_price {
+                    background-color: #FFEBE6;
+                    .num_box {
+                        .subscribe {
+                            color: #F34C1F;
+                        }
+                    }
+                }
+            }
+            .content_text {
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+                >span {
+                    display: flex;
+                    align-items: center;
+                    font-size: 20px;
+                    color: #3A3A3A;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,238 @@
+.triagcall {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    .top_box {
+        height: 8%;
+        box-sizing: border-box;
+        padding: 0 2rem 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo_box {
+            display: flex;
+            align-items: center;
+            width: 40%;
+            .logo_img {
+                width: 3rem;
+                height: 3rem;
+                margin-right: 0.7rem;
+            }
+            .logo_title {
+                color: #29218F;
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
+        .dept_box {
+            width: 20%;
+            height: 4rem;
+            background: linear-gradient(to bottom, #54a2cf, #2078a8);
+            border-radius: 0 0 2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.7rem;
+            margin-top: -0.6rem;
+        }
+        .time_box {
+            width: 40%;
+            display: flex;
+            justify-content: flex-end;
+            .tb_date {
+                margin-right: 2rem;
+                font-size: 1.5rem;
+                color: #000;
+            }
+            .tb_week {
+                margin-right: 2rem;
+                font-size: 1.5rem;
+                color: #000;
+            }
+            .tb_time {
+                width: 7rem;
+                background-image: url("../images/time.png");
+                background-size: 100% 100%;
+                font-weight: 600;
+                color: #fff;
+                display: flex;
+                font-size: 1.5rem;
+                align-items: center;
+                padding-left: 2.5rem;
+                box-sizing: border-box;
+            }
+        }
+    }
+    .mainbody {
+        height: calc(100% - 8%);
+        box-sizing: border-box;
+        background-image: url("../images/mainbody.png");
+        background-size: 100% 100%;
+        padding: 1rem 1rem 0 1rem;
+        position: relative;
+        .mainbody_box {
+            height: calc(100% - 10%);
+            .mainbody_l {
+                height: 100%;
+                padding-right: 1rem;
+                .page_table {
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fff;
+                    border-radius: 2rem 2rem 0 0;
+                }
+                .pt_top {
+                    height: 5rem;
+                    display: flex;
+                    font-size: 1.5rem;
+                    .location {
+                        width: 15%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .currentcheck {
+                        width: 35%;
+                        background: linear-gradient(to bottom, #54a2cf, #2078a8);
+                        color: #fff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .surgery {
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                .data_content {
+                    height: calc(100% - 5rem);
+                    box-sizing: border-box;
+                    border: 1px solid #4595c4;
+                    background-color: #06649c;
+                    .data_item {
+                        display: flex;
+                        border-bottom: 1px solid #4595c4;
+                        box-sizing: border-box;
+                        height: 10%;
+                        font-size: 1.5rem;
+                        background-color: #1376b0;
+                        .location {
+                            width: 15%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: #FFEC50;
+                        }
+                        .currentcheck {
+                            width: 35%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-left: 1px solid #4595c4;
+                            border-right: 1px solid #4595c4;
+                            color: #FF9018;
+                        }
+                        .surgery {
+                            width: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: #FFEC50;
+                            .surgery_item {
+                                margin-right: 1rem;
+                            }
+                        }
+                    }
+                    .bgc_tow {
+                        background-color: #06649c !important;
+                    }
+                }
+            }
+            .mainbody_r {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .stuff_box {
+                    width: 100%;
+                    height: 49%;
+                    .sb_top {
+                        background-color: #fff;
+                        border-radius: 2rem 2rem 0 0;
+                        height: 5rem;
+                        font-size: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .sss_content {
+                        box-sizing: border-box;
+                        border: 1px solid #4595c4;
+                        height: calc(100% - 5rem);
+                        .sssc_item {
+                            height: 25%;
+                            box-sizing: border-box;
+                            border-bottom: 1px solid #4595c4;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: #fff;
+                            font-size: 1.5rem;
+                            background-color: #1376b0;
+                        }
+                    }
+                    .sss_tow {
+                        background-color: #06649c !important;
+                    }
+                }
+                .tips_box {
+                    width: 100%;
+                    height: 49%;
+                    .tb_top {
+                        background-color: #fff;
+                        border-radius: 2rem 2rem 0 0;
+                        height: 5rem;
+                        font-size: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .sss_content {
+                        box-sizing: border-box;
+                        border: 1px solid #4595c4;
+                        height: calc(100% - 5rem);
+                        padding: 1rem;
+                        background-color: #06649c;
+                        .tips1,
+                        .tips2 {
+                            font-size: 1.5rem;
+                            color: #fff;
+                            font-weight: 600;
+                        }
+                        .tips2 {
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        .bottom_footer {
+            width: 100%;
+            height: 8%;
+            background-image: url("../images/bottom.png");
+            background-size: 100% 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-weight: 600;
+            color: #fff;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

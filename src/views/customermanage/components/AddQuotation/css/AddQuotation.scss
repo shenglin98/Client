@@ -1,0 +1,111 @@
+.add_quotation {
+    width: 100%;
+    height: 100%;
+    .header {
+        width: 100%;
+        height: 60px;
+        background: #fff;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /deep/ {
+            .el-form {
+                width: 46%;
+                display: flex;
+                justify-content: space-between;
+            }
+            .el-input__inner {
+                width: 270px;
+            }
+        }
+        .header_employ {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 46%;
+            padding-right: 10px;
+            .copy_box {
+                span {
+                    padding-left: 80px;
+                    text-decoration: underline;
+                    color: blue;
+                }
+            }
+        }
+    }
+    .contact_box {
+        width: 100%;
+        height: auto;
+        margin-top: 24px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        .contact {
+            width: 49%;
+            height: auto;
+            // border: 1px solid #979797;
+            .contact_header {
+                width: 100%;
+                background: #CFDEEB;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 20px;
+                box-sizing: border-box;
+                .contact_header_title {
+                    font-size: 14px;
+                    font-family: PingFangSC-Semibold, PingFang SC;
+                    font-weight: 600;
+                    color: #343434;
+                }
+                .add_contact {
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #2A87E6;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .price_box {
+        float: right;
+        margin-top: 20px;
+        text-align: right;
+        font-weight: 600;
+    }
+}
+
+.addgroupdia {
+    /deel/.el-dialog__body {
+        .el-form {
+            display: flex;
+        }
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    margin-left: 330px;
+}
+
+.order_list {
+    margin-top: 10px;
+}
+
+// /deep/ {
+//     .el-form {
+//         width: 46%;
+//         display: flex;
+//         justify-content: space-between;
+//     }
+//     .el-input__inner {
+//         width: 270px;
+//     }
+// }

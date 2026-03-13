@@ -1,0 +1,98 @@
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+  border: 1px solid #cccccc;
+}
+
+.main .main_left {
+  width: 210px;
+  height: calc(100vh - 100px);
+  border-right: 1px solid #cccccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .main_left .main_left_head {
+  width: 210px;
+  height: 50px;
+  background-color: #f5f5f5;
+  border-right: 1px solid #cccccc;
+}
+
+.main .main_left .main_left_menu {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #fff;
+}
+
+.main .main_left .main_left_menu .el-menu {
+  border: none;
+}
+
+.main .main_right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: calc(100vh - 100px);
+}
+
+.main .main_right .main_right_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 50px;
+  background-color: #f5f5f5;
+}
+
+.main .main_right .main_right_head /deep/.sticky {
+  background-color: #f5f5f5;
+}
+
+.main .main_right .main_right_menu {
+  height: calc(100vh - 150px);
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 570px;
+}
+
+.main .main_right .main_right_menu .rich_text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.main .main_right .main_right_menu .rich_text .quill-editor {
+  margin: 5px;
+  height: calc(100vh - 202px);
+}
+
+.el-menu-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+}
+/*# sourceMappingURL=index.css.map */

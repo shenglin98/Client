@@ -1,0 +1,203 @@
+.addoredit {
+  padding: 10px;
+  background-color: #efefef;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: calc(100vh - 80px);
+}
+
+.addoredit .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #343434;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f6f7fc;
+}
+
+.addoredit .title::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 20px;
+  background: #559FEB;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.addoredit .head_box {
+  height: 115px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.addoredit .head_box .title_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f6f7fc;
+}
+
+.addoredit .head_box .search_form {
+  margin-top: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.addoredit .head_box .search_form /deep/.el-form-item {
+  margin-bottom: 0;
+}
+
+.addoredit .subject {
+  margin-top: 10px;
+  height: calc(100% - 125px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.addoredit .subject .s_left {
+  background: #FFFFFF;
+  border-radius: 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  width: 36%;
+  margin-right: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.addoredit .subject .s_left /deep/.el-radio-group {
+  margin: 12px 0;
+}
+
+.addoredit .subject .s_left .staff_table {
+  height: calc(100% - 80px);
+}
+
+.addoredit .subject .s_left .mask {
+  background-color: transparent;
+  position: absolute;
+  width: 95%;
+  height: calc(100% - 100px);
+  z-index: 999;
+}
+
+.addoredit .subject .s_right {
+  background: #FFFFFF;
+  border-radius: 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  width: 63%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.addoredit .subject .s_right .staff_table {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.addoredit .subject .s_right .mode_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px 0 13px 0;
+}
+
+.addoredit .subject .s_right .mode_box .mode_title {
+  margin: 0 30px 0 16px;
+}
+
+.addoredit .subject .s_right .mode_message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.addoredit .subject .s_right .mode_message .message_itme {
+  margin-top: 8px;
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.addoredit .subject .s_right .mode_message .message_itme .m_title {
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  white-space: nowrap;
+}
+
+.addoredit .subject .s_right .mode_message .message_itme .m_value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addoredit .subject .s_right .mode_explain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 21px;
+}
+
+.addoredit .subject .s_right .mode_explain .e_title {
+  width: 100px;
+}
+
+.addoredit .subject .s_right .mode_explain .explain {
+  height: 60px;
+}
+
+.addoredit .subject .s_right .mode_explain .explain /deep/.el-textarea__inner {
+  height: 100%;
+}
+
+.addoredit .subject .s_right .page_btn {
+  margin-top: 21px;
+  text-align: center;
+}
+
+.addoredit .subject .s_right .page_btn /deep/.el-button {
+  width: 100px;
+}
+/*# sourceMappingURL=addOrEdit.css.map */

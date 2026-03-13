@@ -1,0 +1,147 @@
+@charset "UTF-8";
+.setmeal_dialog {
+  /*vxe-table 自定义行高 */
+}
+
+.setmeal_dialog .page_dialog /deep/.el-dialog {
+  margin-top: 86px !important;
+  margin-bottom: 0 !important;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__header,
+.setmeal_dialog /deep/.page_dialog .el-dialog__body,
+.setmeal_dialog /deep/.page_dialog .el-dialog__footer {
+  padding: 10px;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .content_top {
+  height: 35px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+  display: flex;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .content_top .search_box {
+  display: flex;
+  width: 250px;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .content_top .search_box .el-input {
+  margin-right: 8px;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .content_top .total_box {
+  align-items: center;
+  display: flex;
+  margin-right: 170px;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .content_top .total_box .total {
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #8d8d8d;
+  margin-right: 20px;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .content_top .total_box .total .title {
+  padding: 5px 10px;
+  background-color: #caf982;
+  border-right: 1px solid #8d8d8d;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .content_top .total_box .total .bgtwo {
+  background-color: #81d3f8;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .content_top .total_box .total .value {
+  padding: 5px 20px;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .content_top .btn_template {
+  display: flex;
+  align-items: center;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .table_box {
+  margin-top: 20px;
+  width: 100%;
+  height: 590px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .table_box .setmeal_table {
+  width: 24%;
+  margin: 0 8px 0 0;
+  height: 100%;
+}
+
+.setmeal_dialog /deep/.page_dialog .el-dialog__body .content .table_box .combination_table {
+  width: 24%;
+  margin: 0 8px;
+  height: 100%;
+}
+
+.setmeal_dialog /deep/.temp_dialog {
+  z-index: 2200 !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.setmeal_dialog /deep/.temp_dialog .el-dialog__header,
+.setmeal_dialog /deep/.temp_dialog .el-dialog__body,
+.setmeal_dialog /deep/.temp_dialog .el-dialog__footer {
+  padding: 10px;
+}
+
+.setmeal_dialog /deep/.temp_dialog .el-dialog__body .add_temp {
+  margin-top: 20px;
+}
+
+.setmeal_dialog /deep/.temp_dialog .el-dialog__body .add_temp .head {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.setmeal_dialog /deep/.temp_dialog .el-dialog__body .add_temp .input_box {
+  display: flex;
+  align-items: center;
+}
+
+.setmeal_dialog /deep/.temp_dialog .el-dialog__body .add_temp .input_box .el-input {
+  width: 250px;
+}
+
+.setmeal_dialog /deep/.temp_dialog .el-dialog__body .update_temp .head {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.setmeal_dialog /deep/.temp_dialog .el-dialog__body .update_temp .template_table {
+  height: 250px;
+}
+
+.setmeal_dialog /deep/.vxe-table .vxe-header--row .col--checkbox .vxe-cell--checkbox {
+  display: none;
+}
+
+.setmeal_dialog /deep/.vxe-table .vxe-body--column.col--ellipsis {
+  height: 30px;
+}
+
+.setmeal_dialog /deep/.vxe-table .vxe-body--column:not(.col--ellipsis),
+.setmeal_dialog /deep/.vxe-table .vxe-footer--column:not(.col--ellipsis),
+.setmeal_dialog /deep/.vxe-table .vxe-header--column:not(.col--ellipsis) {
+  padding: 5px 0;
+  height: 30px;
+}
+
+.setmeal_dialog /deep/.vxe-table--tooltip-wrapper {
+  z-index: 999999 !important;
+}

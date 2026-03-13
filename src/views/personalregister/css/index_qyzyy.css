@@ -1,0 +1,854 @@
+@charset "UTF-8";
+.personal_register {
+  height: 100vh;
+}
+
+.personal_register .filter-container {
+  height: 45px;
+  background-color: #cfdeeb;
+  margin: 5px 10px 0 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.personal_register .filter-container > div {
+  margin: 0 4px;
+}
+
+.personal_register .filter-container .filter-container-in {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 43px;
+}
+
+.personal_register .filter-container .filter-container-in .filter-items {
+  width: 100%;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.personal_register .headss {
+  min-width: 100px;
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  align-items: center;
+}
+
+.personal_register .headss .heads-in {
+  width: 5px;
+  height: 18px;
+  background-color: #2a85ea;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+
+.personal_register .app-container {
+  height: calc(100vh - 130px);
+}
+
+.personal_register .app-container .bg_white {
+  height: 100%;
+}
+
+.personal_register .app-container .bg_white /deep/.el-col {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal_register .app-container .bg_white /deep/.el-col .content_left {
+  height: 100%;
+}
+
+.personal_register .app-container .bg_white /deep/.el-col .height_h .basicInfo {
+  height: 100% !important;
+  overflow: hidden;
+}
+
+.personal_register .app-container .bg_white /deep/.el-col .group_body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 365px);
+}
+
+.personal_register .app-container .bg_white /deep/.el-form-item {
+  margin-bottom: 3px;
+}
+
+.personal_register .app-container .bg_white .content_left {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .message {
+  background: #cfdeeb;
+  margin: -10px;
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .message /deep/.el-input {
+  width: 300px;
+  margin: 0 15px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .message .card_operation {
+  display: flex;
+  margin-left: 105px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .message .card_operation /deep/.el-input {
+  width: 200px;
+  margin: 0 15px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .message .card_operations {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .message .card_operations .read_card {
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  margin-left: 10px;
+  outline: none;
+  background-color: #fff;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .message .card_operations .read_card:focus {
+  border: 1px solid #0076c8;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .message .card_operations /deep/.el-select {
+  min-width: 90px;
+  margin-right: 10px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .message .card_operations /deep/.el-select .el-input {
+  width: 100%;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .message .card_operations .el-input {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .questionnairebox {
+  height: calc(100vh - 191px);
+  padding: 15px 0;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .medicalhistory {
+  height: calc(100vh - 191px);
+  overflow-y: auto;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info {
+  margin-top: 16px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .head {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body {
+  display: flex;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .form_box {
+  margin-right: 10px;
+  flex: 1;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .form_box .age /deep/.el-form-item__content {
+  display: flex;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .form_box .age .age_num /deep/.el-input__inner {
+  padding-right: 0;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .form_box .read_card {
+  width: 100%;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  outline: none;
+  background-color: #fff;
+  padding: 0 15px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .form_box .read_card:focus {
+  border: 1px solid #0076c8;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .photo_box {
+  width: 104px;
+  height: 124px;
+  overflow: hidden;
+  position: relative;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .photo_box img {
+  width: 100%;
+  height: 100%;
+  background-size: 50% 50%;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .photo_box .del_btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  cursor: pointer;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .photo_box .avatar {
+  width: 104px;
+  height: 124px;
+  cursor: pointer;
+  border: 1px solid #ebeef5;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .photo_box .text {
+  font-weight: 600;
+  text-align: center;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .photo_box .photo_box_dialog /deep/.el-dialog__body {
+  padding: 0 10px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .photo_box .photo_box_dialog /deep/.el-dialog__body .canvasCamera {
+  margin-left: 10px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .photo_box .photo_box_dialog /deep/.el-dialog__footer {
+  padding: 10px;
+  text-align: center;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .photo_box .detailed_dialog /deep/.el-dialog__body {
+  overflow: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .personal_info .info_body .photo_box .detailed_dialog /deep/.el-dialog__body .btn_camera .el-button {
+  width: 150px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .other_info {
+  margin-top: 16px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .other_info .other_info_form /deep/.el-form-item .el-select {
+  width: 100%;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .other_info .head {
+  width: 100%;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #cfdeeb;
+  padding-left: 12px;
+  border-radius: 6px;
+  margin-bottom: 7px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .other_info .head .title .title {
+  display: flex;
+  align-items: center;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .other_info .head .title .title .logo .logo {
+  width: 7px;
+  height: 20px;
+  background-color: #5c7ceb;
+  border-radius: 3.5px;
+  margin-right: 5px;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .other_info .age /deep/.el-form-item__label {
+  width: 90px !important;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .other_info .age /deep/.el-form-item__content {
+  display: flex;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .other_info .age .age_num /deep/.el-input__inner {
+  padding-right: 0;
+}
+
+.personal_register .app-container .bg_white .content_left .basicInfo .other_info .other_info_check {
+  height: 32px !important;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.personal_register .app-container .bg_white .content_left .team_inspect {
+  display: flex;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+  background-color: #cfdeeb;
+  padding-left: 12px;
+}
+
+.personal_register .app-container .bg_white .content_left .team_inspect > div {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.personal_register .app-container .bg_white .content_left .team_inspect .message-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.personal_register .app-container .bg_white .content_left .team_inspect .message-title .headss .heads-in {
+  width: 5px;
+  height: 18px;
+  background-color: #2a85ea;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+
+.personal_register .app-container .bg_white .content_left .team_inspect .message-title .message_content {
+  margin-top: 5px;
+}
+
+.personal_register .app-container .bg_white .content_left .team_inspect .tuanjian /deep/.el-select {
+  width: 100%;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-bottom: 2px;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .head {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .select_box {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .select_box .select_text {
+  text-align: right;
+  vertical-align: middle;
+  float: left;
+  font-size: 14px;
+  color: #606266;
+  line-height: 40px;
+  padding: 0 12px 0 0;
+  box-sizing: border-box;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group .state_item {
+  display: flex;
+  margin-right: 20px;
+  border-radius: 5px;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group .state_item div {
+  padding: 5px 0px 5px 10px;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group .state_item .title1 {
+  color: #f56c6c;
+  font-size: 14px;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group .state_item .state1 {
+  color: #f56c6c;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group .state_item .title2 {
+  color: #67c23a;
+  font-size: 14px;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group .state_item .state2 {
+  color: #67c23a;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group .state_item .title3 {
+  color: #409eff;
+  font-size: 14px;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group .state_item .state3 {
+  color: #409eff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group .state_item .title4 {
+  color: #fc5531;
+  font-size: 14px;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state_group .state_item .state4 {
+  color: #fc5531;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .state-add {
+  padding-right: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .table-box {
+  max-width: 100%;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .auxiliary {
+  height: 28px;
+  padding: 0 20px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .checkup_body .discount {
+  margin-left: 20px;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .group_table {
+  height: calc(100% - 40px);
+  padding: 0 10px;
+  /*滚动条样式*/
+  /*定义滚动条轨道 内阴影+圆角*/
+  /*定义滑块 内阴影+圆角*/
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .group_table /deep/.el-table__row {
+  height: 26px !important;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .group_table /deep/.el-table__body .cell .discount_input {
+  width: 100%;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  outline: none;
+  background-color: #fff;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .group_table /deep/.el-table__body .cell .discount_input:focus {
+  border: 1px solid #0076c8;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .group_table /deep/.el-table__body td {
+  padding: 0 !important;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .group_table /deep/.el-table__body-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #f0f0f0;
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .group_table /deep/.el-table__body-wrapper::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px rgba(240, 240, 240, 0.5);
+  border-radius: 10px;
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+.personal_register .app-container .bg_white .content_left .checkup_project .group_table /deep/.el-table__body-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 0px gray;
+  background-color: gray;
+}
+
+.personal_register .app-container .bg_white .content_right {
+  height: 100%;
+  padding: 0 0 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal_register .app-container .bg_white .content_right .card_operation-id {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.personal_register .app-container .bg_white .content_right .card_operation-id .card_operations {
+  width: 100%;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding: 10px;
+}
+
+.personal_register .app-container .bg_white .content_right .content_table {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal_register .app-container .bg_white .content_right .message-title {
+  margin: 10px;
+  padding: 2px 10px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #cfdeeb;
+  min-height: 105px;
+}
+
+.personal_register .app-container .bg_white .content_right .message-title .condition {
+  margin-top: 5px;
+}
+
+.personal_register .app-container .bg_white .content_right .message-title .condition .checkup_code {
+  margin-bottom: 5px;
+}
+
+.personal_register .app-container .bg_white .content_right .checkup_code {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 8px;
+}
+
+.personal_register .app-container .bg_white .content_right .checkup_code > span {
+  margin-right: 10px;
+}
+
+.personal_register .app-container .bg_white .content_right .checkup_code /deep/.el-input {
+  width: 230px !important;
+  margin-right: 10px;
+}
+
+.personal_register .app-container .bg_white .content_right .checkup_code /deep/.el-input .el-input__inner {
+  width: 100%;
+}
+
+.personal_register .app-container .bg_white .content_right .checkup_date {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 8px;
+}
+
+.personal_register .app-container .bg_white .content_right .checkup_date /deep/.el-date-editor {
+  width: 230px;
+}
+
+.personal_register .app-container .bg_white .content_right .checkup_date /deep/.el-button {
+  margin-right: 10px;
+}
+
+.personal_register .app-container .bg_white .content_right .checkup_btn {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.personal_register .app-container .bg_white .content_right .checkup_btn .checkin {
+  margin-left: 30px !important;
+}
+
+.personal_register .app-container .bg_white .content_right .condition_table {
+  padding: 10px 10px 0 10px;
+}
+
+.personal_register .app-container .bg_white .checkup_btn-in {
+  width: 100%;
+  height: calc(100% - 135px);
+  background-color: #fff;
+  min-height: 300px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.personal_register .app-container .bg_white .checkup_btn-in .checkins {
+  border: none;
+}
+
+.personal_register .app-container .bg_white .checkup_btn-in .checkup_btn {
+  margin-left: 10px;
+  border-radius: 5px;
+  margin-bottom: 0px;
+}
+
+.personal_register .app-container .bg_white .checkup_btn-in .checkup_btn /deep/.el-button {
+  margin: 0;
+  border-radius: 3px;
+}
+
+.personal_register .app-container .bg_white .checkup_btn-in .condition_table {
+  height: calc(100vh - 320px);
+}
+
+.personal_register .app-container .bg_white .checkup_btn-in .condition_table .condition_table_es {
+  height: calc(100% - 32px);
+  /*滚动条样式*/
+  /*定义滚动条轨道 内阴影+圆角*/
+  /*定义滑块 内阴影+圆角*/
+}
+
+.personal_register .app-container .bg_white .checkup_btn-in .condition_table .condition_table_es /deep/.el-table__body-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #f0f0f0;
+}
+
+.personal_register .app-container .bg_white .checkup_btn-in .condition_table .condition_table_es /deep/.el-table__body-wrapper::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px rgba(240, 240, 240, 0.5);
+  border-radius: 10px;
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+.personal_register .app-container .bg_white .checkup_btn-in .condition_table .condition_table_es /deep/.el-table__body-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 0px gray;
+  background-color: gray;
+}
+
+.personal_register .app-container .bg_white .checkup_btn-in .condition_table /deep/.el-pagination {
+  margin-top: 2px;
+}
+
+.personal_register .charge_details .table_box {
+  margin-top: 10px;
+  display: flex;
+  height: 350px;
+}
+
+.personal_register .charge_details .table_box .table_item {
+  width: 65%;
+}
+
+.personal_register .charge_details .table_box .charge_form {
+  width: 34%;
+  min-width: 265px;
+  height: 100%;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal_register .charge_details .table_box .charge_form .form_body {
+  background-color: #ebeef5;
+  height: calc(100% - 36px);
+  display: flex;
+  flex-direction: column;
+}
+
+.personal_register .charge_details .table_box .charge_form .form_body .form_body_item {
+  flex: 1;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.personal_register .charge_details .table_box .charge_form .form_body .form_body_item .title {
+  color: #000;
+  white-space: nowrap;
+}
+
+.personal_register .charge_details .table_box .charge_form .form_body .form_body_item .blue {
+  color: #0000bf;
+}
+
+.personal_register .charge_details .table_box .charge_form .form_body .form_body_item .red {
+  color: red;
+}
+
+.personal_register .charge_details .table_box .charge_form .form_btn {
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.personal_register .charge_details .table_box .charge_form .form_btn /deep/.el-button {
+  margin-right: 8px;
+}
+
+.personal_register .charge_details .table_box .table_item:first-child {
+  margin-right: 15px;
+}
+
+.personal_register .history_table .history_table_box .history_table_item:first-child {
+  margin-right: 12px;
+}
+
+.personal_register .history_table .history_table_box {
+  height: 500px;
+  display: flex;
+}
+
+.personal_register .history_table .history_table_box .history_table_item {
+  width: 49%;
+}
+
+.personal_register .history_table /deep/.el-dialog__footer {
+  text-align: center;
+}
+
+.personal_register .intellect .table_box {
+  height: 500px;
+}
+
+.personal_register .intellect .table_box .table_item {
+  height: 100%;
+}
+
+.personal_register .intellect /deep/.el-dialog__footer {
+  text-align: center;
+}
+
+.personal_register .discount_dialog .discount_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal_register .discount_dialog .discount_box /deep/.el-input {
+  width: 150px;
+}
+
+.personal_register .discount_dialog .discount_box > div {
+  margin-left: 5px;
+}
+
+.personal_register .discount_dialog /deep/.el-dialog__footer {
+  text-align: center;
+}
+
+.personal_register .todaycombine /deep/.el-dialog__header,
+.personal_register .todaycombine /deep/.el-dialog__body,
+.personal_register .todaycombine /deep/.el-dialog__footer {
+  padding: 10px;
+}
+
+.personal_register .todaycombine /deep/.el-dialog__footer {
+  text-align: center;
+}
+
+.personal_register .todaycombine /deep/.el-dialog__body .tc_content {
+  height: 320px;
+}
+
+.personal_register .todaycombine /deep/.el-dialog__body .tc_content > div {
+  height: 100%;
+}
+
+.personal_register .history_pson .table_item {
+  height: 400px;
+}
+
+.personal_register .fade-enter {
+  opacity: 0;
+}
+
+.personal_register .fade-leave {
+  opacity: 1;
+}
+
+.personal_register .fade-enter-active {
+  transition: opacity 0.5s;
+}
+
+.personal_register .fade-leave-active {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.el-popover .content .content_item {
+  height: 20px;
+  margin-bottom: 3px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.el-popover .content .content_item:hover {
+  color: #66b1ff;
+  background-color: #ecf5ff;
+}
+
+.el-popover .print_item {
+  margin-bottom: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.el-popover .print_item:hover {
+  background-color: #ecf5ff;
+  color: #66b1ff;
+}

@@ -1,0 +1,133 @@
+.appointment .subject {
+  background-color: #efefef;
+  padding: 10px;
+}
+
+.appointment .subject .bg_white {
+  background-color: #fff;
+  height: calc(100vh - 140px);
+}
+
+.appointment .subject .bg_white .search_box {
+  padding-right: 10px;
+  height: 100%;
+}
+
+.appointment .subject .bg_white .search_box /deep/.el-card__body {
+  height: 100%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.appointment .subject .bg_white .search_box .el-card {
+  height: 100%;
+}
+
+.appointment .subject .bg_white .search_box .condition .head,
+.appointment .subject .bg_white .search_box .calendar .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #f6f7fc;
+  margin: -10px -10px 10px -10px;
+  height: 38px;
+  padding-left: 12px;
+}
+
+.appointment .subject .bg_white .search_box .condition .head .logo,
+.appointment .subject .bg_white .search_box .calendar .head .logo {
+  width: 7px;
+  height: 20px;
+  background-color: #5c7ceb;
+  border-radius: 3.5px;
+  margin-right: 5px;
+}
+
+.appointment .subject .bg_white .search_box .condition {
+  height: 53%;
+}
+
+.appointment .subject .bg_white .search_box .condition .mt {
+  margin-top: 12px;
+}
+
+.appointment .subject .bg_white .search_box .condition .condition_form {
+  width: 80%;
+}
+
+.appointment .subject .bg_white .search_box .condition .condition_form /deep/.el-form-item {
+  margin-bottom: 12px;
+}
+
+.appointment .subject .bg_white .search_box .condition .condition_form /deep/.el-button {
+  width: 80px !important;
+}
+
+.appointment .subject .bg_white .search_box .condition .condition_form /deep/.el-select {
+  width: 100%;
+}
+
+.appointment .subject .bg_white .search_box .condition .condition_form .checkno {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.appointment .subject .bg_white .search_box .condition .condition_form .checkno .el-input {
+  margin-left: 10px;
+}
+
+.appointment .subject .bg_white .search_box .condition .condition_form .persontype,
+.appointment .subject .bg_white .search_box .condition .condition_form .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.appointment .subject .bg_white .search_box .condition .condition_form .date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.appointment .subject .bg_white .search_box .condition .condition_form .date /deep/.el-button {
+  margin-right: 10px;
+}
+
+.appointment .subject .bg_white .search_box .condition .condition_form .btn_submit {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.appointment .subject .bg_white .search_box .calendar {
+  height: 47%;
+}
+
+.appointment .subject .bg_white .data_box {
+  padding: 10px;
+  height: 100%;
+}
+
+.appointment .subject .bg_white .data_box .table_appointment {
+  height: calc(100% - 45px);
+}
+
+.appointment .subject .bg_white .data_box /deep/.el-pagination {
+  text-align: center;
+  margin-top: 5px;
+}
+/*# sourceMappingURL=index.css.map */

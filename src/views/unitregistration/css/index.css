@@ -1,0 +1,266 @@
+@charset "UTF-8";
+.unitregistration .filter-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 5px;
+}
+
+.unitregistration .filter-container .select_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-size: 14px;
+}
+
+.unitregistration .filter-container .select_group /deep/.el-select {
+  margin-right: 15px;
+}
+
+.unitregistration .filter-container .button_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.unitregistration .filter-container .button_group .filter-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.unitregistration .filter-container .button_group .btn_group {
+  margin-left: 10px;
+}
+
+.unitregistration .app-container .bg-white {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: transparent;
+  height: calc(100vh - 136px);
+}
+
+.unitregistration .app-container .bg-white .el-card /deep/.el-card__body {
+  padding: 10px;
+}
+
+.unitregistration .app-container .bg-white .group_info {
+  height: 40%;
+}
+
+.unitregistration .app-container .bg-white .group_info .head {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.unitregistration .app-container .bg-white .group_info /deep/.el-card__body {
+  height: calc(100% - 33px);
+}
+
+.unitregistration .app-container .bg-white .group_table {
+  height: 100%;
+}
+
+.unitregistration .app-container .bg-white .import_detailed {
+  margin-top: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.unitregistration .app-container .bg-white .import_detailed /deep/.el-card__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 33px);
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import,
+.unitregistration .app-container .bg-white .import_detailed .detailed {
+  width: 47.5%;
+  height: 100% !important;
+  /*修改表头背景色*/
+  /*调整表格行高*/
+  /*vxe-table 自定义行高 */
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import .head_box,
+.unitregistration .app-container .bg-white .import_detailed .detailed .head_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import .head_box .head,
+.unitregistration .app-container .bg-white .import_detailed .detailed .head_box .head {
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding-right: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import .head_box .head .text,
+.unitregistration .app-container .bg-white .import_detailed .detailed .head_box .head .text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import .head_box .head .message,
+.unitregistration .app-container .bg-white .import_detailed .detailed .head_box .head .message {
+  margin-left: 10px;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import .bottom_table,
+.unitregistration .app-container .bg-white .import_detailed .detailed .bottom_table {
+  height: 100%;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import /deep/.vxe-table--header-wrapper,
+.unitregistration .app-container .bg-white .import_detailed .import .vxe-header--row,
+.unitregistration .app-container .bg-white .import_detailed .import .vxe-table--header,
+.unitregistration .app-container .bg-white .import_detailed .detailed /deep/.vxe-table--header-wrapper,
+.unitregistration .app-container .bg-white .import_detailed .detailed .vxe-header--row,
+.unitregistration .app-container .bg-white .import_detailed .detailed .vxe-table--header {
+  background-color: #d0ddeb;
+  padding: 0px 0;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import /deep/.vxe-table .vxe-body--column:not(.col--ellipsis),
+.unitregistration .app-container .bg-white .import_detailed .import .vxe-table .vxe-footer--column:not(.col--ellipsis),
+.unitregistration .app-container .bg-white .import_detailed .import .vxe-table .vxe-header--column:not(.col--ellipsis),
+.unitregistration .app-container .bg-white .import_detailed .detailed /deep/.vxe-table .vxe-body--column:not(.col--ellipsis),
+.unitregistration .app-container .bg-white .import_detailed .detailed .vxe-table .vxe-footer--column:not(.col--ellipsis),
+.unitregistration .app-container .bg-white .import_detailed .detailed .vxe-table .vxe-header--column:not(.col--ellipsis) {
+  padding: 0px 0;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import /deep/.vxe-table .vxe-body--column.col--ellipsis,
+.unitregistration .app-container .bg-white .import_detailed .detailed /deep/.vxe-table .vxe-body--column.col--ellipsis {
+  height: 30px;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import /deep/.vxe-table .vxe-body--column:not(.col--ellipsis),
+.unitregistration .app-container .bg-white .import_detailed .import .vxe-table .vxe-footer--column:not(.col--ellipsis),
+.unitregistration .app-container .bg-white .import_detailed .import .vxe-table .vxe-header--column:not(.col--ellipsis),
+.unitregistration .app-container .bg-white .import_detailed .detailed /deep/.vxe-table .vxe-body--column:not(.col--ellipsis),
+.unitregistration .app-container .bg-white .import_detailed .detailed .vxe-table .vxe-footer--column:not(.col--ellipsis),
+.unitregistration .app-container .bg-white .import_detailed .detailed .vxe-table .vxe-header--column:not(.col--ellipsis) {
+  padding: 5px 0;
+  height: 30px;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .import .reset_btn,
+.unitregistration .app-container .bg-white .import_detailed .detailed .reset_btn {
+  margin: 0 8px;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .shuttle_btn {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 20px;
+  padding-top: 50px;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .shuttle_btn /deep/.el-button + .el-button {
+  margin-left: 0;
+}
+
+.unitregistration .app-container .bg-white .import_detailed .shuttle_btn /deep/.el-button {
+  margin-top: 15px;
+}
+
+.unitregistration .detailed_dialog .head_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 8px;
+}
+
+.unitregistration .detailed_dialog .head_box .title {
+  font-size: 18px;
+  color: #000;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.head .head {
+  width: 100%;
+  height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #f6f7fc;
+  padding-left: 12px;
+}
+
+.head .head .title .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.head .head .title .title .logo .logo {
+  width: 7px;
+  height: 20px;
+  background-color: #5c7ceb;
+  border-radius: 3.5px;
+  margin-right: 5px;
+}
+/*# sourceMappingURL=index.css.map */

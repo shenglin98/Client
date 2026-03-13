@@ -1,0 +1,260 @@
+.btnBox {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5vw;
+    background-color: white;
+    width: 100% !important;
+    margin-bottom: 10px;
+    padding: 10px;
+
+    .btnFlagClas {
+        background-color: #0076C8 !important;
+        color: white !important;
+    }
+}
+
+.appointmentView {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+
+    .itemBox {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .fontSize {
+        font-size: 17px;
+    }
+
+    .btnFlagClas {
+        background-color: #0076C8 !important;
+        color: white !important;
+    }
+
+    .bodymain {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 6px;
+        box-sizing: border-box;
+        padding: 10px;
+
+        .searchBox {
+            width: 20%;
+            display: flex;
+            line-height: 31px;
+            margin: 10px 0 -20px 0;
+
+            .span {
+                display: inline-block;
+                white-space: nowrap;
+            }
+
+            .input {
+                width: 100%;
+                height: 30px;
+
+            }
+        }
+
+        /*  // 日历列表渲染 */
+        .calendar_box {
+            min-height: 635px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+
+            .dialogClas {
+                .el-dialog {
+                    width: 77% !important;
+                    height: 70% !important;
+
+
+                }
+
+                .notice_shutDown {
+                    width: 15%;
+                    position: absolute;
+                    right: 0;
+                    top: 50px;
+                }
+
+                .handoff {
+                    display: flex;
+                    justify-content: space-between;
+                    height: 30px;
+
+                    .retrievalBox {
+                        display: flex;
+                        line-height: 30px;
+                        width: 24%;
+                    }
+                }
+
+            }
+
+
+            .leftTable {
+                width: 77%;
+                height: 550px;
+                overflow: auto;
+                padding-top: 20px;
+            }
+
+            .head {
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .weeks_box {
+                display: flex;
+                padding: 20px 0;
+
+                >div {
+                    flex: 1;
+                    height: 40px;
+                    background-color: #409eff;
+                    box-shadow: 0 2px 2px rgba(10, 16, 20, .24), 0 0 2px rgba(10, 16, 20, .12);
+                    padding: 5px 0;
+                    margin-right: 10px;
+                    text-align: center;
+                    color: #fff;
+                    border-radius: 20px;
+                    line-height: 35px;
+                }
+
+                .mon {
+                    margin-left: 10px;
+                }
+            }
+
+            /*  // 日历内容列表 */
+            .calendar_list {
+                max-width: 100%;
+                overflow: auto;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0 0px 0 12px;
+                height: 73%;
+
+                .empty_box {
+                    display: flex;
+                }
+
+                .empty {
+                    border: 0 none !important;
+                }
+
+                .calendar_item {
+                    width: 13%;
+                    margin: 10px 0.93% 10px 0.35%;
+
+                    .item_head {
+                        width: 99%;
+                        background-color: #63afe1;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-top-left-radius: 10px;
+                        /* 左上角 */
+                        border-top-right-radius: 10px;
+                        /* 右上角 */
+                        color: #fff;
+                        margin: 0;
+                    }
+
+                    .item_content {
+                        width: 99%;
+                        background-color: #fff;
+
+                        .type,
+                        .individual,
+                        .team {
+                            width: 100%;
+                            font-size: 14px;
+                            margin: 0 auto;
+                            text-align: center;
+
+                            .span {
+                                width: 33%;
+                                display: inline-block;
+                                background-color: #02A7F0;
+                                border: 1px solid #000;
+                                padding: 5px 5px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                margin-bottom: -6px;
+                            }
+                        }
+
+
+                        .content_item {
+                            width: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 1px solid #a6caae;
+                            font-size: 14px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                        }
+
+                        .content_code {
+                            width: 50%;
+                            overflow: hidden;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 1px solid #a6caae;
+                            color: #78b1f3;
+                            white-space: nowrap;
+                        }
+                    }
+
+                    .item_content_select {
+                        border: 2px solid #409eff;
+                        background-color: #e6f1fa;
+                    }
+                }
+            }
+
+            /*  // 手动高度 */
+            .calendar_m {
+                height: calc(100% - 132px);
+            }
+
+            /*   // 滚动条美化 */
+            .calendar_list::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            .calendar_list::-webkit-scrollbar-track {
+                background-color: transparent;
+                -webkit-border-radius: 2em;
+                -moz-border-radius: 2em;
+                border-radius: 2em;
+            }
+
+            .calendar_list::-webkit-scrollbar-thumb {
+                background-color: #dddee0;
+                -webkit-border-radius: 2em;
+                -moz-border-radius: 2em;
+                border-radius: 2em;
+            }
+        }
+    }
+
+}
+
+.table_appointment {
+    height: 90% !important;
+}
+
+.el-dialog__body {
+    height: 100% !important;
+}
