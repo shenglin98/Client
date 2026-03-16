@@ -521,20 +521,29 @@
                         </div>
                         <div class="box-content">
                           <div class="opinion-tags">
-                            <el-tag
+                            <el-tooltip
                               v-for="(tag, index) in medicalConclusion.opinions"
                               :key="index"
-                              closable
-                              @close="handleRemoveOpinion(index)"
-                              type="primary"
-                              size="small"
+                              :content="tag"
+                              placement="top"
+                              effect="dark"
                             >
-                              <el-input
-                                v-model="medicalConclusion.opinions[index]"
-                                size="mini"
-                                class="tag-input"
-                              ></el-input>
-                            </el-tag>
+                              <el-tag
+                                closable
+                                @close="handleRemoveOpinion(index)"
+                                type="primary"
+                                size="small"
+                              >
+                                <el-input
+                                  v-model="medicalConclusion.opinions[index]"
+                                  size="mini"
+                                  class="tag-input"
+                                ></el-input>
+                              </el-tag>
+                            </el-tooltip>
+                            <span v-if="medicalConclusion.opinions.length === 0" class="opinion-empty-tip">
+                              请从上方"意见追加选择"下拉框中选择处理意见
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -543,12 +552,15 @@
                     <div class="right-section">
                       <div class="section-title">
                         <span>职业体检危害因素</span>
-                        <el-tooltip content="上岗前如果有疑似职业病，用人单位必须填写，而且与当前体检单位不一致" placement="top" effect="light">
+                        <!-- <el-tooltip content="上岗前如果有疑似职业病，用人单位必须填写，而且与当前体检单位不一致" placement="top" effect="light">
                           <span class="sub-title">上岗前如果有疑似职业病，用人单位必须填写，而且与当前体检单位不一致</span>
-                        </el-tooltip>
+                        </el-tooltip> -->
                       </div>
                       <!-- 危害因素列表 -->
                       <div class="hazard-list">
+                        <div v-if="hazardFactorData.length === 0" class="hazard-empty-tip">
+                          暂无危害因素数据
+                        </div>
                         <div
                           v-for="(item, index) in hazardFactorData"
                           :key="index"
@@ -585,29 +597,67 @@
                           <!-- 动态表单区域 -->
                           <div class="dynamic-form" v-if="item.conclusionType">
                             <!-- 疑似职业 -->
-                            <div class="form-row" v-if="showSuspectedOccupation(item.conclusionType)">
-                              <span class="label">疑似职业</span>
-                              <el-select v-model="item.suspectedOccupation" placeholder="请选择" size="small">
-                                <el-option
-                                  v-for="opt in suspectedOccupationOptions"
-                                  :key="opt.value"
-                                  :label="opt.label"
-                                  :value="opt.value"
-                                ></el-option>
-                              </el-select>
-                              <span class="label">用人单位</span>
-                              <el-input v-model="item.employer" placeholder="上岗前必填写" size="small"></el-input>
+                            <div class="form-row suspected-occupation-row" v-if="showSuspectedOccupation(item.conclusionType)">
+                              <div class="suspected-occupation-left">
+                                <span class="label">疑似职业</span>
+                                <el-select
+                                  v-model="item.suspectedOccupation"
+                                  placeholder="请选择"
+                                  size="small"
+                                  clearable
+                                  filterable
+                                  :filter-method="(query) => handleSearchSuspectedOccupation(query, item)"
+                                  @visible-change="(visible) => handleSuspectedOccupationVisibleChange(visible, item)"
+                                  @clear="() => handleClearSuspectedOccupation(item)"
+                                  ref="suspectedOccupationSelect"
+                                >
+                                  <el-option
+                                    v-for="opt in getSuspectedOccupationDisplayOptions(item)"
+                                    :key="opt.value"
+                                    :label="opt.label"
+                                    :value="opt.value"
+                                  ></el-option>
+                                  <div 
+                                    v-if="showSuspectedOccupationLoadMore(item)"
+                                    style="text-align: center; padding: 10px; color: #409EFF; font-size: 12px; cursor: pointer;"
+                                    @click.stop.prevent="handleLoadMoreSuspectedOccupation(item)"
+                                  >
+                                    <i class="el-icon-arrow-down"></i> 点击加载更多 ({{getSuspectedOccupationDisplayCount(item)}}/{{suspectedOccupationOptions.length}})
+                                  </div>
+                                </el-select>
+                              </div>
+                              <div class="suspected-occupation-right">
+                                <span class="label">用人单位</span>
+                                <el-input v-model="item.employer" placeholder="上岗前必填写" size="small"></el-input>
+                              </div>
                             </div>
                             <!-- 职业禁忌证 -->
                             <div class="form-row" v-if="showContraindication(item.conclusionType)">
                               <span class="label">职业禁忌证</span>
-                              <el-select v-model="item.contraindication" placeholder="请选择" size="small">
+                              <el-select
+                                v-model="item.contraindication"
+                                placeholder="请选择"
+                                size="small"
+                                clearable
+                                filterable
+                                :filter-method="(query) => handleSearchContraindication(query, item)"
+                                @visible-change="(visible) => handleContraindicationVisibleChange(visible, item)"
+                                @clear="() => handleClearContraindication(item)"
+                                ref="contraindicationSelect"
+                              >
                                 <el-option
-                                  v-for="opt in contraindicationOptions"
+                                  v-for="opt in getContraindicationDisplayOptions(item)"
                                   :key="opt.value"
                                   :label="opt.label"
                                   :value="opt.value"
                                 ></el-option>
+                                <div 
+                                  v-if="showContraindicationLoadMore(item)"
+                                  style="text-align: center; padding: 10px; color: #409EFF; font-size: 12px; cursor: pointer;"
+                                  @click.stop.prevent="handleLoadMoreContraindication(item)"
+                                >
+                                  <i class="el-icon-arrow-down"></i> 点击加载更多 ({{getContraindicationDisplayCount(item)}}/{{contraindicationOptions.length}})
+                                </div>
                               </el-select>
                             </div>
                             <!-- 其他疾病 -->
@@ -1098,6 +1148,7 @@
   </div>
 </template>
 <script>
+import Vue from "vue";
 import Sticky from "@/components/Sticky"; // 引入按钮组
 import permissionBtn from "@/components/PermissionBtn";
 import SearchDialogzyb from "@/components/searchDialog/index_search_hzdlyy";
@@ -1149,6 +1200,11 @@ import {
   CombineImage,
   SendSMS,
   batchSave,
+  // 体检结论模块下拉框接口
+  GetHandleAdviseList,
+  GetHealthCheckConclusionList,
+  GetSuspectedOccupationList,
+  GetOccupationTabooList,
 } from "@/api/totalcheck.js"; // 引入接口文件
 import {
   getCompanyList,
@@ -1364,8 +1420,8 @@ export default {
       // ==================== 体检结论模块数据 ====================
       // 体检结论数据
       medicalConclusion: {
-        text: "未见异常",
-        opinions: ["未见异常"],
+        text: "",
+        opinions: [],
       },
       // 选中的处理意见
       selectedOpinion: "",
@@ -1378,54 +1434,8 @@ export default {
         { label: "疑似职业病", value: "疑似职业病" },
         { label: "其他", value: "其他" },
       ],
-      // 危害因素数据（假数据）
-      hazardFactorData: [
-        {
-          name: "粉尘类/矽尘",
-          isMainConclusion: false,
-          conclusionType: "",
-          suspectedOccupation: "",
-          employer: "",
-          contraindication: "",
-          otherDisease: "",
-        },
-        {
-          name: "化学物质类/氧化锌",
-          isMainConclusion: false,
-          conclusionType: "",
-          suspectedOccupation: "",
-          employer: "",
-          contraindication: "",
-          otherDisease: "",
-        },
-        {
-          name: "化学物质类/氧化锌",
-          isMainConclusion: false,
-          conclusionType: "",
-          suspectedOccupation: "",
-          employer: "",
-          contraindication: "",
-          otherDisease: "",
-        },
-        {
-          name: "化学物质类/氧化锌",
-          isMainConclusion: false,
-          conclusionType: "",
-          suspectedOccupation: "",
-          employer: "",
-          contraindication: "",
-          otherDisease: "",
-        },
-        {
-          name: "化学物质类/氧化锌",
-          isMainConclusion: false,
-          conclusionType: "",
-          suspectedOccupation: "",
-          employer: "",
-          contraindication: "",
-          otherDisease: "",
-        },
-      ],
+      // 危害因素数据
+      hazardFactorData: [],
       // 危害因素结论类型选项
       conclusionTypeOptions: [
         { label: "疑似职业病", value: "suspected" },
@@ -2407,6 +2417,8 @@ export default {
       this.loginUserInfo = response.result;
     });
     localStorage.removeItem("revokeData");
+    // 加载体检结论模块下拉框数据
+    this.loadMedicalConclusionOptions();
   },
   beforeDestroy() {
     localStorage.removeItem("revokeData");
@@ -2439,16 +2451,17 @@ export default {
       if (item.isMainConclusion) {
         this.medicalConclusion.text = `${item.name}：${this.getConclusionText(item)}`;
       } else {
-        this.medicalConclusion.text = "未见异常";
+        this.medicalConclusion.text = "";
       }
     },
     // 获取结论文本
     getConclusionText(item) {
       const typeMap = {
-        suspected: "疑似职业病",
-        contraindication: "职业禁忌证",
-        other: "其他疾病",
-        normal: "未见异常",
+        "12001": "目前未见异常",
+        "12002": "复查",
+        "12003": "疑似职业病",
+        "12004": "职业禁忌证",
+        "12005": "其他疾病或异常",
       };
       return typeMap[item.conclusionType] || "";
     },
@@ -2459,17 +2472,217 @@ export default {
         this.medicalConclusion.text = `${item.name}：${this.getConclusionText(item)}`;
       }
     },
-    // 是否显示疑似职业
+    // 是否显示疑似职业 (code: 12003)
     showSuspectedOccupation(type) {
-      return type === "suspected";
+      return type === "12003";
     },
-    // 是否显示职业禁忌证
+    // 是否显示职业禁忌证 (code: 12004)
     showContraindication(type) {
-      return type === "contraindication";
+      return type === "12004";
     },
-    // 是否显示其他疾病
+    // 是否显示其他疾病 (code: 12005)
     showOtherDisease(type) {
-      return type === "other";
+      return type === "12005";
+    },
+    // 加载体检结论模块下拉框数据
+    loadMedicalConclusionOptions() {
+      // 1. 加载处理意见列表
+      GetHandleAdviseList()
+        .then((res) => {
+          console.log("加载处理意见列表成功:", res);
+          if (res.result && Array.isArray(res.result)) {
+            // 处理意见接口返回的是字符串数组
+            this.opinionOptions = res.result.map((item) => ({
+              label: item,
+              value: item,
+            }));
+          }
+        })
+        .catch((err) => {
+          console.error("加载处理意见列表失败:", err);
+        });
+
+      // 2. 加载危害因素结论列表
+      GetHealthCheckConclusionList()
+        .then((res) => {
+          console.log("加载危害因素结论列表成功:", res);
+          if (res.result && Array.isArray(res.result)) {
+            // 判断返回的是字符串数组还是对象数组
+            this.conclusionTypeOptions = res.result.map((item) => {
+              if (typeof item === 'string') {
+                return { label: item, value: item };
+              }
+              return { label: item.name, value: item.code || item.name };
+            });
+          }
+        })
+        .catch((err) => {
+          console.error("加载危害因素结论列表失败:", err);
+        });
+
+      // 3. 加载疑似职业病列表
+      GetSuspectedOccupationList()
+        .then((res) => {
+          console.log("加载疑似职业病列表成功:", res);
+          if (res.result && Array.isArray(res.result)) {
+            // 判断返回的是字符串数组还是对象数组
+            this.suspectedOccupationOptions = res.result.map((item) => {
+              if (typeof item === 'string') {
+                return { label: item, value: item };
+              }
+              return { label: item.name, value: item.code || item.name };
+            });
+          }
+        })
+        .catch((err) => {
+          console.error("加载疑似职业病列表失败:", err);
+        });
+
+      // 4. 加载职业禁忌列表
+      GetOccupationTabooList()
+        .then((res) => {
+          console.log("加载职业禁忌列表成功:", res);
+          if (res.result && Array.isArray(res.result)) {
+            // 判断返回的是字符串数组还是对象数组
+            this.contraindicationOptions = res.result.map((item) => {
+              if (typeof item === 'string') {
+                return { label: item, value: item };
+              }
+              return { label: item.name, value: item.code || item.name };
+            });
+          }
+        })
+        .catch((err) => {
+          console.error("加载职业禁忌列表失败:", err);
+        });
+    },
+    // 疑似职业病下拉框显示/隐藏
+    handleSuspectedOccupationVisibleChange(visible, item) {
+      if (visible) {
+        // 下拉框展开时，初始化显示数量
+        if (!item.suspectedOccupationDisplayCount) {
+          Vue.set(item, 'suspectedOccupationDisplayCount', 100);
+        }
+        // 清空搜索过滤
+        Vue.set(item, 'suspectedOccupationOptions', null);
+      }
+    },
+    // 清空疑似职业病选择
+    handleClearSuspectedOccupation(item) {
+      item.suspectedOccupation = "";
+      Vue.set(item, 'suspectedOccupationOptions', null);
+      Vue.set(item, 'suspectedOccupationDisplayCount', 100);
+    },
+    // 搜索疑似职业病
+    handleSearchSuspectedOccupation(query, item) {
+      // 如果有搜索关键字，过滤数据
+      if (query) {
+        const filtered = this.suspectedOccupationOptions.filter(
+          (opt) => opt.label.toLowerCase().includes(query.toLowerCase())
+        );
+        Vue.set(item, 'suspectedOccupationOptions', filtered);
+        Vue.set(item, 'suspectedOccupationDisplayCount', filtered.length);
+      } else {
+        // 无搜索关键字，恢复默认
+        Vue.set(item, 'suspectedOccupationOptions', null);
+        Vue.set(item, 'suspectedOccupationDisplayCount', 100);
+      }
+    },
+    // 获取疑似职业病显示数量
+    getSuspectedOccupationDisplayCount(item) {
+      return item.suspectedOccupationDisplayCount || 100;
+    },
+    // 获取疑似职业病显示选项
+    getSuspectedOccupationDisplayOptions(item) {
+      const displayCount = this.getSuspectedOccupationDisplayCount(item);
+      if (item.suspectedOccupationOptions) {
+        return item.suspectedOccupationOptions.slice(0, displayCount);
+      }
+      return this.suspectedOccupationOptions.slice(0, displayCount);
+    },
+    // 是否显示疑似职业病加载更多
+    showSuspectedOccupationLoadMore(item) {
+      const displayCount = this.getSuspectedOccupationDisplayCount(item);
+      const totalCount = this.suspectedOccupationOptions.length;
+      // 如果有搜索过滤，使用过滤后的数据长度
+      if (item.suspectedOccupationOptions) {
+        return item.suspectedOccupationOptions.length > displayCount;
+      }
+      return totalCount > displayCount;
+    },
+    // 加载更多疑似职业病
+    handleLoadMoreSuspectedOccupation(item) {
+      console.log("加载更多疑似职业病", item);
+      const currentCount = this.getSuspectedOccupationDisplayCount(item);
+      const totalCount = this.suspectedOccupationOptions.length;
+      const newCount = Math.min(currentCount + 100, totalCount);
+      // 使用 Vue.set 确保响应式更新
+      Vue.set(item, 'suspectedOccupationDisplayCount', newCount);
+      console.log("更新显示数量:", currentCount, "->", newCount);
+    },
+    // 职业禁忌证下拉框显示/隐藏
+    handleContraindicationVisibleChange(visible, item) {
+      if (visible) {
+        // 下拉框展开时，初始化显示数量
+        if (!item.contraindicationDisplayCount) {
+          Vue.set(item, 'contraindicationDisplayCount', 100);
+        }
+        // 清空搜索过滤
+        Vue.set(item, 'contraindicationOptions', null);
+      }
+    },
+    // 清空职业禁忌证选择
+    handleClearContraindication(item) {
+      item.contraindication = "";
+      Vue.set(item, 'contraindicationOptions', null);
+      Vue.set(item, 'contraindicationDisplayCount', 100);
+    },
+    // 搜索职业禁忌证
+    handleSearchContraindication(query, item) {
+      // 如果有搜索关键字，过滤数据
+      if (query) {
+        const filtered = this.contraindicationOptions.filter(
+          (opt) => opt.label.toLowerCase().includes(query.toLowerCase())
+        );
+        Vue.set(item, 'contraindicationOptions', filtered);
+        Vue.set(item, 'contraindicationDisplayCount', filtered.length);
+      } else {
+        // 无搜索关键字，恢复默认
+        Vue.set(item, 'contraindicationOptions', null);
+        Vue.set(item, 'contraindicationDisplayCount', 100);
+      }
+    },
+    // 获取职业禁忌证显示数量
+    getContraindicationDisplayCount(item) {
+      return item.contraindicationDisplayCount || 100;
+    },
+    // 获取职业禁忌证显示选项
+    getContraindicationDisplayOptions(item) {
+      const displayCount = this.getContraindicationDisplayCount(item);
+      if (item.contraindicationOptions) {
+        return item.contraindicationOptions.slice(0, displayCount);
+      }
+      return this.contraindicationOptions.slice(0, displayCount);
+    },
+    // 是否显示职业禁忌证加载更多
+    showContraindicationLoadMore(item) {
+      const displayCount = this.getContraindicationDisplayCount(item);
+      const totalCount = this.contraindicationOptions.length;
+      // 如果有搜索过滤，使用过滤后的数据长度
+      if (item.contraindicationOptions) {
+        return item.contraindicationOptions.length > displayCount;
+      }
+      return totalCount > displayCount;
+    },
+    // 加载更多职业禁忌证
+    handleLoadMoreContraindication(item) {
+      console.log("加载更多职业禁忌证", item);
+      const currentCount = this.getContraindicationDisplayCount(item);
+      const totalCount = this.contraindicationOptions.length;
+      const newCount = Math.min(currentCount + 100, totalCount);
+      // 使用 Vue.set 确保响应式更新
+      Vue.set(item, 'contraindicationDisplayCount', newCount);
+      console.log("更新显示数量:", currentCount, "->", newCount);
     },
     // ==================== 体检结论模块方法结束 ====================
 
@@ -4038,7 +4251,37 @@ export default {
           });
         });
       });
+      // 构建体检危害因素集 conclusionHarms
+      const conclusionHarms = this.hazardFactorData.map((item) => {
+        return {
+          regid: this.currentPeople.regid,
+          harmcode: item.conclusionType || "", // 危害编码
+          harmname: item.name || "", // 危害名称
+          conclusioncode: item.conclusionType || "", // 结论编码
+          conclusiondes: this.getConclusionText(item) || "", // 结论描述
+          likeOccupationCode: item.suspectedOccupation || "", // 疑似职业病编码
+          likeOccupationName: item.suspectedOccupation
+            ? (this.suspectedOccupationOptions.find(opt => opt.value === item.suspectedOccupation)?.label || "")
+            : "", // 疑似职业病名称
+          companyName: item.employer || "", // 单位名称
+          contraindicationCode: item.contraindication || "", // 职业禁忌证编码
+          contraindicationName: item.contraindication
+            ? (this.contraindicationOptions.find(opt => opt.value === item.contraindication)?.label || "")
+            : "", // 职业禁忌证名称
+          otherIll: item.otherDisease || "", // 其它疾病
+          mainFlag: item.isMainConclusion ? 1 : 0, // 主要结论标志 0：不勾选，1：勾选
+        };
+      });
+
+      // 构建处理意见 handleadvise（将意见数组拼接成字符串）
+      const handleadvise = this.medicalConclusion.opinions.join("；");
+
       let data = undefined;
+      // 判断体检结论：如果 medicalConclusion.text 有值（包括空字符串）则使用它，否则使用 totalconclusion
+      const totalconclusion = this.medicalConclusion.text !== undefined && this.medicalConclusion.text !== null
+        ? this.medicalConclusion.text
+        : this.totalconclusion;
+
       if (occupationitems.length == 0) {
         data = {
           regid: this.currentPeople.regid,
@@ -4046,7 +4289,8 @@ export default {
           doctorname: this.currentPeople.doctorname,
           inputdate: this.currentPeople.inputdate,
           conclusiontext: this.conclusiontext,
-          totalconclusion: this.totalconclusion,
+          totalconclusion: totalconclusion, // 体检结论
+          handleadvise: handleadvise, // 处理意见
           worditems,
           conclusionSummaryItems: this.conclusionitems.map((k) => {
             return {
@@ -4054,6 +4298,7 @@ export default {
               conclusion: k.conclusion,
             };
           }),
+          conclusionHarms: conclusionHarms, // 体检危害因素集
         };
       } else {
         data = {
@@ -4062,7 +4307,8 @@ export default {
           doctorname: this.currentPeople.doctorname,
           inputdate: this.currentPeople.inputdate,
           conclusiontext: this.conclusiontext,
-          totalconclusion: this.totalconclusion,
+          totalconclusion: totalconclusion, // 体检结论
+          handleadvise: handleadvise, // 处理意见
           worditems,
           conclusionSummaryItems: this.conclusionitems.map((k) => {
             return {
@@ -4071,6 +4317,7 @@ export default {
             };
           }),
           occupationitems: occupationitems.length > 0 ? occupationitems : [],
+          conclusionHarms: conclusionHarms, // 体检危害因素集
         };
       }
       this.btnLoading = true;
@@ -4189,6 +4436,7 @@ export default {
       let checkRes = await CheckItemIsComplete({
         whereitems: [{ key: "regid", value: this.checkupWork.trim() }],
       });
+
       if (!checkRes.result.iscomplete) {
         this.$confirm(`${checkRes.result.message}`, "提示", {
           confirmButtonText: "确定",
@@ -4222,6 +4470,8 @@ export default {
         },
       ];
       getTotalCheckQyzyy({ whereitems }).then((res) => {
+        console.log("获取总检结果回调", res)
+
         let data = res.result;
         if (!data) return false;
         if (data.remindflag === 1) {
@@ -4319,6 +4569,35 @@ export default {
         }
         this.illitems = data.illitems;
         if (this.illitems.length > 0) this.showIllitems = true;
+
+        // ==================== 体检结论模块数据回填开始 ====================
+        // 回填体检结论
+        if (data.totalconclusion !== undefined && data.totalconclusion !== null) {
+          this.medicalConclusion.text = data.totalconclusion;
+        }
+        // 回填处理意见
+        if (data.handleadvise) {
+          // 将处理意见字符串按分隔符分割成数组
+          this.medicalConclusion.opinions = data.handleadvise.split(/；|;/).filter(item => item.trim() !== "");
+        } else {
+          this.medicalConclusion.opinions = [];
+        }
+        // 回填危害因素数据
+        if (data.conclusionHarms && Array.isArray(data.conclusionHarms) && data.conclusionHarms.length > 0) {
+          // 清空现有数据并重新构建
+          this.hazardFactorData = data.conclusionHarms.map((harm) => {
+            return {
+              name: harm.harmname || "", // 危害名称
+              isMainConclusion: harm.mainFlag === 1, // 主要结论标志
+              conclusionType: harm.conclusioncode || "", // 结论编码
+              suspectedOccupation: harm.likeOccupationCode || "", // 疑似职业病编码
+              employer: harm.companyName || "", // 用人单位
+              contraindication: harm.contraindicationCode || "", // 职业禁忌证编码
+              otherDisease: harm.otherIll || "", // 其他疾病
+            };
+          });
+        }
+        // ==================== 体检结论模块数据回填结束 ====================
       });
       localStorage.removeItem("revokeData");
       this.checkupWork = "";
@@ -5603,6 +5882,64 @@ export default {
     text-align: center;
   }
 }
+
+// ==================== 疑似职业病行响应式布局开始 ====================
+.suspected-occupation-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+
+  .suspected-occupation-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 280px;
+
+    .el-select {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+
+  .suspected-occupation-right {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 280px;
+
+    .el-input {
+      flex: 1;
+      min-width: 150px;
+    }
+  }
+
+  .label {
+    white-space: nowrap;
+    margin-right: 8px;
+    color: #606266;
+    font-size: 14px;
+  }
+}
+// ==================== 疑似职业病行响应式布局结束 ====================
+
+// ==================== 处理意见空值提示样式开始 ====================
+.opinion-empty-tip {
+  color: #909399a3;
+  font-size: 13px;
+  // padding: 8px 0;
+  display: inline-block;
+}
+// ==================== 处理意见空值提示样式结束 ====================
+
+// ==================== 危害因素空值提示样式开始 ====================
+.hazard-empty-tip {
+  color: #909399;
+  font-size: 13px;
+  text-align: center;
+  padding: 20px 0;
+}
+// ==================== 危害因素空值提示样式结束 ====================
 </style>
 <style lang="scss">
 .el-message-box.checkRes-model {

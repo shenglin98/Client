@@ -597,11 +597,7 @@
                           <el-col :span="6">
                             <el-form-item label="总工龄" label-width="90px">
                               <div class="unit-input-number">
-                                <el-input-number 
-                                  v-model="occupationalForm.totalWorkYears" 
-                                  :min="0" 
-                                  :max="100" 
-                                  controls-position="right">
+                                <el-input-number v-model="occupationalForm.totalWorkYears" :min="0" :max="100" controls-position="right">
                                 </el-input-number>
                                 <el-dropdown class="unit-dropdown" @command="(cmd) => handleUnitChange('totalWorkYearsUnit', cmd)">
                                   <span class="unit-text">
@@ -619,11 +615,7 @@
                           <el-col :span="6">
                             <el-form-item label="接害工龄">
                               <div class="unit-input-number">
-                                <el-input-number
-                                  v-model="occupationalForm.harmWorkYears"
-                                  :min="0"
-                                  :max="100"
-                                  controls-position="right">
+                                <el-input-number v-model="occupationalForm.harmWorkYears" :min="0" :max="100" controls-position="right">
                                 </el-input-number>
                                 <el-dropdown class="unit-dropdown" @command="(cmd) => handleUnitChange('harmWorkYearsUnit', cmd)">
                                   <span class="unit-text">
@@ -640,24 +632,8 @@
                           </el-col>
                           <el-col :span="6">
                             <el-form-item label="工种代码">
-                              <el-select
-                                v-model="occupationalForm.jobCode"
-                                placeholder="请输入关键字搜索或滚动浏览"
-                                clearable
-                                filterable
-                                remote
-                                reserve-keyword
-                                :remote-method="filterJobCode"
-                                :loading="jobCodeLoading"
-                                style="width: 100%;"
-                                popper-class="job-code-select-dropdown"
-                                @visible-change="handleJobCodeVisibleChange"
-                                @change="handleJobCodeChange">
-                                <el-option
-                                  v-for="(item, index) in jobCodeFilteredOptions"
-                                  :key="item.code + '-' + index"
-                                  :label="item.code + ' - ' + item.name"
-                                  :value="item.code">
+                              <el-select v-model="occupationalForm.jobCode" placeholder="请输入关键字搜索或滚动浏览" clearable filterable remote reserve-keyword :remote-method="filterJobCode" :loading="jobCodeLoading" style="width: 100%;" popper-class="job-code-select-dropdown" @visible-change="handleJobCodeVisibleChange" @change="handleJobCodeChange">
+                                <el-option v-for="(item, index) in jobCodeFilteredOptions" :key="item.code + '-' + index" :label="item.code + ' - ' + item.name" :value="item.code">
                                 </el-option>
                                 <div v-if="jobCodePagination.hasMore && !jobCodeSearchQuery" class="load-more-wrapper">
                                   <div class="load-more-btn" @click.stop="loadMoreJobCode">
@@ -701,28 +677,13 @@
                             <span class="required-label">危害因素</span>
                           </template>
                           <template slot-scope="scope">
-                            <el-cascader
-                              v-model="scope.row.factorNamePath"
-                              :options="hazardFactorCascaderOptions"
-                              :props="{ checkStrictly: false, emitPath: false }"
-                              placeholder="请选择"
-                              size="mini"
-                              clearable
-                              filterable
-                              style="width: 100%;"
-                              @change="(val) => handleHazardFactorChange(val, scope.row)">
+                            <el-cascader v-model="scope.row.factorNamePath" :options="hazardFactorCascaderOptions" :props="{ checkStrictly: false, emitPath: false }" placeholder="请选择" size="mini" clearable filterable style="width: 100%;" @change="(val) => handleHazardFactorChange(val, scope.row)">
                             </el-cascader>
                           </template>
                         </el-table-column>
                         <el-table-column prop="otherHazard" label="其它危害" min-width="200">
                           <template slot-scope="scope">
-                            <el-input 
-                              v-model="scope.row.otherHazard" 
-                              placeholder="其它需要填写内容" 
-                              size="mini" 
-                              clearable
-                              :disabled="!scope.row.isOtherHazard"
-                              @change="(val) => handleOtherHazardChange(val, scope.row)">
+                            <el-input v-model="scope.row.otherHazard" placeholder="其它需要填写内容" size="mini" clearable :disabled="!scope.row.isOtherHazard" @change="(val) => handleOtherHazardChange(val, scope.row)">
                             </el-input>
                           </template>
                         </el-table-column>
@@ -866,7 +827,7 @@
                             <el-col :span="8">
                               <el-form-item label="月经史-初潮年龄">
                                 <div class="unit-input-number">
-                                  <el-input-number v-model="questionnaireForm.menarcheAge" :min="0" :max="100"  controls-position="right"></el-input-number>
+                                  <el-input-number v-model="questionnaireForm.menarcheAge" :min="0" :max="100" controls-position="right"></el-input-number>
                                   <el-dropdown class="unit-dropdown" @command="(cmd) => handleQuestionnaireUnitChange('menarcheAgeUnit', cmd)">
                                     <span class="unit-text">
                                       {{ questionnaireForm.menarcheAgeUnit || '年' }}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -895,7 +856,7 @@
                             <el-col :span="8">
                               <el-form-item label="月经史-停经年龄">
                                 <div class="unit-input-number">
-                                  <el-input-number v-model="questionnaireForm.menopauseAge" :min="0" :max="100"  controls-position="right"></el-input-number>
+                                  <el-input-number v-model="questionnaireForm.menopauseAge" :min="0" :max="100" controls-position="right"></el-input-number>
                                   <el-dropdown class="unit-dropdown" @command="(cmd) => handleQuestionnaireUnitChange('menopauseAgeUnit', cmd)">
                                     <span class="unit-text">
                                       {{ questionnaireForm.menopauseAgeUnit || '年' }}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -1216,7 +1177,7 @@
                   <el-button type="primary" size="mini" plain icon="el-icon-edit" @click="handleCardReading" :disabled="formFlag" style="margin-left: 10px">编辑</el-button>
                 </div>
               </div> -->
-             <div class="content_table" style="background-color: #fff; border-radius: 5px">
+              <div class="content_table" style="background-color: #fff; border-radius: 5px">
                 <div class="message-title">
                   <!-- style="background-color: #f5f7fa" -->
                   <div class="headss">
@@ -1745,7 +1706,7 @@ export default {
         page: 1,
         pageSize: 100,
         total: 0,
-        hasMore: true
+        hasMore: true,
       },
       // 工种代码搜索关键字
       jobCodeSearchQuery: "",
@@ -1763,7 +1724,13 @@ export default {
       occupationalDetail: null,
       // 接触危害因素集
       hazardFactorList: [
-        { factorCode: "", factorName: "", otherHazard: "", isExamFactor: false, isOtherHazard: false },
+        {
+          factorCode: "",
+          factorName: "",
+          otherHazard: "",
+          isExamFactor: false,
+          isOtherHazard: false,
+        },
       ],
       // 职业史集
       workHistoryList: [
@@ -3001,7 +2968,7 @@ export default {
       company_archives
         .GetOccupationTreeList({ category: "DutyStatus" })
         .then((res) => {
-          console.log("在岗状态：", res)
+          console.log("在岗状态：", res);
           if (res.code == 200) {
             this.workStatusOptions = res.result || [];
           }
@@ -3040,7 +3007,7 @@ export default {
           return "";
         };
         row.factorName = findName(this.hazardFactorCascaderOptions, value);
-        
+
         // 判断是否选择了"其它危害" (code 包含 999)
         if (value && value.includes && value.includes("999")) {
           row.isOtherHazard = true;
@@ -3822,15 +3789,17 @@ export default {
         if (!item.factorCode) {
           this.$message.error({
             message: `【危害因素】第 ${i + 1} 条记录：危害因素不能为空！`,
-            duration: 3000
+            duration: 3000,
           });
           return;
         }
         // 校验其它危害：如果是其它危害(code包含999)，则其它危害内容不能为空
         if (item.isOtherHazard && !item.otherHazard.trim()) {
           this.$message.error({
-            message: `【危害因素】第 ${i + 1} 条记录：选择了其它危害，请填写其它危害内容！`,
-            duration: 3000
+            message: `【危害因素】第 ${
+              i + 1
+            } 条记录：选择了其它危害，请填写其它危害内容！`,
+            duration: 3000,
           });
           return;
         }
@@ -3842,7 +3811,7 @@ export default {
         if (!item.diseaseName) {
           this.$message.error({
             message: `【既往病史】第 ${i + 1} 条记录：疾病名称不能为空！`,
-            duration: 3000
+            duration: 3000,
           });
           return;
         }
@@ -3854,35 +3823,35 @@ export default {
         if (!item.startDate || !item.endDate) {
           this.$message.error({
             message: `【职业史】第 ${i + 1} 条记录：起止日期不能为空！`,
-            duration: 3000
+            duration: 3000,
           });
           return;
         }
         if (!item.typeCode) {
           this.$message.error({
             message: `【职业史】第 ${i + 1} 条记录：类型编码不能为空！`,
-            duration: 3000
+            duration: 3000,
           });
           return;
         }
         if (!item.companyName) {
           this.$message.error({
             message: `【职业史】第 ${i + 1} 条记录：工作单位名称不能为空！`,
-            duration: 3000
+            duration: 3000,
           });
           return;
         }
         if (!item.checkDate) {
           this.$message.error({
             message: `【职业史】第 ${i + 1} 条记录：检查日期不能为空！`,
-            duration: 3000
+            duration: 3000,
           });
           return;
         }
         if (!item.checkDoctor) {
           this.$message.error({
             message: `【职业史】第 ${i + 1} 条记录：检查医生不能为空！`,
-            duration: 3000
+            duration: 3000,
           });
           return;
         }
@@ -3903,27 +3872,27 @@ export default {
         worktypecode: this.occupationalForm.jobCode || "",
         worktypename: this.occupationalForm.jobName || "",
         // 危害因素集合
-        customerRegisterHarmItems: this.hazardFactorList.map(item => ({
+        customerRegisterHarmItems: this.hazardFactorList.map((item) => ({
           harmcode: item.factorCode || "",
           harmname: item.factorName || "",
-          checkHarmFlag: item.isExamFactor ? 1 : 0
+          checkHarmFlag: item.isExamFactor ? 1 : 0,
         })),
         // 病史集合
-        customerMedicalHistoryItems: this.medicalHistoryList.map(item => ({
+        customerMedicalHistoryItems: this.medicalHistoryList.map((item) => ({
           medicalhistorydes: item.description || "",
           illName: item.diseaseName || "",
           diagnoseCompanyName: item.diagnosisUnit || "",
           diagnoseDate: item.diagnosisDate || "",
-          illReturn: item.outcome || ""
+          illReturn: item.outcome || "",
         })),
         // 职业史集合
-        customerWorkHistoryItems: this.workHistoryList.map(item => ({
+        customerWorkHistoryItems: this.workHistoryList.map((item) => ({
           checktype: item.typeCode || "",
           startdate: item.startDate || "",
           enddate: item.endDate || "",
           companyname: item.companyName || "",
           checkdate: item.checkDate || "",
-          checkdoctor: item.checkDoctor || ""
+          checkdoctor: item.checkDoctor || "",
         })),
         // 问卷信息
         basequestionItem: {
@@ -3952,10 +3921,10 @@ export default {
           drinkUnit: this.questionnaireForm.drinkingUnit || "年",
           familyHistory: this.questionnaireForm.familyHistory || "",
           personHistory: this.questionnaireForm.personalHistory || "",
-          otherDes: this.questionnaireForm.otherSituation || ""
-        }
+          otherDes: this.questionnaireForm.otherSituation || "",
+        },
       };
-      
+
       SaveOccupation(submitData)
         .then((res) => {
           console.log("保存职业病信息:", res);
@@ -4017,7 +3986,6 @@ export default {
       this.getHazardFactorList();
       // 获取吸烟情况列表
       this.getSmokingStatusList();
-
     },
     // 清除职业病信息数据缓存
     clearOccupationalData() {
@@ -4040,7 +4008,15 @@ export default {
         remark: "",
       };
       // 清空列表数据
-      this.hazardFactorList = [{ factorCode: "", factorName: "", otherHazard: "", isExamFactor: false, isOtherHazard: false }];
+      this.hazardFactorList = [
+        {
+          factorCode: "",
+          factorName: "",
+          otherHazard: "",
+          isExamFactor: false,
+          isOtherHazard: false,
+        },
+      ];
       this.workHistoryList = [];
       this.medicalHistoryList = [];
       // 清空问卷数据
@@ -4079,14 +4055,14 @@ export default {
     // 获取职业病详情数据
     getOccupationDetail() {
       if (!this.choosePeople?.regid) return;
-      
+
       const loading = this.$loading({
         lock: true,
         text: "加载中...",
         spinner: "el-icon-loading",
         background: "rgba(0, 0, 0, 0.7)",
       });
-      
+
       GetOccupationOther({ regid: this.choosePeople.regid })
         .then((res) => {
           console.log("获取职业病详情:", res);
@@ -4105,7 +4081,7 @@ export default {
     fillOccupationData(data) {
       // 保存详情数据，用于后续保存时获取regid和arsid
       this.occupationalDetail = data;
-      
+
       // 填充主表单数据
       this.occupationalForm.sourceregid = data.sourceregid || "";
       this.occupationalForm.workStatus = data.jobin || "";
@@ -4117,40 +4093,57 @@ export default {
       this.occupationalForm.harmWorkYearsUnit = data.harmwordyearunit || "年";
       this.occupationalForm.jobCode = data.worktypecode || "";
       this.occupationalForm.jobName = data.worktypename || "";
-      
+
       // 填充危害因素列表
-      if (data.customerRegisterHarmItems && data.customerRegisterHarmItems.length > 0) {
-        this.hazardFactorList = data.customerRegisterHarmItems.map(item => {
+      if (
+        data.customerRegisterHarmItems &&
+        data.customerRegisterHarmItems.length > 0
+      ) {
+        this.hazardFactorList = data.customerRegisterHarmItems.map((item) => {
           const factorCode = item.harmcode || "";
           // 根据code查找完整的级联路径
-          const factorNamePath = factorCode ? this.findCascaderPathByCode(this.hazardFactorCascaderOptions, factorCode) : [];
+          const factorNamePath = factorCode
+            ? this.findCascaderPathByCode(
+                this.hazardFactorCascaderOptions,
+                factorCode
+              )
+            : [];
           // 判断是否包含999（其它危害）
-          const isOtherHazard = factorCode && factorCode.includes && factorCode.includes("999");
+          const isOtherHazard =
+            factorCode && factorCode.includes && factorCode.includes("999");
           return {
             factorCode: factorCode,
             factorName: item.harmname || "",
             factorNamePath: factorNamePath,
-            otherHazard: isOtherHazard ? (item.harmname || "") : "",
+            otherHazard: isOtherHazard ? item.harmname || "" : "",
             isExamFactor: item.checkHarmFlag === 1,
-            isOtherHazard: isOtherHazard
+            isOtherHazard: isOtherHazard,
           };
         });
       }
-      
+
       // 填充病史列表
-      if (data.customerMedicalHistoryItems && data.customerMedicalHistoryItems.length > 0) {
-        this.medicalHistoryList = data.customerMedicalHistoryItems.map(item => ({
-          diseaseName: item.illName || "",
-          outcome: item.illReturn || "",
-          diagnosisDate: item.diagnoseDate || "",
-          diagnosisUnit: item.diagnoseCompanyName || "",
-          description: item.medicalhistorydes || ""
-        }));
+      if (
+        data.customerMedicalHistoryItems &&
+        data.customerMedicalHistoryItems.length > 0
+      ) {
+        this.medicalHistoryList = data.customerMedicalHistoryItems.map(
+          (item) => ({
+            diseaseName: item.illName || "",
+            outcome: item.illReturn || "",
+            diagnosisDate: item.diagnoseDate || "",
+            diagnosisUnit: item.diagnoseCompanyName || "",
+            description: item.medicalhistorydes || "",
+          })
+        );
       }
-      
+
       // 填充职业史列表
-      if (data.customerWorkHistoryItems && data.customerWorkHistoryItems.length > 0) {
-        this.workHistoryList = data.customerWorkHistoryItems.map(item => {
+      if (
+        data.customerWorkHistoryItems &&
+        data.customerWorkHistoryItems.length > 0
+      ) {
+        this.workHistoryList = data.customerWorkHistoryItems.map((item) => {
           const startDate = item.startdate || "";
           const endDate = item.enddate || "";
           return {
@@ -4160,11 +4153,11 @@ export default {
             typeCode: item.checktype || "",
             companyName: item.companyname || "",
             checkDate: item.checkdate || "",
-            checkDoctor: item.checkdoctor || ""
+            checkDoctor: item.checkdoctor || "",
           };
         });
       }
-      
+
       // 填充问卷数据
       if (data.basequestionItem) {
         const q = data.basequestionItem;
@@ -4197,38 +4190,45 @@ export default {
     },
     // 获取工种代码列表
     getJobCodeList() {
-      company_archives.GetOccupationTreeList({ category: "JobCode" }).then((res) => {
-        console.log("工种代码：", res)
-        if (res.code == 200) {
-          this.jobCodeOptions = res.result || [];
-          this.jobCodePagination.total = this.jobCodeOptions.length;
-          this.jobCodePagination.hasMore = this.jobCodeOptions.length > this.jobCodePagination.pageSize;
-          // 初始加载第一页数据
-          this.loadJobCodePage(1);
-        }
-      }).catch((err) => {
-        console.error("获取工种代码列表失败:", err);
-      });
+      company_archives
+        .GetOccupationTreeList({ category: "JobCode" })
+        .then((res) => {
+          console.log("工种代码：", res);
+          if (res.code == 200) {
+            this.jobCodeOptions = res.result || [];
+            this.jobCodePagination.total = this.jobCodeOptions.length;
+            this.jobCodePagination.hasMore =
+              this.jobCodeOptions.length > this.jobCodePagination.pageSize;
+            // 初始加载第一页数据
+            this.loadJobCodePage(1);
+          }
+        })
+        .catch((err) => {
+          console.error("获取工种代码列表失败:", err);
+        });
     },
     // 加载工种代码分页数据
     loadJobCodePage(page) {
       const start = (page - 1) * this.jobCodePagination.pageSize;
       const end = page * this.jobCodePagination.pageSize;
       const pageData = this.jobCodeOptions.slice(start, end);
-      
+
       if (page === 1) {
         this.jobCodeFilteredOptions = pageData;
       } else {
-        this.jobCodeFilteredOptions = [...this.jobCodeFilteredOptions, ...pageData];
+        this.jobCodeFilteredOptions = [
+          ...this.jobCodeFilteredOptions,
+          ...pageData,
+        ];
       }
-      
+
       this.jobCodePagination.page = page;
       this.jobCodePagination.hasMore = end < this.jobCodeOptions.length;
     },
     // 加载更多工种代码
     loadMoreJobCode() {
       if (this.jobCodeLoadingMore || !this.jobCodePagination.hasMore) return;
-      
+
       this.jobCodeLoadingMore = true;
       // 模拟异步加载效果
       setTimeout(() => {
@@ -4242,7 +4242,8 @@ export default {
         // 下拉框打开时，如果没有搜索关键字，重置为第一页
         if (!this.jobCodeSearchQuery) {
           this.jobCodePagination.page = 1;
-          this.jobCodePagination.hasMore = this.jobCodeOptions.length > this.jobCodePagination.pageSize;
+          this.jobCodePagination.hasMore =
+            this.jobCodeOptions.length > this.jobCodePagination.pageSize;
         }
       }
     },
@@ -4250,7 +4251,9 @@ export default {
     handleJobCodeChange(value) {
       if (value) {
         // 根据选中的code查找对应的name
-        const selectedItem = this.jobCodeOptions.find(item => item.code === value);
+        const selectedItem = this.jobCodeOptions.find(
+          (item) => item.code === value
+        );
         if (selectedItem) {
           this.occupationalForm.jobName = selectedItem.name;
         }
@@ -4261,15 +4264,19 @@ export default {
     // 过滤工种代码
     filterJobCode(query) {
       this.jobCodeSearchQuery = query;
-      if (query !== '') {
+      if (query !== "") {
         this.jobCodeLoading = true;
         setTimeout(() => {
           this.jobCodeLoading = false;
           // 根据输入关键字过滤，最多显示200条
-          this.jobCodeFilteredOptions = this.jobCodeOptions.filter(item => {
-            return item.name.toLowerCase().indexOf(query.toLowerCase()) > -1 ||
-                   item.code.toLowerCase().indexOf(query.toLowerCase()) > -1;
-          }).slice(0, 200);
+          this.jobCodeFilteredOptions = this.jobCodeOptions
+            .filter((item) => {
+              return (
+                item.name.toLowerCase().indexOf(query.toLowerCase()) > -1 ||
+                item.code.toLowerCase().indexOf(query.toLowerCase()) > -1
+              );
+            })
+            .slice(0, 200);
         }, 200);
       } else {
         // 空查询时重置为第一页
@@ -4278,31 +4285,39 @@ export default {
     },
     // 获取危害因素列表
     getHazardFactorList() {
-      company_archives.GetOccupationTreeList({ category: "HarmFactor" }).then((res) => {
-        console.log("危害因素：", res)
-        if (res.code == 200) {
-          this.hazardFactorOptions = res.result || [];
-          // 将数据转换为级联格式
-          this.hazardFactorCascaderOptions = this.convertToCascaderData(this.hazardFactorOptions);
-        }
-      }).catch((err) => {
-        console.error("获取危害因素列表失败:", err);
-      });
+      company_archives
+        .GetOccupationTreeList({ category: "HarmFactor" })
+        .then((res) => {
+          console.log("危害因素：", res);
+          if (res.code == 200) {
+            this.hazardFactorOptions = res.result || [];
+            // 将数据转换为级联格式
+            this.hazardFactorCascaderOptions = this.convertToCascaderData(
+              this.hazardFactorOptions
+            );
+          }
+        })
+        .catch((err) => {
+          console.error("获取危害因素列表失败:", err);
+        });
     },
     // 将危害因素数据转换为级联格式
     convertToCascaderData(data) {
       // 找出所有一级节点（parentcode为空或为特定值）
-      const topLevel = data.filter(item => !item.parentcode || item.parentcode === '' || item.parentcode === '0');
+      const topLevel = data.filter(
+        (item) =>
+          !item.parentcode || item.parentcode === "" || item.parentcode === "0"
+      );
 
       // 递归构建树形结构
       const buildTree = (parentCode) => {
-        const children = data.filter(item => item.parentcode === parentCode);
-        return children.map(child => {
+        const children = data.filter((item) => item.parentcode === parentCode);
+        return children.map((child) => {
           const node = {
             value: child.code,
             label: child.name,
             code: child.code,
-            name: child.name
+            name: child.name,
           };
           const childNodes = buildTree(child.code);
           if (childNodes.length > 0) {
@@ -4313,12 +4328,12 @@ export default {
       };
 
       // 构建级联数据
-      return topLevel.map(item => ({
+      return topLevel.map((item) => ({
         value: item.code,
         label: item.name,
         code: item.code,
         name: item.name,
-        children: buildTree(item.code)
+        children: buildTree(item.code),
       }));
     },
     // 根据叶子节点code查找级联路径
@@ -4328,7 +4343,10 @@ export default {
           return [option.value];
         }
         if (option.children && option.children.length > 0) {
-          const childPath = this.findCascaderPathByCode(option.children, targetCode);
+          const childPath = this.findCascaderPathByCode(
+            option.children,
+            targetCode
+          );
           if (childPath.length > 0) {
             return [option.value, ...childPath];
           }
@@ -4338,14 +4356,17 @@ export default {
     },
     // 获取吸烟情况列表
     getSmokingStatusList() {
-      company_archives.GetOccupationTreeList({ category: "Smoking" }).then((res) => {
-        console.log("吸烟情况：", res)
-        if (res.code == 200) {
-          this.smokingStatusOptions = res.result || [];
-        }
-      }).catch((err) => {
-        console.error("获取吸烟情况列表失败:", err);
-      });
+      company_archives
+        .GetOccupationTreeList({ category: "Smoking" })
+        .then((res) => {
+          console.log("吸烟情况：", res);
+          if (res.code == 200) {
+            this.smokingStatusOptions = res.result || [];
+          }
+        })
+        .catch((err) => {
+          console.error("获取吸烟情况列表失败:", err);
+        });
     },
     // 类型列表
     handleQuestionnaireTitleList() {
@@ -5090,6 +5111,10 @@ export default {
             key: "checkno",
             value: this.personalForm.checkno,
           },
+          {
+            key: "sourcetype",
+            value: this.personalForm.checkno,
+          }
         ];
         getPersonalRegisterList({
           page: this.currentPage,
@@ -6090,6 +6115,7 @@ export default {
     handleGetPersonalRegisterList(pageflag, regid) {
       this.loadingCondition = true;
       let whereitems = [];
+
       // 搜索关键词
       if (this.checkupWork) {
         whereitems.push({
@@ -6112,6 +6138,10 @@ export default {
       if (this.persontype) {
         whereitems.push({
           key: "persontype",
+          value: this.persontype,
+        });
+        whereitems.push({
+          key: "sourcetype",
           value: this.persontype,
         });
       }

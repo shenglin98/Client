@@ -1181,6 +1181,7 @@ import {
   ImportImage,
   CheckCompanySeqno,
   CopyCombine,
+  WriteLog4,
 } from "@/api/personalregister.js";
 import { setFilesUpload } from "@/api/customerresult.js"; // 引入页面接口
 import { printBase64 } from "@/api/printreport.js";
@@ -3995,6 +3996,10 @@ export default {
             key: "checkno",
             value: this.personalForm.checkno,
           },
+          {
+            key: "sourcetype",
+            value: this.personalForm.checkno,
+          },
         ];
         getPersonalRegisterList({
           page: this.currentPage,
@@ -4893,6 +4898,13 @@ export default {
         this.personalForm.fileid = data.fileid;
         this.personalForm.fileid && this.handleGetFiles(); // 获取头像文件
         this.loading = false; // 关闭加载
+        // 记录日志：详情数据接口返回成功
+        const userInfo2 = JSON.parse(localStorage.getItem("usernameOrId")) || {};
+        const logMsg2 = `[性能排查] 详情数据接口返回 - 操作账号:${userInfo2.usercode || ''}, 操作人:${userInfo2.username || ''}, 姓名:${data.name}, 体检号:${data.regid}, 时间:${new Date().toLocaleString()}, 事件:接口数据返回成功`;
+        console.log(logMsg2);
+        WriteLog4({
+          c: logMsg2,
+        }).then((res) => {});
         if (this.isGuideSingle) {
           this.handlePrintGuideSingle();
           // if (this.personalForm.checktype == 2) {
@@ -4910,6 +4922,16 @@ export default {
         }
         this.choosePeople.inputcompanyname = "";
         this.personalForm.inputcompanyname = "";
+        // 使用 $nextTick 确保数据已渲染到页面
+        this.$nextTick(() => {
+          // 记录日志：详情数据完全显示到页面
+          const userInfo3 = JSON.parse(localStorage.getItem("usernameOrId")) || {};
+          const logMsg3 = `[性能排查] 详情数据渲染完成 - 操作账号:${userInfo3.usercode || ''}, 操作人:${userInfo3.username || ''}, 姓名:${data.name}, 体检号:${data.regid}, 时间:${new Date().toLocaleString()}, 事件:数据已完全渲染到页面`;
+          console.log(logMsg3);
+          WriteLog4({
+            c: logMsg3,
+          }).then((res) => {});
+        });
       });
     },
     // 排序渲染
@@ -5059,6 +5081,13 @@ export default {
     // 检索条件表信息选中行回调
     handleCheckCondition(row) {
       if (!row) return false;
+      // 记录日志：点击人员列表选中
+      const userInfo = JSON.parse(localStorage.getItem("usernameOrId")) || {};
+      const logMsg = `[性能排查] 点击人员列表选中 - 操作账号:${userInfo.usercode || ''}, 操作人:${userInfo.username || ''}, 姓名:${row.name}, 体检号:${row.regid}, 时间:${new Date().toLocaleString()}, 事件:开始加载人员详情`;
+      console.log(logMsg);
+      WriteLog4({
+        c: logMsg,
+      }).then((res) => {});
       this.setmealRadio = row.regid;
       this.groupdis = true;
       this.groupPriceTotal = 0; // 体检项目总金额
@@ -5082,6 +5111,7 @@ export default {
     handleGetPersonalRegisterList(pageflag, regids) {
       this.loadingCondition = true;
       let whereitems = [];
+      
       // 搜索关键词
       if (this.checkupWork) {
         whereitems.push({
@@ -5112,11 +5142,16 @@ export default {
               : "endregisterdate",
           value: this.conditionDate[1],
         });
+        
       }
       // 类型
       if (this.persontype != "") {
         whereitems.push({
           key: "persontype",
+          value: this.persontype,
+        });
+        whereitems.push({
+          key: "sourcetype",
           value: this.persontype,
         });
       }
@@ -6164,7 +6199,15 @@ export default {
     },
     // 打印指引单回调
     handlePrintGuideSingle(resRegid) {
-      if (!this.choosePeople && !this.choosePeople.regid) {
+      // 记录日志：点击指引单打印
+      const userInfo = JSON.parse(localStorage.getItem("usernameOrId")) || {};
+      const logMsg = `[性能排查] 点击指引单打印 - 操作账号:${userInfo.usercode || ''}, 操作人:${userInfo.username || ''}, 姓名:${this.choosePeople?.name || ''}, 体检号:${this.choosePeople?.regid || ''}, 时间:${new Date().toLocaleString()}, 事件:开始打印指引单`;
+      console.log(logMsg);
+      WriteLog4({
+        c: logMsg,
+      }).then((res) => {});
+
+      if (!this.choosePeople || !this.choosePeople.regid) {
         this.$message({
           showClose: true,
           message: "请选择人员再进行导出指引单",
@@ -6176,102 +6219,120 @@ export default {
         this.$message.warning(`${this.choosePeople.name} 数据已冻结!`);
         return;
       }
-      let d = this.$refs.btnGuideSingle[0];
-      if (d.$el.innerText == "打印") {
-        let indexP = d.$attrs["data-remark"].split("、")[0] + "、";
-        let repname = "";
-        let psData = this.choosePeople;
-        let tempArr = this.groupTableData.map((k) => {
-          return k.combinecode;
-        });
-        if (psData.companycode == 20009) {
-          repname = `${indexP}指引单`;
-        } else if (tempArr.includes("205032")) {
-          repname = `${indexP}高干指引单知书版`;
-        } else if (psData.meccode == 0) {
-          if (
-            psData.personalflag == 1 &&
-            psData.companytype == "入职" &&
-            psData.checktype == "2"
-          ) {
-            repname = `${indexP}入职指引单`;
-          } else if (
-            psData.personalflag == 1 &&
-            psData.companytype == "入职" &&
-            psData.checktype != "2"
-          ) {
-            repname = `${indexP}指引单`;
-          } else if (
-            psData.companycode != "20009" &&
-            psData.personalflag == 1 &&
-            psData.checktype != "2"
-          ) {
-            repname = `${indexP}团体指引单`;
-          } else if (psData.checktype == "2" || psData.checktype == "10108") {
-            repname = `${indexP}入职指引单`;
-          } else if (psData.checktype == "10102") {
-            repname = `${indexP}团体指引单`;
-          } else if (psData.personalflag == 0 && psData.checktype != "2") {
-            repname = `${indexP}指引单`;
-          } else {
-            repname = `${indexP}团体指引单`;
-          }
-        } else if (psData.meccode == 1) {
-          if (psData.companytype == "入职") {
-            repname = `${indexP}高干入职指引单`;
-          } else if (psData.companytype == "VIP") {
-            repname = `${indexP}高干指引单A4`;
-          } else if (psData.companytype == "网约" && psData.checktype == "2") {
-            repname = `${indexP}高干入职指引单`;
-          } else if (psData.companytype == "网约" && psData.checktype != "2") {
-            repname = `${indexP}高干指引单A4`;
-          } else {
-            repname = `${indexP}高干指引单A4`;
-          }
-        } else if (psData.meccode == 3) {
-          if (psData.personalflag == 1) {
-            repname = `${indexP}番禺团体指引单`;
-          } else if (psData.checktype == "2") {
-            repname = `${indexP}番禺入职指引单`;
-          } else {
-            repname = `${indexP}番禺指引单`;
-          }
-        } else {
-          repname = d.$attrs["data-remark"].split("、")[0];
-        }
-
-        let data = {
-          fingercode: localStorage.getItem("md5code"),
-          codes: resRegid ? [resRegid] : [this.choosePeople.regid],
-          repname,
-          printflag: 1,
-          whereitems: [
-            {
-              key: "regid",
-              value: resRegid || this.choosePeople.regid,
-            },
-          ],
-        };
-        printBase64(data)
-          .then((res) => {
-            this.lodop = getLodop();
-            let printname = ``;
-            if (res.data[0].printname == "") {
-              printname = this.lodop.GET_PRINTER_NAME(-1);
-            } else {
-              printname = res.data[0].printname;
-            }
-            let printObj = new LodopPrinter(null, printname);
-            let fileList = res.data.map((k) => {
-              return k.base64String;
-            });
-            printObj.printBase64PdfReport(this.lodop, fileList);
-            this.isGuideSingle = false;
-          })
-          .catch((err) => {
-            this.isGuideSingle = false;
-          });
+      let d = this.$refs.btnGuideSingle && this.$refs.btnGuideSingle[0];
+      if (!d) {
+        console.error("无法获取 btnGuideSingle 按钮引用");
+        this.$message.error("打印按钮配置异常，请联系管理员");
+        return;
       }
+      // 获取 data-remark 属性，如果不存在则使用默认值
+      let dataRemark = d.$attrs && d.$attrs["data-remark"] ? d.$attrs["data-remark"] : "2、指引单";
+      let indexP = dataRemark.split("、")[0] + "、";
+      let repname = "";
+      let psData = this.choosePeople;
+      let tempArr = this.groupTableData.map((k) => {
+        return k.combinecode;
+      });
+      if (psData.companycode == 20009) {
+        repname = `${indexP}指引单`;
+      } else if (tempArr.includes("205032")) {
+        repname = `${indexP}高干指引单知书版`;
+      } else if (psData.meccode == 0) {
+        if (
+          psData.personalflag == 1 &&
+          psData.companytype == "入职" &&
+          psData.checktype == "2"
+        ) {
+          repname = `${indexP}入职指引单`;
+        } else if (
+          psData.personalflag == 1 &&
+          psData.companytype == "入职" &&
+          psData.checktype != "2"
+        ) {
+          repname = `${indexP}指引单`;
+        } else if (
+          psData.companycode != "20009" &&
+          psData.personalflag == 1 &&
+          psData.checktype != "2"
+        ) {
+          repname = `${indexP}团体指引单`;
+        } else if (psData.checktype == "2" || psData.checktype == "10108") {
+          repname = `${indexP}入职指引单`;
+        } else if (psData.checktype == "10102") {
+          repname = `${indexP}团体指引单`;
+        } else if (psData.personalflag == 0 && psData.checktype != "2") {
+          repname = `${indexP}指引单`;
+        } else {
+          repname = `${indexP}团体指引单`;
+        }
+      } else if (psData.meccode == 1) {
+        if (psData.companytype == "入职") {
+          repname = `${indexP}高干入职指引单`;
+        } else if (psData.companytype == "VIP") {
+          repname = `${indexP}高干指引单A4`;
+        } else if (psData.companytype == "网约" && psData.checktype == "2") {
+          repname = `${indexP}高干入职指引单`;
+        } else if (psData.companytype == "网约" && psData.checktype != "2") {
+          repname = `${indexP}高干指引单A4`;
+        } else {
+          repname = `${indexP}高干指引单A4`;
+        }
+      } else if (psData.meccode == 3) {
+        if (psData.personalflag == 1) {
+          repname = `${indexP}番禺团体指引单`;
+        } else if (psData.checktype == "2") {
+          repname = `${indexP}番禺入职指引单`;
+        } else {
+          repname = `${indexP}番禺指引单`;
+        }
+      } else {
+        repname = dataRemark.split("、")[0];
+      }
+
+      let data = {
+        fingercode: localStorage.getItem("md5code"),
+        codes: resRegid ? [resRegid] : [this.choosePeople.regid],
+        repname,
+        printflag: 1,
+        whereitems: [
+          {
+            key: "regid",
+            value: resRegid || this.choosePeople.regid,
+          },
+        ],
+      };
+      printBase64(data)
+        .then((res) => {
+          // 记录日志：指引单打印成功
+          const logMsg2 = `[性能排查] 指引单打印成功 - 操作账号:${userInfo.usercode || ''}, 操作人:${userInfo.username || ''}, 姓名:${this.choosePeople?.name || ''}, 体检号:${this.choosePeople?.regid || ''}, 时间:${new Date().toLocaleString()}, 事件:指引单打印成功, 报表名称:${repname}`;
+          console.log(logMsg2);
+          WriteLog4({
+            c: logMsg2,
+          }).then((res) => {});
+
+          this.lodop = getLodop();
+          let printname = ``;
+          if (res.data[0].printname == "") {
+            printname = this.lodop.GET_PRINTER_NAME(-1);
+          } else {
+            printname = res.data[0].printname;
+          }
+          let printObj = new LodopPrinter(null, printname);
+          let fileList = res.data.map((k) => {
+            return k.base64String;
+          });
+          printObj.printBase64PdfReport(this.lodop, fileList);
+          this.isGuideSingle = false;
+        })
+        .catch((err) => {
+          // 记录日志：指引单打印失败
+          const logMsg3 = `[性能排查] 指引单打印失败 - 操作账号:${userInfo.usercode || ''}, 操作人:${userInfo.username || ''}, 姓名:${this.choosePeople?.name || ''}, 体检号:${this.choosePeople?.regid || ''}, 时间:${new Date().toLocaleString()}, 事件:指引单打印失败, 错误:${err.message || '未知错误'}`;
+          console.log(logMsg3);
+          WriteLog4({
+            c: logMsg3,
+          }).then((res) => {});
+          this.isGuideSingle = false;
+        });
     },
     // 打印指引单回调-同时打印体格表
     handlePrintGuideSingleAdult() {

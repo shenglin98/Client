@@ -437,6 +437,55 @@ export function TotalCheck2Detail(params) {
     })
 }
 
+// ==================== 体检结论模块下拉框接口开始 ====================
+
+// 1. 处理意见列表
+export function GetHandleAdviseList(params) {
+    return request({
+        url: '/DicOccupationTree/GetHandleAdviseList',
+        method: 'get',
+        params
+    })
+}
+
+// 2. 危害因素结论列表
+export function GetHealthCheckConclusionList(params) {
+    return request({
+        url: '/DicOccupationTree/GetOccupationTreeList',
+        method: 'get',
+        params: {
+            category: 'HealthCheckConclusion',
+            ...params
+        }
+    })
+}
+
+// 3. 疑似职业病列表
+export function GetSuspectedOccupationList(params) {
+    return request({
+        url: '/DicOccupationTree/GetOccupationTreeList',
+        method: 'get',
+        params: {
+            category: 'SuspectedOccupation',
+            ...params
+        }
+    })
+}
+
+// 4. 职业禁忌列表
+export function GetOccupationTabooList(params) {
+    return request({
+        url: '/DicOccupationTree/GetOccupationTreeList',
+        method: 'get',
+        params: {
+            category: 'OccupationTaboo',
+            ...params
+        }
+    })
+}
+
+// ==================== 体检结论模块下拉框接口结束 ====================
+
 // 批量二审
 export function BatchCheck2(data) {
     return request({

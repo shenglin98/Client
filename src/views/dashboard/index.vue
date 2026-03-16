@@ -9,8 +9,13 @@
         <div class="content_box">
           <!-- 我的工作计数模块 -->
           <div class="head word_t_box">
-            <div class="head_word">我的工作</div>
-            <el-button type="primary" size="mini" round @click="handleGetMyWorkModule">配置</el-button>
+            <div class="head_word">我的工作1</div>
+            <div class="head_buttons">
+              <el-tooltip content="手动刷新工作统计数据" placement="top">
+                <el-button type="success" size="mini" round icon="el-icon-refresh" @click="handleManualRefreshWorkStatic">刷新</el-button>
+              </el-tooltip>
+              <el-button type="primary" size="mini" round @click="handleGetMyWorkModule">配置</el-button>
+            </div>
           </div>
           <div class="my_job_box">
             <div class="my_job fixed_job" v-if="workStatic">
@@ -694,6 +699,11 @@ export default {
         ],
       }, // 严重新增便签表单对象
       workStatic: undefined, //我的工作
+      // 工作统计刷新相关
+      workStaticLastUpdate: null, // 上次更新时间戳
+      workStaticTimer: null, // 定时器
+      workStaticRefreshInterval: 30 * 60 * 1000, // 半小时（30分钟）
+      // workStaticRefreshInterval: 10 * 1000, // 半小时（30分钟）
       form: {},
       noteItem: {},
       nodeDelete: [],
@@ -1060,7 +1070,8 @@ export default {
     }
     // 页面加载获取数据
     // this.handleGetMessageList();
-    this.handleGetWorkStatic();
+    // 智能刷新工作统计数据
+    this.handleSmartRefreshWorkStatic();
     this.handleGetNoteList();
     this.handleGetSysBulletin();
     this.handleGetCriticalvalueList();
@@ -1070,6 +1081,13 @@ export default {
     this.$nextTick(() => {
       this.isHospital = this.Hospitals;
     });
+  },
+  beforeDestroy() {
+    // 清除定时器
+    if (this.workStaticTimer) {
+      clearInterval(this.workStaticTimer);
+      this.workStaticTimer = null;
+    }
   },
   methods: {
     async localSocket(md5code) {
@@ -1579,7 +1597,7 @@ export default {
     },
     // 获取我的工作回调
     handleGetWorkStatic() {
-      getWorkStatic().then((res) => {
+      return getWorkStatic().then((res) => {
         this.workStatic = res.result;
         if (res.result.workModuleitems.length != 0) {
           this.workModuleitems = res.result.workModuleitems.map((k) => {
@@ -1590,6 +1608,48 @@ export default {
             };
           });
         }
+        // 更新最后更新时间（使用 localStorage 持久化）
+        const now = Date.now();
+        this.workStaticLastUpdate = now;
+        localStorage.setItem('workStaticLastUpdate', now.toString());
+      });
+    },
+    // 智能刷新工作统计数据
+    handleSmartRefreshWorkStatic() {
+      const now = Date.now();
+      // 从 localStorage 读取上次更新时间
+      const savedTime = localStorage.getItem('workStaticLastUpdate');
+      const lastUpdate = savedTime ? parseInt(savedTime) : null;
+      
+      // 首次加载 或 超过半小时未更新
+      if (!lastUpdate || (now - lastUpdate) >= this.workStaticRefreshInterval) {
+        this.handleGetWorkStatic().then(() => {
+          // 启动定时器
+          this.startWorkStaticTimer();
+        });
+      } else {
+        // 未超过半小时，恢复上次更新时间并启动定时器
+        this.workStaticLastUpdate = lastUpdate;
+        this.startWorkStaticTimer();
+      }
+    },
+    // 启动工作统计定时器
+    startWorkStaticTimer() {
+      // 清除已有定时器
+      if (this.workStaticTimer) {
+        clearInterval(this.workStaticTimer);
+      }
+      // 每半小时检查一次
+      this.workStaticTimer = setInterval(() => {
+        this.handleGetWorkStatic();
+      }, this.workStaticRefreshInterval);
+    },
+    // 手动刷新工作统计
+    handleManualRefreshWorkStatic() {
+      this.handleGetWorkStatic().then(() => {
+        this.$message.success("刷新成功");
+        // 重新启动定时器
+        this.startWorkStaticTimer();
       });
     },
     // 我的工作模块配置提交
