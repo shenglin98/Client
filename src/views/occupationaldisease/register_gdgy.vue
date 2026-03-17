@@ -654,11 +654,7 @@
                               </el-select>
                             </el-form-item>
                           </el-col>
-                          <el-col :span="6">
-                            <el-form-item label="备注">
-                              <el-input v-model="occupationalForm.remark" placeholder="信息备注" clearable></el-input>
-                            </el-form-item>
-                          </el-col>
+
                         </el-row>
                       </el-form>
                     </div>
@@ -1691,7 +1687,6 @@ export default {
         harmWorkYearsUnit: "年",
         jobCode: "",
         jobName: "",
-        remark: "",
       },
       // 在岗状态选项列表
       workStatusOptions: [],
@@ -2921,6 +2916,7 @@ export default {
     this.handleQuestionnaireTitleList();
     this.handleGetPublicConfigs("Occupation"); // 职业类型
     this.handleGetPublicConfigs("Nation"); // 民族
+    this.handleGetPublicConfigs("OccupationCheckType"); // 体检类型
     this.handleGetAllUser(); // 导诊护士 业务员
     getSysConfigInfo({ cc: "Sys_Print_Inspection" }).then((res) => {
       // 获取条件计算日期范围回调
@@ -3684,6 +3680,9 @@ export default {
           this.occupationItems = res.result;
         } else if (cc == "Nation") {
           this.nationItems = res.result;
+        } else if (cc == "OccupationCheckType") {
+          // 体检类型
+          this.checktypeitems = res.result;
         }
       });
     },
@@ -5325,12 +5324,11 @@ export default {
         (data.marriageitem.filter((k) => k.selected)[0] &&
           data.marriageitem.filter((k) => k.selected)[0].code) ||
         "其他";
-      // 检查类型列表 / 回显值
-      this.checktypeitems = data.checktypeitems;
-      this.personalForm.checktype =
-        (data.checktypeitems.filter((k) => k.selected)[0] &&
-          data.checktypeitems.filter((k) => k.selected)[0].code) ||
-        "";
+      // 检查类型列表 - 使用 OccupationCheckType 接口获取的数据，不再从详情接口获取
+      // this.checktypeitems = data.checktypeitems;
+      // 回显体检类型选中值
+      const selectedCheckType = this.checktypeitems.filter((k) => k.selected)[0];
+      this.personalForm.checktype = selectedCheckType ? selectedCheckType.code : "";
       // 下拉单位列表 /  回显值
       // this.companyitems = data.companyitems;
       // this.batchitems = data.batchitems;
@@ -5906,12 +5904,11 @@ export default {
           (data.marriageitem.filter((k) => k.selected)[0] &&
             data.marriageitem.filter((k) => k.selected)[0].code) ||
           "其他";
-        // 检查类型列表 / 回显值
-        this.checktypeitems = data.checktypeitems;
-        this.personalForm.checktype =
-          (data.checktypeitems.filter((k) => k.selected)[0] &&
-            data.checktypeitems.filter((k) => k.selected)[0].code) ||
-          "";
+        // 检查类型列表 - 使用 OccupationCheckType 接口获取的数据，不再从详情接口获取
+        // this.checktypeitems = data.checktypeitems;
+        // 回显体检类型选中值
+        const selectedCheckType2 = this.checktypeitems.filter((k) => k.selected)[0];
+        this.personalForm.checktype = selectedCheckType2 ? selectedCheckType2.code : "";
         // 下拉单位列表 /  回显值
         this.companyitems = data.companyitems;
         this.batchitems = data.batchitems;
@@ -5994,7 +5991,7 @@ export default {
           workitems,
         } = res.result;
         this.agearr = ageunititems;
-        this.checktypeitems = checktypeitems;
+        // this.checktypeitems = checktypeitems; // 使用 OccupationCheckType 接口获取的数据
         this.marriagearr = marriageitem;
         this.companyitems = companyitems;
         // 年龄单位列表 / 回显值
@@ -6008,12 +6005,11 @@ export default {
           (marriageitem.filter((k) => k.selected)[0] &&
             marriageitem.filter((k) => k.selected)[0].code) ||
           "未知";
-        // 检查类型列表 / 回显值
-        this.checktypeitems = checktypeitems;
-        this.personalForm.checktype =
-          (checktypeitems.filter((k) => k.selected)[0] &&
-            checktypeitems.filter((k) => k.selected)[0].code) ||
-          "";
+        // 检查类型列表 - 使用 OccupationCheckType 接口获取的数据，不再从详情接口获取
+        // this.checktypeitems = checktypeitems;
+        // 回显体检类型选中值
+        const selectedCheckType3 = this.checktypeitems.filter((k) => k.selected)[0];
+        this.personalForm.checktype = selectedCheckType3 ? selectedCheckType3.code : "";
         // 下拉单位列表 /  回显值
         this.companyitems = companyitems;
         let company = companyitems.filter((k) => k.selected)[0];
@@ -6107,6 +6103,8 @@ export default {
       this.message = "basic"; // 基本信息-basic 其他信息-other
       this.avatarImg = require("./images/lin.jpg");
       this.formFlag = true; // 解除表单限制可编辑
+
+      this.clearOccupationalData();
     },
     handleCompanycodeChange() {
       this.handleGetPersonalRegisterList();

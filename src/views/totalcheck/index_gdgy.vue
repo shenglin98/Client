@@ -333,7 +333,7 @@
                     <el-tab-pane label="饮食建议" name="ysjy">饮食建议</el-tab-pane>
                     <el-tab-pane label="运动建议" name="ydjy">运动建议</el-tab-pane>
                     <el-tab-pane label="健康知识" name="jkzs">健康知识</el-tab-pane>
-                    <el-tab-pane label="体检结论" name="tjjl">体检结论</el-tab-pane>
+                    <el-tab-pane label="体检结论" name="tjjl">职业体检结论</el-tab-pane>
                   </el-tabs>
                   <div class="handle_btn_group">
                     <div class="handle_btn" @click="handleAddblank">
@@ -1438,10 +1438,10 @@ export default {
       hazardFactorData: [],
       // 危害因素结论类型选项
       conclusionTypeOptions: [
-        { label: "疑似职业病", value: "suspected" },
-        { label: "职业禁忌证", value: "contraindication" },
-        { label: "其他疾病", value: "other" },
-        { label: "未见异常", value: "normal" },
+        { label: "疑似职业病", value: "12003" },
+        { label: "职业禁忌证", value: "12004" },
+        { label: "其他疾病", value: "12005" },
+        { label: "未见异常", value: "12001" },
       ],
       // 疑似职业选项
       suspectedOccupationOptions: [
@@ -2449,27 +2449,25 @@ export default {
       });
       // 更新体检结论文本
       if (item.isMainConclusion) {
-        this.medicalConclusion.text = `${item.name}：${this.getConclusionText(item)}`;
+        this.medicalConclusion.text = `${item.name} - ${this.getConclusionText(item)}`;
       } else {
         this.medicalConclusion.text = "";
       }
     },
-    // 获取结论文本
+    // 获取结论文本（从危害因素结论选项中获取完整描述）
     getConclusionText(item) {
-      const typeMap = {
-        "12001": "目前未见异常",
-        "12002": "复查",
-        "12003": "疑似职业病",
-        "12004": "职业禁忌证",
-        "12005": "其他疾病或异常",
-      };
-      return typeMap[item.conclusionType] || "";
+      if (!item.conclusionType) return "";
+      // 从危害因素结论选项中查找对应的完整描述
+      const conclusion = this.conclusionTypeOptions.find(
+        (opt) => opt.value === item.conclusionType
+      );
+      return conclusion ? conclusion.label : "";
     },
     // 结论类型变化
     handleConclusionTypeChange(item) {
       // 如果当前是主检结论，更新体检结论文本
       if (item.isMainConclusion) {
-        this.medicalConclusion.text = `${item.name}：${this.getConclusionText(item)}`;
+        this.medicalConclusion.text = `${item.name} - ${this.getConclusionText(item)}`;
       }
     },
     // 是否显示疑似职业 (code: 12003)
@@ -5311,6 +5309,19 @@ export default {
       } else {
         this.assignmentFlag = 0;
       }
+    },
+    // 监听危害因素数据变化，实时更新体检结论
+    hazardFactorData: {
+      handler(newVal) {
+        // 查找当前设为主检结论的项目
+        const mainItem = newVal.find(item => item.isMainConclusion);
+        if (mainItem) {
+          this.medicalConclusion.text = `${mainItem.name} - ${this.getConclusionText(mainItem)}`;
+        } else {
+          this.medicalConclusion.text = "";
+        }
+      },
+      deep: true
     },
   },
   directives: {

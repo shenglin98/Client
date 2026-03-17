@@ -1,4 +1,4 @@
-﻿import request from '@/utils/request'
+import request from '@/utils/request'
 
 export function getList(params) {
     return request({
@@ -49,7 +49,6 @@ export function getSysConfigInfo(params) {
         params
     })
 }
-
 
 // /SysOperateLog/Load
 export function deleteItem(data) {
