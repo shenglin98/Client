@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @licstart The following is the entire license notice for the
  * Javascript code in this page
  *
@@ -14615,4 +14615,3 @@ const pdfjsBuild = 'e667c8cbc';
 /******/ })()
 ;
 });
-//# sourceMappingURL=pdf.js.map

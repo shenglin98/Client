@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @licstart The following is the entire license notice for the
  * Javascript code in this page
  *
@@ -306,4 +306,3 @@ function QuickJSSandbox() {
 /******/ })()
 ;
 });
-//# sourceMappingURL=pdf.sandbox.js.map

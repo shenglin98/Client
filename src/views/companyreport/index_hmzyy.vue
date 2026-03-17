@@ -668,7 +668,7 @@ export default {
         .search_form {
           width: 100% !important;
           display: flex;
-          justify-content: start;
+          justify-content: flex-start;
           align-items: center;
           .el-form {
             width: 100% !important;

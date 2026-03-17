@@ -3998,7 +3998,7 @@ export default {
           },
           {
             key: "sourcetype",
-            value: this.personalForm.checkno,
+            value: 0,
           },
         ];
         getPersonalRegisterList({
@@ -5150,10 +5150,6 @@ export default {
           key: "persontype",
           value: this.persontype,
         });
-        whereitems.push({
-          key: "sourcetype",
-          value: this.persontype,
-        });
       }
       // 单位
       if (this.companycode) {
@@ -5169,6 +5165,10 @@ export default {
           value: pageflag,
         });
       }
+      whereitems.push({
+        key: "sourcetype",
+        value: 0,
+      });
       getPersonalRegisterList({
         page: this.currentPage,
         limit: this.pageSize,

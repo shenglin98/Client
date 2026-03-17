@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,cAAc,CAAC;EACX,aAAa,EAAE,GAAG;CACrB",
-    "sources": [
-        "flow-attr.scss"
-    ],
-    "names": [],
-    "file": "flow-attr.css"
-}

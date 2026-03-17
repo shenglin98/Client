@@ -965,7 +965,7 @@ export default {
             margin-top: 40px;
             text-align: center;
             display: flex;
-            justify-content: start;
+            justify-content: flex-start;
             flex-wrap: wrap;
             .el-button {
               width: 21%;

@@ -672,14 +672,11 @@
                     font-size: 13px;
                 }
                 /deep/ .custom-theme .el-select-dropdown__list {
-                    padding: 6px 0 0;
+                    padding: 6px 0 0 !important;
                 }
                 /deep/ .el-input .el-input__inner {
                     font-size: 13px;
                 }
-                // /deep/ .el-input--prefix .el-input__inner {
-                //     padding: 0 0 0 25px !important;
-                // }
                 // 级联选择器样式优化 - 点击文字也能选中
                 /deep/ .el-cascader-panel {
                     .el-cascader-node {
@@ -1292,6 +1289,7 @@
         max-height: 400px;
         overflow-y: auto;
         padding-bottom: 60px; // 为悬浮按钮留出空间
+        padding: 6px 0 0 !important;
     }
     // 悬浮加载按钮容器
     .load-more-wrapper {

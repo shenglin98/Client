@@ -654,6 +654,12 @@
                               </el-select>
                             </el-form-item>
                           </el-col>
+                          <el-col :span="6" v-if="occupationalForm.isOtherJob">
+                            <el-form-item label="其它工种">
+                              <el-input v-model="occupationalForm.otherJob" placeholder="请输入其它工种" clearable size="small">
+                              </el-input>
+                            </el-form-item>
+                          </el-col>
 
                         </el-row>
                       </el-form>
@@ -1687,6 +1693,8 @@ export default {
         harmWorkYearsUnit: "年",
         jobCode: "",
         jobName: "",
+        otherJob: "",
+        isOtherJob: false,
       },
       // 在岗状态选项列表
       workStatusOptions: [],
@@ -1699,7 +1707,7 @@ export default {
       // 工种代码分页参数
       jobCodePagination: {
         page: 1,
-        pageSize: 100,
+        pageSize: 50,
         total: 0,
         hasMore: true,
       },
@@ -2028,7 +2036,7 @@ export default {
       showQuestionnaire: false, // 调查问卷显示
       questionnaireId: "",
       currentPage: 1, // 当前页
-      pageSize: 100, // 页面条数
+      pageSize: 50, // 页面条数
       count: 0, // 总条数
       showHealthView: false, // 健康视图
       appointmentData: undefined, // 预约数据
@@ -3782,6 +3790,14 @@ export default {
     },
     // 职业病信息保存回调
     handleSaveOccupational() {
+      // 校验工种代码：如果选择了code最后三位是999的工种，则其它工种内容不能为空
+      if (this.occupationalForm.isOtherJob && !this.occupationalForm.otherJob.trim()) {
+        this.$message.error({
+          message: "选择了其它工种，请填写其它工种内容！",
+          duration: 3000,
+        });
+        return;
+      }
       // 校验危害因素集合
       for (let i = 0; i < this.hazardFactorList.length; i++) {
         const item = this.hazardFactorList[i];
@@ -3869,7 +3885,9 @@ export default {
         workyearunit: this.occupationalForm.totalWorkYearsUnit || "年",
         harmwordyearunit: this.occupationalForm.harmWorkYearsUnit || "年",
         worktypecode: this.occupationalForm.jobCode || "",
-        worktypename: this.occupationalForm.jobName || "",
+        worktypename: this.occupationalForm.isOtherJob && this.occupationalForm.otherJob 
+          ? this.occupationalForm.otherJob 
+          : (this.occupationalForm.jobName || ""),
         // 危害因素集合
         customerRegisterHarmItems: this.hazardFactorList.map((item) => ({
           harmcode: item.factorCode || "",
@@ -4004,6 +4022,8 @@ export default {
         harmWorkYearsUnit: "年",
         jobCode: "",
         jobName: "",
+        otherJob: "",
+        isOtherJob: false,
         remark: "",
       };
       // 清空列表数据
@@ -4092,6 +4112,15 @@ export default {
       this.occupationalForm.harmWorkYearsUnit = data.harmwordyearunit || "年";
       this.occupationalForm.jobCode = data.worktypecode || "";
       this.occupationalForm.jobName = data.worktypename || "";
+      // 判断是否显示其它工种（code最后三位是999时）
+      const jobCode = data.worktypecode || "";
+      if (jobCode.slice(-3) === "999") {
+        this.occupationalForm.isOtherJob = true;
+        this.occupationalForm.otherJob = data.worktypename || "";
+      } else {
+        this.occupationalForm.isOtherJob = false;
+        this.occupationalForm.otherJob = "";
+      }
 
       // 填充危害因素列表
       if (
@@ -4256,8 +4285,19 @@ export default {
         if (selectedItem) {
           this.occupationalForm.jobName = selectedItem.name;
         }
+        // 判断最后三位是否是 999
+        const lastThree = value.slice(-3);
+        if (lastThree === "999") {
+          this.occupationalForm.isOtherJob = true;
+          this.occupationalForm.otherJob = "";
+        } else {
+          this.occupationalForm.isOtherJob = false;
+          this.occupationalForm.otherJob = "";
+        }
       } else {
         this.occupationalForm.jobName = "";
+        this.occupationalForm.isOtherJob = false;
+        this.occupationalForm.otherJob = "";
       }
     },
     // 过滤工种代码
@@ -5112,7 +5152,7 @@ export default {
           },
           {
             key: "sourcetype",
-            value: this.personalForm.checkno,
+            value: 1,
           }
         ];
         getPersonalRegisterList({
@@ -6138,10 +6178,7 @@ export default {
           key: "persontype",
           value: this.persontype,
         });
-        whereitems.push({
-          key: "sourcetype",
-          value: this.persontype,
-        });
+        
       }
       // 单位
       if (this.companycode) {
@@ -6157,6 +6194,10 @@ export default {
           value: pageflag,
         });
       }
+      whereitems.push({
+        key: "sourcetype",
+        value: 1,
+      });
       getPersonalRegisterList({
         page: this.currentPage,
         limit: this.pageSize,
