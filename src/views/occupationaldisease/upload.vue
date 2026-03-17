@@ -6,7 +6,7 @@
         <div class="form-item">
           <label>单位名称</label>
           <el-select v-model="searchForm.companycode" placeholder="请选择单位" clearable filterable size="small" @change="handleChangeCompany">
-            <el-option v-for="(item, index) in companyitems" :key="index" :label="`${item.code}　${item.name}`" :value="item.code" />
+            <el-option v-for="(item, index) in companyitems" :key="index" :label="item.name" :value="item.code" />
           </el-select>
         </div>
         <div class="form-item">
